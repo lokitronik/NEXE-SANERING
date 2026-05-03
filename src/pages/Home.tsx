@@ -36,15 +36,13 @@ const coreServices = [
     link: "/tjanster/traumasanering"
   },
   {
-      title: "Socialsanering & hoarder-städning",
-      description:
-  "Vi utför professionell socialsanering och hoarder-städning — rensning och sanering "
-  "av kraftigt nedskräpade bostäder med biologisk belastning, lukt och extrem uppsamling. "
-  "Diskret, metodisk och med full utrustning.",
-  icon: <Users2 className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
-  link: "/tjanster/socialsanering"
-},
-{
+    title: "Socialsanering & hoarder-städning",
+    description:
+      "Vi utför professionell socialsanering och hoarder-städning — rensning och sanering av kraftigt nedskräpade bostäder med biologisk belastning, lukt och extrem uppsamling. Diskret, metodisk och med full utrustning.",
+    icon: <Users2 className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
+    link: "/tjanster/socialsanering"
+  },
+  {
     title: "Luktsanering",
     description:
       "Teknisk behandling av svåra och kvarvarande lukter i bostäder, lokaler och andra miljöer där vanlig rengöring inte räcker.",
@@ -114,11 +112,11 @@ export default function Home() {
         <title>Prio Sanering AB | Traumasanering, sanering vid dödsfall och luktsanering</title>
         <meta
           name="description"
-          content="Prio Sanering AB erbjuder specialiserade tjänster inom traumasanering, sanering vid dödsfall, luktsanering, förebyggande hygienbehandling med torrånga och ozon, teknisk rengöring och sanering av svåråtkomliga ytor."
+          content="Prio Sanering AB erbjuder specialiserade tjänster inom traumasanering, sanering vid dödsfall, socialsanering, luktsanering, förebyggande hygienbehandling med torrånga och ozon, teknisk rengöring och sanering av svåråtkomliga ytor."
         />
         <meta
           name="keywords"
-          content="traumasanering, sanering vid dödsfall, luktsanering, förebyggande hygienbehandling, torrånga, ozonbehandling, teknisk rengöring, svåråtkomliga ytor, biologisk sanering"
+          content="traumasanering, sanering vid dödsfall, socialsanering, hoarder städning, luktsanering, förebyggande hygienbehandling, torrånga, ozonbehandling, teknisk rengöring, svåråtkomliga ytor, biologisk sanering"
         />
         <link rel="canonical" href={window.location.origin} />
       </Helmet>
