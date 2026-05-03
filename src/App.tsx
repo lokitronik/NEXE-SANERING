@@ -2,7 +2,6 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
-
 import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "motion/react";
 import Layout from "./components/Layout";
@@ -16,12 +15,12 @@ import OdorSanitization from "./pages/services/OdorSanitization";
 import ForebyggandeHygienbehandling from "./pages/services/ForebyggandeHygienbehandling";
 import TechnicalCleaningB2B from "./pages/services/TechnicalCleaningB2B";
 import HardToReachDisinfection from "./pages/services/HardToReachDisinfection";
+import Socialsanering from "./pages/services/Socialsanering";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 
 function AnimatedRoutes() {
   const location = useLocation();
-
   return (
     <AnimatePresence mode="wait">
       <Routes location={location}>
@@ -36,6 +35,7 @@ function AnimatedRoutes() {
         />
         <Route path="/tjanster/technical-cleaning-b2b" element={<TechnicalCleaningB2B />} />
         <Route path="/tjanster/svaratkomliga-ytor" element={<HardToReachDisinfection />} />
+        <Route path="/tjanster/socialsanering" element={<Socialsanering />} />
         <Route path="/om-oss" element={<About />} />
         <Route path="/kontakt" element={<Contact />} />
         <Route path="/integritetspolicy" element={<PrivacyPolicy />} />
