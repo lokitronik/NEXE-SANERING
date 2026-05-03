@@ -10,7 +10,8 @@ import {
   ShieldCheck,
   Box,
   Sparkles,
-  Maximize
+  Maximize,
+  Users2,
 } from "lucide-react";
 
 const fadeInUp = {
@@ -35,6 +36,15 @@ const coreServices = [
     link: "/tjanster/traumasanering"
   },
   {
+      title: "Socialsanering & hoarder-städning",
+      description:
+  "Vi utför professionell socialsanering och hoarder-städning — rensning och sanering "
+  "av kraftigt nedskräpade bostäder med biologisk belastning, lukt och extrem uppsamling. "
+  "Diskret, metodisk och med full utrustning.",
+  icon: <Users2 className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
+  link: "/tjanster/socialsanering"
+},
+{
     title: "Luktsanering",
     description:
       "Teknisk behandling av svåra och kvarvarande lukter i bostäder, lokaler och andra miljöer där vanlig rengöring inte räcker.",
