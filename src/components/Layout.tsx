@@ -131,6 +131,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </li>
               <li>
                 <Link
+                  to="/tjanster/socialsanering"
+                  className="hover:text-cyan-accent transition-colors"
+                >
+                  Socialsanering & hoarder-städning
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/tjanster/luktsanering"
                   className="hover:text-cyan-accent transition-colors"
                 >
