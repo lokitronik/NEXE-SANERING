@@ -10,7 +10,8 @@ import {
   Box,
   Sparkles,
   ShieldCheck,
-  Users
+  Users,
+  Users2
 } from "lucide-react";
 
 const fadeInUp = {
@@ -33,6 +34,13 @@ const coreServices = [
       "Snabb och säker sanering efter blodspill, olyckor, våldshändelser och andra akuta biologiska föroreningar. Vid behov kan teknisk rengöring läggas till för övriga ytor.",
     icon: <Activity className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
     link: "/tjanster/traumasanering"
+  },
+  {
+    title: "Socialsanering & hoarder-städning",
+    description:
+      "Vi utför professionell socialsanering och hoarder-städning — rensning och sanering av kraftigt nedskräpade bostäder med biologisk belastning, extrem uppsamling och luktpåverkan. Diskret, metodisk och med full utrustning.",
+    icon: <Users2 className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
+    link: "/tjanster/socialsanering"
   },
   {
     title: "Luktsanering",
@@ -86,11 +94,11 @@ export default function Services() {
         <title>Våra tjänster | Prio Sanering AB</title>
         <meta
           name="description"
-          content="Utforska våra specialiserade tjänster inom biologisk sanering, traumasanering, luktsanering, förebyggande hygienbehandling med torrånga och ozon, teknisk rengöring och sanering av svåråtkomliga ytor."
+          content="Utforska våra specialiserade tjänster inom biologisk sanering, traumasanering, luktsanering, socialsanering, förebyggande hygienbehandling med torrånga och ozon, teknisk rengöring och sanering av svåråtkomliga ytor."
         />
         <meta
           name="keywords"
-          content="saneringstjänster, traumasanering, luktsanering, dödsfallssanering, förebyggande hygienbehandling, torrånga, ozonbehandling, teknisk rengöring, svåråtkomliga ytor"
+          content="saneringstjänster, traumasanering, luktsanering, dödsfallssanering, socialsanering, hoarder städning, förebyggande hygienbehandling, torrånga, ozonbehandling, teknisk rengöring, svåråtkomliga ytor"
         />
       </Helmet>
 
