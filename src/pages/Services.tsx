@@ -11,7 +11,7 @@ import {
   Sparkles,
   ShieldCheck,
   Users,
-  Users2
+  Users2, 
 } from "lucide-react";
 
 const fadeInUp = {
