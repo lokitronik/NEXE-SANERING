@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { motion } from "motion/react";
 import { Helmet } from "react-helmet-async";
 import {
@@ -53,6 +53,15 @@ export default function Contact() {
   const [files, setFiles] = useState<File[]>([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  const filePreviews = useMemo(
+    () =>
+      files.map((file) => ({
+        file,
+        url: URL.createObjectURL(file)
+      })),
+    [files]
+  );
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files) return;
 
@@ -62,25 +71,15 @@ export default function Contact() {
     );
 
     setFiles((prev) => [...prev, ...allowedFiles].slice(0, 6));
+    e.target.value = "";
   };
 
   const removeFile = (index: number) => {
     setFiles((prev) => prev.filter((_, i) => i !== index));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    /*
-      Viktigt:
-      Detta visar bara frontend-logiken.
-      För att faktiskt skicka formulär + bilder behöver du koppla detta till:
-      - Formspree
-      - Netlify Forms
-      - EmailJS
-      - egen backend/API
-      - eller ett CRM/formulärsystem
-    */
 
     const formData = new FormData();
 
@@ -249,11 +248,11 @@ export default function Contact() {
                 />
               </label>
 
-              {files.length > 0 && (
+              {filePreviews.length > 0 && (
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-4">
-                  {files.map((file, index) => (
+                  {filePreviews.map(({ file, url }, index) => (
                     <div
-                      key={`${file.name}-${index}`}
+                      key={`${file.name}-${file.lastModified}-${index}`}
                       className="relative bg-white rounded-2xl border border-midnight/5 p-3"
                     >
                       <button
@@ -267,7 +266,7 @@ export default function Contact() {
 
                       <div className="aspect-square rounded-xl overflow-hidden bg-slate-100 mb-2">
                         <img
-                          src={URL.createObjectURL(file)}
+                          src={url}
                           alt={file.name}
                           className="w-full h-full object-cover"
                         />
