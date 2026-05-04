@@ -59,13 +59,13 @@ const coreServices = [
 ];
 
 const preventativeServices = [
-  {
-    title: "Förebyggande hygienbehandling",
-    description:
-      "Teknisk behandling med torrånga och ozon för utrymmen med luktproblem, stillastående miljöer eller behov av förebyggande hygieninsats i utvalda ytor.",
-    icon: <Sparkles className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
-    link: "/tjanster/forebyggande-hygienbehandling"
-  },
+{
+  title: "Förebyggande hygienbehandling",
+  description:
+    "Teknisk behandling med torrånga och hydroxylteknik för utrymmen med luktproblem, stillastående miljöer eller behov av förebyggande hygieninsats på utvalda ytor.",
+  icon: <Sparkles className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
+  link: "/tjanster/forebyggande-hygienbehandling"
+}
   {
     title: "Teknisk rengöring & hygienkontroll",
     description:
@@ -108,18 +108,18 @@ export default function Home() {
       exit={{ opacity: 0 }}
       className="overflow-x-hidden bg-white"
     >
-      <Helmet>
-        <title>Prio Sanering AB | Traumasanering, sanering vid dödsfall och luktsanering</title>
-        <meta
-          name="description"
-          content="Prio Sanering AB erbjuder specialiserade tjänster inom traumasanering, sanering vid dödsfall, socialsanering, luktsanering, förebyggande hygienbehandling med torrånga och ozon, teknisk rengöring och sanering av svåråtkomliga ytor."
-        />
-        <meta
-          name="keywords"
-          content="traumasanering, sanering vid dödsfall, socialsanering, hoarder städning, luktsanering, förebyggande hygienbehandling, torrånga, ozonbehandling, teknisk rengöring, svåråtkomliga ytor, biologisk sanering"
-        />
-        <link rel="canonical" href={window.location.origin} />
-      </Helmet>
+    <Helmet>
+  <title>Prio Sanering AB | Traumasanering, sanering vid dödsfall och luktsanering</title>
+  <meta
+    name="description"
+    content="Prio Sanering AB erbjuder specialiserade tjänster inom traumasanering, sanering vid dödsfall, socialsanering, luktsanering, förebyggande hygienbehandling med torrånga och hydroxylteknik, teknisk rengöring och sanering av svåråtkomliga ytor."
+  />
+  <meta
+    name="keywords"
+    content="traumasanering, sanering vid dödsfall, socialsanering, hoarder städning, luktsanering, förebyggande hygienbehandling, torrånga, hydroxylbehandling, hydroxylteknik, teknisk rengöring, svåråtkomliga ytor, biologisk sanering"
+  />
+  <link rel="canonical" href={window.location.origin} />
+</Helmet>
 
       {/* Hero */}
       <section className="relative min-h-[100svh] flex items-center overflow-hidden">
