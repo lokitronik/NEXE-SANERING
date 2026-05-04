@@ -28,7 +28,6 @@ const caseTypes = [
   "Lukt eller hygienproblem",
   "Förebyggande hygienbehandling",
   "Teknisk rengöring / B2B",
-  "Fågelskydd / BirdBlocker",
   "Jag är osäker"
 ];
 
@@ -115,7 +114,7 @@ export default function Contact() {
         />
         <meta
           name="keywords"
-          content="kontakta sanering, akut sanering, traumasanering, sanering dödsfall, luktproblem, hygien sanering, prio sanering kontakt"
+          content="kontakta sanering, akut sanering, traumasanering, sanering dödsfall, luktproblem, förebyggande hygienbehandling, teknisk rengöring, hygien sanering, prio sanering kontakt"
         />
       </Helmet>
 
