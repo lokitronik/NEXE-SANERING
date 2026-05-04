@@ -4,9 +4,6 @@ import {
   ShieldCheck,
   Phone,
   Hotel,
-  Building2,
-  UserCheck,
-  Zap,
   Microscope
 } from "lucide-react";
 
