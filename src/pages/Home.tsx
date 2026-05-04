@@ -59,13 +59,13 @@ const coreServices = [
 ];
 
 const preventativeServices = [
-{
-  title: "Förebyggande hygienbehandling",
-  description:
-    "Teknisk behandling med torrånga och hydroxylteknik för utrymmen med luktproblem, stillastående miljöer eller behov av förebyggande hygieninsats på utvalda ytor.",
-  icon: <Sparkles className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
-  link: "/tjanster/forebyggande-hygienbehandling"
-}
+  {
+    title: "Förebyggande hygienbehandling",
+    description:
+      "Teknisk behandling med torrånga och hydroxylteknik för utrymmen med luktproblem, stillastående miljöer eller behov av förebyggande hygieninsats på utvalda ytor.",
+    icon: <Sparkles className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
+    link: "/tjanster/forebyggande-hygienbehandling"
+  },
   {
     title: "Teknisk rengöring & hygienkontroll",
     description:
@@ -81,7 +81,6 @@ const preventativeServices = [
     link: "/tjanster/svaratkomliga-ytor"
   }
 ];
-
 const values = [
   {
     title: "Diskret hantering",
