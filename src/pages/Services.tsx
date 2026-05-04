@@ -62,7 +62,7 @@ const preventativeServices = [
   {
     title: "Förebyggande hygienbehandling",
     description:
-      "Förebyggande behandling med torrånga och ozon i utrymmen med kvarvarande lukt, stillastående luft eller behov av teknisk hygieninsats i utvalda ytor.",
+      "Teknisk behandling med torrånga och hydroxylteknik för utrymmen med luktproblem, stillastående miljöer eller behov av förebyggande hygieninsats på utvalda ytor.",
     icon: <Sparkles className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
     link: "/tjanster/forebyggande-hygienbehandling"
   },
