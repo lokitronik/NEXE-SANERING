@@ -12,7 +12,7 @@ import {
   Sparkles, 
   Maximize,
   Users2,
-} from "lucide-react";
+} from "lucide-react"; 
 
 const fadeInUp = {
   initial: { opacity: 0, y: 36 },
