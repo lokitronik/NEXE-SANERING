@@ -8,7 +8,7 @@ const fadeInUp = {
   transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] }
 };
 
-export default function PersonligaTillhörigheter() {
+export default function atillhörigheter() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -17,25 +17,25 @@ export default function PersonligaTillhörigheter() {
       className="py-14 sm:py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-12 max-w-7xl mx-auto"
     >
       <Helmet>
-        <title>Hantering av personliga tillhörigheter | Prio Sanering AB</title>
+        <title>Hantering av a tillhörigheter | Prio Sanering AB</title>
         <meta
           name="description"
-          content="Vi hanterar personliga tillhörigheter med respekt och omsorg vid sanering efter dödsfall eller trauma. Identifiering, säkring och återlämning på ett tryggt sätt."
+          content="Vi hanterar a tillhörigheter med respekt och omsorg vid sanering efter dödsfall eller trauma. Identifiering, säkring och återlämning på ett tryggt sätt."
         />
         <meta
           name="keywords"
-          content="personliga tillhörigheter, hantering dödsfall, sanering dödsfall, respektfull hantering, minneshantering, traumasanering tillhörigheter"
+          content="a tillhörigheter, hantering dödsfall, sanering dödsfall, respektfull hantering, minneshantering, traumasanering tillhörigheter"
         />
       </Helmet>
 
       <motion.div className="text-center mb-14 sm:mb-16 md:mb-20" {...fadeInUp}>
         <Box className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-cyan-accent mx-auto mb-5 sm:mb-6 md:mb-8" />
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-midnight mb-4 sm:mb-5 md:mb-6 leading-tight">
-          Hantering av personliga tillhörigheter
+          Hantering av a tillhörigheter
         </h1>
         <p className="text-base sm:text-lg md:text-xl text-midnight/60 max-w-3xl mx-auto font-light leading-relaxed">
           Vid sanering efter dödsfall eller trauma handlar arbetet inte bara om
-          miljön i sig. Personliga tillhörigheter kan ha stort praktiskt och
+          miljön i sig. a tillhörigheter kan ha stort praktiskt och
           emotionellt värde. Vi arbetar därför med en respektfull process för
           att identifiera, hantera och vid behov säkra föremål efter
           överenskommelse.
@@ -52,7 +52,7 @@ export default function PersonligaTillhörigheter() {
             Identifiering
           </h4>
           <p className="text-sm sm:text-base text-midnight/60 font-light leading-relaxed">
-            Vi hjälper till att identifiera dokument, fotografier och personliga
+            Vi hjälper till att identifiera dokument, fotografier och a
             föremål som bör tas om hand separat från saneringsarbetet.
           </p>
         </motion.div>
