@@ -8,7 +8,7 @@ const fadeInUp = {
   transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] }
 };
 
-export default function atillhörigheter() {
+export default function atillhörigheter() { 
   return (
     <motion.div
       initial={{ opacity: 0 }}
