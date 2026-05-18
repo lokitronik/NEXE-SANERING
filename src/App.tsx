@@ -18,6 +18,7 @@ import HardToReachDisinfection from "./pages/services/HardToReachDisinfection";
 import Socialsanering from "./pages/services/Socialsanering";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
+import PersonligaTillhörigheter from "./pages/PersonligaTillhörigheter";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -37,6 +38,7 @@ function AnimatedRoutes() {
         <Route path="/tjanster/svaratkomliga-ytor" element={<HardToReachDisinfection />} />
         <Route path="/tjanster/socialsanering" element={<Socialsanering />} />
         <Route path="/om-oss" element={<About />} />
+        <Route path="/hantering-av-personliga-tillhorigeter" element={<PersonligaTillhörigheter />} />
         <Route path="/kontakt" element={<Contact />} />
         <Route path="/integritetspolicy" element={<PrivacyPolicy />} />
         <Route path="/allmanna-villkor" element={<TermsAndConditions />} />
