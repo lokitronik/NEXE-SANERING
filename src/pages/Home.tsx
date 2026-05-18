@@ -9,7 +9,7 @@ import {
   Wind,
   ShieldCheck,
   Box,
-  Sparkles,
+  Sparkles, 
   Maximize,
   Users2,
 } from "lucide-react";
