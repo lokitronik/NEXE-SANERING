@@ -18,7 +18,7 @@ import HardToReachDisinfection from "./pages/services/HardToReachDisinfection";
 import Socialsanering from "./pages/services/Socialsanering";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
-import PersonligaTillhörigheter from "./pages/Personligatillhörigheter";
+import Personligatillhörigheter from "./pages/Personligatillhörigheter";
 
 function AnimatedRoutes() {
   const location = useLocation();
