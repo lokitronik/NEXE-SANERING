@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Helmet } from "react-helmet-async";
-import { Shield, Heart, Microscope, Truck, UserCheck, Box } from "lucide-react";
+import { Shield, Heart, Microscope, Truck, UserCheck } from "lucide-react";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -49,6 +49,7 @@ export default function About() {
         />
       </Helmet>
 
+      {/* Hero */}
       <motion.div className="text-center mb-14 sm:mb-16 md:mb-20" {...fadeInUp}>
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-midnight mb-4 sm:mb-5 md:mb-6 leading-tight">
           Om Prio Sanering AB
@@ -60,6 +61,7 @@ export default function About() {
         </p>
       </motion.div>
 
+      {/* Values */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 md:gap-8 mb-14 sm:mb-16 md:mb-24">
         {values.map((value, index) => (
           <motion.div
@@ -79,8 +81,8 @@ export default function About() {
         ))}
       </div>
 
-      {/* Discreet handling section */}
-      <div className="bg-midnight text-white p-6 sm:p-8 md:p-12 lg:p-20 rounded-[2rem] md:rounded-[3rem] grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 md:gap-16 items-center mb-14 sm:mb-16 md:mb-24">
+      {/* Discreet handling */}
+      <div className="bg-midnight text-white p-6 sm:p-8 md:p-12 lg:p-20 rounded-[2rem] md:rounded-[3rem] grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 md:gap-16 items-center">
         <motion.div {...fadeInUp}>
           <Truck className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-cyan-accent mb-5 sm:mb-6 md:mb-8" />
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-5 sm:mb-6 md:mb-8 leading-tight">
@@ -113,49 +115,6 @@ export default function About() {
           />
         </motion.div>
       </div>
-
-      {/* Personal belongings / respectful handling */}
-      <section
-        id="minneshantering"
-        className="py-14 sm:py-16 md:py-24 bg-slate-50 rounded-[2rem] md:rounded-[3rem] px-6 sm:px-8 md:px-12 lg:px-20"
-      >
-        <motion.div className="max-w-4xl mx-auto text-center" {...fadeInUp}>
-          <Box className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-cyan-accent mx-auto mb-5 sm:mb-6 md:mb-8" />
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-5 sm:mb-6 md:mb-8 leading-tight">
-            Personliga tillhörigheter och respektfull hantering
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl font-light text-midnight/70 leading-relaxed mb-8 sm:mb-10 md:mb-12">
-            Vid sanering efter dödsfall eller trauma handlar arbetet inte bara
-            om miljön i sig. Personliga tillhörigheter kan ha stort praktiskt och
-            emotionellt värde. Vi arbetar därför med en respektfull process för
-            att identifiera, hantera och vid behov säkra föremål efter
-            överenskommelse.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 md:gap-8 text-left">
-            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm">
-              <h4 className="font-bold mb-3 sm:mb-4 text-cyan-accent">
-                Identifiering
-              </h4>
-              <p className="text-sm sm:text-base text-midnight/60 font-light leading-relaxed">
-                Vi hjälper till att identifiera dokument, fotografier och
-                personliga föremål som bör tas om hand separat.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm">
-              <h4 className="font-bold mb-3 sm:mb-4 text-cyan-accent">
-                Säkring
-              </h4>
-              <p className="text-sm sm:text-base text-midnight/60 font-light leading-relaxed">
-                Vid behov hanteras tillhörigheter med målet att de ska kunna
-                återlämnas eller tas om hand på ett tryggt och respektfullt
-                sätt.
-              </p>
-            </div>
-          </div>
-        </motion.div>
-      </section>
     </motion.div>
   );
 }
