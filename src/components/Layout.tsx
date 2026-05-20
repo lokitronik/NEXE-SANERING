@@ -147,10 +147,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </li>
               <li>
                 <Link
-                  to="/om-oss#minneshantering"
+                  to="/hantering-av-personliga-tillhorigheter"
                   className="hover:text-cyan-accent transition-colors"
                 >
-                  Minneshantering
+                  Hantering av personliga tillhörigheter
                 </Link>
               </li>
             </ul>
