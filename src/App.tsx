@@ -16,9 +16,9 @@ import ForebyggandeHygienbehandling from "./pages/services/ForebyggandeHygienbeh
 import TechnicalCleaningB2B from "./pages/services/TechnicalCleaningB2B";
 import HardToReachDisinfection from "./pages/services/HardToReachDisinfection";
 import Socialsanering from "./pages/services/Socialsanering";
+import Personligatillhörigheter from "./pages/services/Personligatillhörigheter";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
-import Personligatillhörigheter from "./pages/Personligatillhörigheter";
 
 function AnimatedRoutes() {
   const location = useLocation();
