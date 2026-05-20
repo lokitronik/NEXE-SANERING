@@ -45,25 +45,25 @@ const workPrinciples = [
 
 const team = [
   {
-    name: "Manel Zurita",
-    role: "Teknisk sanering & biologisk riskförståelse",
-    image: "DIN_BILD_URL_HÄR",
-    desc:
-      "Erfarenhet från laboratoriemiljöer, blodbank och arbete med biologiskt material. Bidrar med struktur, hygienrutiner, dokumentation och förståelse för kontrollerade arbetsflöden.",
-  },
-  {
     name: "Eduard Bosch",
-    role: "Biologiskt material & dekontaminering",
+    role: "Teknisk sanering & selektiv demontering",
     image: "DIN_BILD_URL_HÄR",
     desc:
-      "Erfarenhet från blodbank, biologiskt material och kontrollerade arbetsrutiner. Bidrar med noggrannhet, biosäkerhet, avfallshantering och metodiskt arbete.",
+      "Erfarenhet från blodbank, biologiskt material och teknisk rivning. Bidrar med förståelse för biohazard, materialpåverkan och selektiv demontering när förorening har trängt ner i golv, väggar, ventilation eller andra konstruktioner.",
   },
   {
     name: "Jordi Bosch",
-    role: "Teknisk rivning & materialhantering",
+    role: "Biologiskt material & dekontaminering",
     image: "DIN_BILD_URL_HÄR",
     desc:
-      "Erfarenhet från biologiskt material och praktiskt arbete med teknisk rivning. Bidrar med förståelse för material, konstruktion och selektiv demontering vid behov.",
+      "Lång erfarenhet av blodbank, komponenthantering och arbete med biologiskt material. Bidrar med biosäkerhet, noggrann avfallshantering, dekontaminering och metodiskt arbete enligt tydliga rutiner.",
+  },
+  {
+    name: "Manel Zurita",
+    role: "Laboratorierutiner & biologisk riskförståelse",
+    image: "DIN_BILD_URL_HÄR",
+    desc:
+      "Erfarenhet från laboratoriemiljöer, blodbank, renrum och dekontaminering av biologiskt material. Bidrar med struktur, hygienrutiner, zonindelning, dokumentation och förståelse för kontrollerade arbetsflöden.",
   },
 ];
 
@@ -181,9 +181,10 @@ export default function About() {
           </h2>
 
           <p className="text-base sm:text-lg text-midnight/60 max-w-3xl mx-auto font-light leading-relaxed">
-            Bakom Prio Sanering AB finns ett team med erfarenhet från
-            laboratoriemiljöer, blodbank, biologisk dekontaminering, teknisk
-            sanering och praktiskt arbete i krävande miljöer.
+            Bakom Prio Sanering AB finns ett team med praktisk erfarenhet från
+            laboratoriemiljöer, blodbank, biologisk dekontaminering, teknisk sanering
+            och selektiv demontering. Det ger oss en teknisk grund i arbetet med
+            biologiska risker, kontaminerade material och känsliga miljöer.
           </p>
         </motion.div>
 
