@@ -38,7 +38,7 @@ const coreServices = [
   {
     title: "Socialsanering & hoarder-städning",
     description:
-      "Vi utför professionell socialsanering och hoarder-städning — rensning och sanering av kraftigt nedskräpade bostäder med biologisk belastning, lukt och extrem uppsamling. Diskret, metodisk och med full utrustning.",
+      "Vi utför professionell socialsanering och hoarder-städning, rensning och sanering av kraftigt nedskräpade bostäder med biologisk belastning, lukt och extrem uppsamling. Diskret, metodisk och med full utrustning.",
     icon: <Users2 className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
     link: "/tjanster/socialsanering",
   },
@@ -54,18 +54,18 @@ const coreServices = [
     description:
       "Respektfull identifiering, sortering och hantering av personliga tillhörigheter efter överenskommelse.",
     icon: <Box className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
-    link: "/tjanster/hantering-av-personliga-tillhorigheter",
+    link: "/Personligatillhörigheter",
   },
 ];
 
 const preventativeServices = [
-{
-  title: "Hantering av personliga tillhörigheter",
-  description:
-    "Respektfull identifiering, sortering och hantering av personliga tillhörigheter efter överenskommelse.",
-  icon: <Box className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
-  link: "/Personligatillhörigheter",
-},
+  {
+    title: "Förebyggande hygienbehandling",
+    description:
+      "Teknisk behandling med torrånga och hydroxylteknik för utrymmen med luktproblem, stillastående miljöer eller behov av förebyggande hygieninsats på utvalda ytor.",
+    icon: <Sparkles className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
+    link: "/tjanster/forebyggande-hygienbehandling",
+  },
   {
     title: "Teknisk rengöring & hygienkontroll",
     description:
