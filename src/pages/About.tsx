@@ -43,6 +43,30 @@ const workPrinciples = [
   "Kontroll och dokumentation före, under och efter insats",
 ];
 
+const team = [
+  {
+    name: "Manel Zurita",
+    role: "Teknisk sanering & biologisk riskförståelse",
+    image: "DIN_BILD_URL_HÄR",
+    desc:
+      "Erfarenhet från laboratoriemiljöer, blodbank och arbete med biologiskt material. Bidrar med struktur, hygienrutiner, dokumentation och förståelse för kontrollerade arbetsflöden.",
+  },
+  {
+    name: "Eduard Bosch",
+    role: "Biologiskt material & dekontaminering",
+    image: "DIN_BILD_URL_HÄR",
+    desc:
+      "Erfarenhet från blodbank, biologiskt material och kontrollerade arbetsrutiner. Bidrar med noggrannhet, biosäkerhet, avfallshantering och metodiskt arbete.",
+  },
+  {
+    name: "Jordi Bosch",
+    role: "Teknisk rivning & materialhantering",
+    image: "DIN_BILD_URL_HÄR",
+    desc:
+      "Erfarenhet från biologiskt material och praktiskt arbete med teknisk rivning. Bidrar med förståelse för material, konstruktion och selektiv demontering vid behov.",
+  },
+];
+
 export default function About() {
   return (
     <motion.div
@@ -148,6 +172,54 @@ export default function About() {
             ))}
           </div>
         </motion.div>
+      </section>
+
+      <section className="mb-14 sm:mb-16 md:mb-24">
+        <motion.div className="text-center mb-10 sm:mb-12" {...fadeInUp}>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-midnight mb-4">
+            Teamet bakom Prio Sanering
+          </h2>
+
+          <p className="text-base sm:text-lg text-midnight/60 max-w-3xl mx-auto font-light leading-relaxed">
+            Bakom Prio Sanering AB finns ett team med erfarenhet från
+            laboratoriemiljöer, blodbank, biologisk dekontaminering, teknisk
+            sanering och praktiskt arbete i krävande miljöer.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
+          {team.map((member, index) => (
+            <motion.div
+              key={member.name}
+              className="bg-slate-50 rounded-3xl border border-midnight/5 overflow-hidden"
+              {...fadeInUp}
+              transition={{ ...fadeInUp.transition, delay: index * 0.1 }}
+            >
+              <div className="aspect-[4/3] bg-midnight/5 overflow-hidden">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+
+              <div className="p-6 sm:p-7">
+                <h3 className="text-xl sm:text-2xl font-bold text-midnight mb-2">
+                  {member.name}
+                </h3>
+
+                <p className="text-cyan-accent font-bold text-sm sm:text-base mb-4 leading-snug">
+                  {member.role}
+                </p>
+
+                <p className="text-sm sm:text-base text-midnight/60 font-light leading-relaxed">
+                  {member.desc}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </section>
 
       <section className="mb-14 sm:mb-16 md:mb-24">
