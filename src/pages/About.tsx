@@ -30,17 +30,17 @@ const values = [
   },
   {
     icon: <Microscope className="w-8 h-8 text-cyan-accent" />,
-    title: "Noggrannhet",
+    title: "Teknisk noggrannhet",
     desc:
-      "Vårt arbete bygger på struktur, skyddsrutiner och förståelse för biologiska risker, hygien och dokumentation.",
+      "Vårt arbete bygger på teknisk struktur, skyddsrutiner, biologisk riskförståelse, hygien, dokumentation och kontroll.",
   },
 ];
 
 const workPrinciples = [
-  "Tydliga arbetsrutiner från första kontakt till avslutat uppdrag",
-  "Diskret hantering i känsliga miljöer",
-  "Noggrann bedömning av risker, material och arbetsmiljö",
-  "Kommunikation som är rak, trygg och respektfull",
+  "Riskbedömning innan arbetet påbörjas",
+  "Tydlig separation mellan ren och påverkad zon",
+  "Rutiner för att minska risken för korskontaminering",
+  "Kontroll och dokumentation före, under och efter insats",
 ];
 
 export default function About() {
@@ -55,11 +55,11 @@ export default function About() {
         <title>Om oss | Prio Sanering AB</title>
         <meta
           name="description"
-          content="Lär känna Prio Sanering AB. Vi är ett specialiserat saneringsföretag med fokus på diskretion, respekt, struktur och teknisk noggrannhet."
+          content="Lär känna Prio Sanering AB. Vi är ett specialiserat saneringsföretag med erfarenhet från laboratoriemiljöer, biologisk dekontaminering, teknisk sanering och kontrollerade arbetsrutiner."
         />
         <meta
           name="keywords"
-          content="om prio sanering, saneringsföretag, specialiserad sanering, diskret sanering, teknisk rengöring, biologiska risker, sanering sverige"
+          content="om prio sanering, saneringsföretag, teknisk sanering, biologisk dekontaminering, laboratoriemiljö, blodbank, renrum, biologiska risker, diskret sanering"
         />
       </Helmet>
 
@@ -77,35 +77,43 @@ export default function About() {
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-midnight/60 max-w-3xl mx-auto font-light leading-relaxed">
-          Prio Sanering AB är ett specialiserat saneringsföretag som arbetar i
-          miljöer där noggrannhet, diskretion och trygg hantering är avgörande.
-          Vi hjälper privatpersoner, fastighetsägare och verksamheter med
-          saneringsuppdrag som kräver struktur, respekt och rätt arbetsmetod.
+          Prio Sanering AB är ett specialiserat saneringsföretag med erfarenhet
+          från miljöer där hygien, skyddsrutiner, biologiska risker och
+          kontrollerade arbetsmetoder är avgörande. Vi arbetar med teknisk
+          sanering i känsliga och krävande miljöer där vanlig rengöring inte
+          räcker.
         </p>
       </motion.section>
 
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-14 items-center mb-14 sm:mb-16 md:mb-24">
         <motion.div {...fadeInUp}>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-midnight mb-5 sm:mb-6 leading-tight">
-            Vi arbetar där situationen kräver mer än vanlig rengöring
+            Erfarenhet från kontrollerade och biologiskt känsliga miljöer
           </h2>
 
           <div className="space-y-4 text-sm sm:text-base md:text-lg text-midnight/65 font-light leading-relaxed">
             <p>
-              Vårt arbete handlar inte bara om att rengöra en yta. I många
-              uppdrag finns det biologiska risker, stark lukt, känsliga
-              omständigheter eller behov av dokumenterad och metodisk hantering.
+              Vår bakgrund omfattar arbete i laboratoriemiljöer, blodbank,
+              renrum, biologisk dekontaminering och teknisk hantering av
+              material som kräver särskild försiktighet. Det är miljöer där
+              hygien, spårbarhet, zonindelning och kontroll är en del av det
+              dagliga arbetet.
             </p>
 
             <p>
-              Därför arbetar vi med tydliga rutiner, skyddsutrustning och ett
-              lugnt arbetssätt. Målet är att skapa en trygg process för kunden
-              och samtidigt utföra arbetet med hög teknisk noggrannhet.
+              Den erfarenheten ger oss en teknisk förståelse för situationer där
+              det kan finnas blod, kroppsvätskor, lukt, organiskt material eller
+              kontaminerade ytor. För oss handlar sanering därför inte bara om
+              att något ska se rent ut, utan om att arbetet ska utföras med rätt
+              metod, skydd och kontroll.
             </p>
 
             <p>
-              Vi tror på rak kommunikation, respektfullt bemötande och lösningar
-              som anpassas efter situationen, inte efter en standardmall.
+              Vid behov kan vi även hantera material som kräver selektiv
+              demontering, till exempel när förorening har påverkat golv,
+              väggar, kök, ventilation eller andra delar av bostaden. Det gör
+              att vi kan kombinera teknisk sanering med praktiskt genomförande
+              på plats.
             </p>
           </div>
         </motion.div>
@@ -118,13 +126,15 @@ export default function About() {
           <ClipboardCheck className="w-12 h-12 sm:w-14 sm:h-14 text-cyan-accent mb-6" />
 
           <h3 className="text-2xl sm:text-3xl font-bold mb-5 leading-tight">
-            Vårt arbetssätt
+            Mer än visuell rengöring
           </h3>
 
           <p className="text-sm sm:text-base text-white/70 font-light leading-relaxed mb-6">
-            Varje uppdrag bedöms utifrån miljö, risknivå, material och kundens
-            behov. Det gör att vi kan arbeta säkert, diskret och effektivt från
-            första kontakt till avslutat arbete.
+            I våra uppdrag räcker det inte att en yta ser ren ut. Arbetet
+            behöver vara säkert, kontrollerat och anpassat efter risknivå,
+            material och miljö. Därför arbetar vi med tydliga rutiner,
+            skyddsutrustning, checklistor och kontroll före, under och efter
+            insatsen.
           </p>
 
           <div className="space-y-4">
@@ -179,14 +189,14 @@ export default function About() {
       <section className="bg-slate-50 p-6 sm:p-8 md:p-12 lg:p-16 rounded-[2rem] md:rounded-[3rem] border border-midnight/5">
         <motion.div className="max-w-4xl mx-auto text-center" {...fadeInUp}>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-midnight mb-5 sm:mb-6 leading-tight">
-            Ett tryggt val i känsliga och krävande situationer
+            Ett tryggt val när uppdraget kräver teknisk förståelse
           </h2>
 
           <p className="text-base sm:text-lg md:text-xl text-midnight/60 font-light leading-relaxed">
             Prio Sanering AB finns för uppdrag där det behövs mer än en snabb
-            städinsats. Vi kombinerar mänskligt bemötande med tekniskt
-            strukturerat arbete, så att kunden får en lösning som känns trygg,
-            tydlig och professionell.
+            städinsats. Vi kombinerar teknisk erfarenhet, strukturerade
+            arbetsrutiner och mänskligt bemötande, så att kunden får en lösning
+            som känns trygg, tydlig och professionell.
           </p>
         </motion.div>
       </section>
