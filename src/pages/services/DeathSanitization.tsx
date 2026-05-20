@@ -7,6 +7,8 @@ import {
   ClipboardCheck,
   HeartHandshake,
   Wind,
+  ShieldCheck,
+  FileText,
 } from "lucide-react";
 
 const fadeInUp = {
@@ -15,34 +17,51 @@ const fadeInUp = {
   transition: { duration: 0.7, ease: [0.25, 1, 0.5, 1] },
 };
 
-const process = [
+const protocol = [
   {
     icon: <ClipboardCheck className="w-6 h-6 text-cyan-accent" />,
-    title: "Bedömning",
+    step: "1",
+    title: "Riskbedömning",
     desc:
-      "Vi går igenom bostaden, omfattningen och vilka åtgärder som behövs innan arbetet planeras.",
+      "Vi bedömer omfattning, biologiska risker, lukt, material och vilka skyddsåtgärder som behövs innan arbetet planeras.",
+  },
+  {
+    icon: <ShieldCheck className="w-6 h-6 text-cyan-accent" />,
+    step: "2",
+    title: "Säkring av arbetsområdet",
+    desc:
+      "Arbetsområdet förbereds med rätt skyddsutrustning, rutiner och avgränsning för att minska exponering och spridning.",
   },
   {
     icon: <Shield className="w-6 h-6 text-cyan-accent" />,
-    title: "Sanering",
+    step: "3",
+    title: "Teknisk sanering",
     desc:
-      "Biologiskt material, påverkade ytor och kontaminerat material hanteras med rätt skydd och metod.",
+      "Biologiskt material, kontaminerade ytor och påverkade material hanteras metodiskt med rätt saneringsmetod.",
   },
   {
     icon: <Wind className="w-6 h-6 text-cyan-accent" />,
-    title: "Lukt och återställning",
+    step: "4",
+    title: "Lukt och återställande åtgärder",
     desc:
-      "Vid behov utförs luktreducerande åtgärder, slutkontroll och dokumentation av insatsen.",
+      "Vid behov utförs luktreducerande behandling och kompletterande åtgärder för att återställa miljön.",
+  },
+  {
+    icon: <FileText className="w-6 h-6 text-cyan-accent" />,
+    step: "5",
+    title: "Kontroll och dokumentation",
+    desc:
+      "Arbetet avslutas med genomgång, dokumentation och tydlig återkoppling till uppdragsgivaren.",
   },
 ];
 
-const helpItems = [
-  "Biologiskt material och påverkade ytor",
-  "Kvarvarande lukt i bostaden",
-  "Kontaminerat material eller lösöre",
+const includedItems = [
+  "Biologisk riskbedömning av bostaden",
+  "Sanering av påverkade ytor och material",
+  "Hantering av kontaminerat lösöre",
+  "Luktreducerande åtgärder vid behov",
   "Personliga tillhörigheter enligt överenskommelse",
-  "Diskret hantering på plats",
-  "Dokumentation vid behov",
+  "Dokumentation efter utförd insats",
 ];
 
 export default function DeathSanitization() {
@@ -54,14 +73,14 @@ export default function DeathSanitization() {
       className="py-10 sm:py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-12 max-w-7xl mx-auto"
     >
       <Helmet>
-        <title>Sanering vid obevakat dödsfall | Prio Sanering AB</title>
+        <title>Teknisk sanering vid obevakat dödsfall | Prio Sanering AB</title>
         <meta
           name="description"
-          content="Diskret och professionell sanering vid obevakade dödsfall. Vi hanterar biologiskt material, lukt, personliga tillhörigheter och dokumentation med respekt och säkerhet."
+          content="Teknisk sanering vid obevakat dödsfall. Vi hanterar biologiska risker, lukt, kontaminerat material, dokumentation och personliga tillhörigheter med diskretion och respekt."
         />
         <meta
           name="keywords"
-          content="sanering vid obevakat dödsfall, dödsfallssanering, sanering efter dödsfall, luktsanering dödsfall, biologisk sanering"
+          content="teknisk sanering vid obevakat dödsfall, sanering vid obevakat dödsfall, dödsfallssanering, sanering efter dödsfall, biologisk sanering, luktsanering dödsfall"
         />
       </Helmet>
 
@@ -73,15 +92,15 @@ export default function DeathSanitization() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-midnight mb-5 leading-tight">
-            När en bostad behöver saneras efter ett obevakat dödsfall
+            Teknisk sanering vid obevakat dödsfall
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-midnight/65 font-light leading-relaxed max-w-3xl">
-            Ett obevakat dödsfall är en känslig situation som kräver både
-            teknisk kunskap och respektfull hantering. Vi hjälper till att
-            sanera bostaden, minska biologiska risker och hantera lukt,
-            material och personliga tillhörigheter på ett tryggt och diskret
-            sätt.
+            Ett obevakat dödsfall kräver mer än vanlig rengöring. Det kräver
+            teknisk sanering, biologisk riskbedömning, rätt skyddsrutiner,
+            lukthantering och metodisk hantering av påverkade material. Vi
+            kombinerar ett tydligt saneringsprotokoll med diskret och
+            respektfull hantering genom hela processen.
           </p>
 
           <div className="mt-7 sm:mt-9">
@@ -104,13 +123,16 @@ export default function DeathSanitization() {
           <HeartHandshake className="w-10 h-10 sm:w-12 sm:h-12 text-cyan-accent mb-5" />
 
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-            Respekt i varje steg
+            Teknisk noggrannhet i en känslig situation
           </h2>
 
           <p className="text-base sm:text-lg text-white/75 font-light leading-relaxed">
-            Vi vet att arbetet ofta sker i en svår stund för anhöriga,
-            fastighetsägare eller andra berörda. Därför arbetar vi lugnt,
-            diskret och med tydlig kommunikation genom hela processen.
+            Vid ett obevakat dödsfall kan bostaden påverkas av biologiskt
+            material, lukt, vätskor, kontaminerade ytor och material som kräver
+            särskild hantering. Därför arbetar vi inte som en vanlig städfirma.
+            Vi följer en strukturerad teknisk process, samtidigt som vi hanterar
+            situationen med respekt för anhöriga, fastighetsägare och andra
+            berörda.
           </p>
         </motion.div>
 
@@ -120,11 +142,11 @@ export default function DeathSanitization() {
           transition={{ ...fadeInUp.transition, delay: 0.1 }}
         >
           <h2 className="text-2xl sm:text-3xl font-bold text-midnight mb-5">
-            Vad kan behöva hanteras?
+            Vad ingår i teknisk sanering vid obevakat dödsfall?
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3.5">
-            {helpItems.map((item) => (
+            {includedItems.map((item) => (
               <div key={item} className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-cyan-accent flex-shrink-0 mt-0.5" />
                 <p className="text-sm sm:text-base text-midnight/70 leading-relaxed">
@@ -133,41 +155,48 @@ export default function DeathSanitization() {
               </div>
             ))}
           </div>
+
+          <p className="text-sm sm:text-base text-midnight/55 font-light leading-relaxed mt-6 max-w-3xl">
+            Personliga tillhörigheter, dokument, fotografier, nycklar eller
+            andra föremål med praktiskt eller sentimentalt värde kan hanteras
+            separat efter överenskommelse.
+          </p>
         </motion.div>
       </section>
 
       <section className="mb-12 sm:mb-16 md:mb-20">
         <motion.div className="mb-8 sm:mb-10 md:mb-12" {...fadeInUp}>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-midnight mb-3">
-            Så arbetar vi
+            Vårt saneringsprotokoll
           </h2>
 
           <p className="text-base sm:text-lg text-midnight/60 max-w-2xl font-light leading-relaxed">
-            Varje uppdrag anpassas efter bostadens skick, omfattning och vilka
-            risker som finns på plats.
+            Varje uppdrag anpassas efter bostadens skick, omfattning och
+            risknivå. Protokollet ger struktur, säkerhet och tydlighet genom
+            hela insatsen.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-          {process.map((item, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 sm:gap-5">
+          {protocol.map((item, index) => (
             <motion.div
               key={item.title}
-              className="bg-slate-50 p-5 sm:p-7 md:p-8 rounded-3xl border border-midnight/5"
+              className="bg-slate-50 p-5 sm:p-6 rounded-3xl border border-midnight/5"
               {...fadeInUp}
-              transition={{ ...fadeInUp.transition, delay: index * 0.1 }}
+              transition={{ ...fadeInUp.transition, delay: index * 0.08 }}
             >
               <div className="flex items-center gap-3 mb-4">
                 <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-cyan-accent/10 text-cyan-accent font-bold text-sm">
-                  {index + 1}
+                  {item.step}
                 </span>
                 {item.icon}
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-bold text-midnight mb-3">
+              <h3 className="text-lg sm:text-xl font-bold text-midnight mb-3">
                 {item.title}
               </h3>
 
-              <p className="text-sm sm:text-base text-midnight/60 font-light leading-relaxed">
+              <p className="text-sm text-midnight/60 font-light leading-relaxed">
                 {item.desc}
               </p>
             </motion.div>
@@ -181,13 +210,13 @@ export default function DeathSanitization() {
       >
         <div className="max-w-4xl">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-midnight mb-5">
-            Behöver du hjälp eller rådgivning?
+            Behöver du hjälp vid ett obevakat dödsfall?
           </h2>
 
           <p className="text-base sm:text-lg md:text-xl text-midnight/60 font-light mb-7 sm:mb-8 max-w-3xl leading-relaxed">
             Kontakta oss för en första bedömning. Vi hjälper dig att förstå vad
-            som behöver göras och hur arbetet kan genomföras på ett säkert,
-            diskret och respektfullt sätt.
+            som behöver göras och hur arbetet kan genomföras med rätt teknisk
+            metod, diskretion och respekt.
           </p>
 
           <a
