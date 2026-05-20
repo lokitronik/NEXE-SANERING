@@ -56,7 +56,7 @@ const team = [
     role: "Biologiskt material & dekontaminering",
     image: "DIN_BILD_URL_HÄR",
     desc:
-      "Lång erfarenhet av blodbank, komponenthantering och arbete med biologiskt material. Bidrar med biosäkerhet, noggrann avfallshantering, dekontaminering och metodiskt arbete enligt tydliga rutiner.",
+      "Lång erfarenhet från blodbank, komponenthantering och biologiskt material. Bidrar med biosäkerhet, dekontaminering, avfallshantering och erfarenhet av hygienrutiner i vårdnära miljöer där kontroll och förebyggande arbete är avgörande.",
   },
   {
     name: "Manel Zurita",
