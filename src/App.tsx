@@ -22,10 +22,12 @@ import Personligatillhörigheter from "./pages/Personligatillhörigheter";
 
 function AnimatedRoutes() {
   const location = useLocation();
+
   return (
     <AnimatePresence mode="wait">
       <Routes location={location}>
         <Route path="/" element={<Home />} />
+
         <Route path="/tjanster" element={<Services />} />
         <Route path="/tjanster/sanering-dodstall" element={<DeathSanitization />} />
         <Route path="/tjanster/traumasanering" element={<TraumaSanitization />} />
@@ -37,9 +39,14 @@ function AnimatedRoutes() {
         <Route path="/tjanster/technical-cleaning-b2b" element={<TechnicalCleaningB2B />} />
         <Route path="/tjanster/svaratkomliga-ytor" element={<HardToReachDisinfection />} />
         <Route path="/tjanster/socialsanering" element={<Socialsanering />} />
+
         <Route path="/om-oss" element={<About />} />
-        <Route path="/hantering-av-personliga-tillhorigeter" element={<PersonligaTillhörigheter />} />
+        <Route
+          path="/hantering-av-personliga-tillhorigheter"
+          element={<Personligatillhörigheter />}
+        />
         <Route path="/kontakt" element={<Contact />} />
+
         <Route path="/integritetspolicy" element={<PrivacyPolicy />} />
         <Route path="/allmanna-villkor" element={<TermsAndConditions />} />
       </Routes>
