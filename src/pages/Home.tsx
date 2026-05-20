@@ -59,13 +59,13 @@ const coreServices = [
 ];
 
 const preventativeServices = [
-  {
-    title: "Förebyggande hygienbehandling",
-    description:
-      "Teknisk behandling med torrånga och hydroxylteknik för utrymmen med luktproblem, stillastående miljöer eller behov av förebyggande hygieninsats på utvalda ytor.",
-    icon: <Sparkles className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
-    link: "/tjanster/forebyggande-hygienbehandling",
-  },
+{
+  title: "Hantering av personliga tillhörigheter",
+  description:
+    "Respektfull identifiering, sortering och hantering av personliga tillhörigheter efter överenskommelse.",
+  icon: <Box className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
+  link: "/Personligatillhörigheter",
+},
   {
     title: "Teknisk rengöring & hygienkontroll",
     description:
