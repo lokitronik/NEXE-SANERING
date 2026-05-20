@@ -49,13 +49,13 @@ const coreServices = [
     icon: <Wind className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
     link: "/tjanster/luktsanering",
   },
-  {
-    title: "Hantering av personliga tillhörigheter",
-    description:
-      "Respektfull identifiering, sortering och hantering av personliga tillhörigheter efter överenskommelse.",
-    icon: <Box className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
-    link: "/Personligatillhörigheter",
-  },
+{
+  title: "Hantering av personliga tillhörigheter",
+  description:
+    "Respektfull identifiering, sortering och hantering av personliga tillhörigheter efter överenskommelse.",
+  icon: <Box className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
+  link: "/hantering-av-personliga-tillhorigheter",
+},
 ];
 
 const preventativeServices = [
