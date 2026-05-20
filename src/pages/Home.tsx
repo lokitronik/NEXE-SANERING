@@ -9,15 +9,15 @@ import {
   Wind,
   ShieldCheck,
   Box,
-  Sparkles, 
+  Sparkles,
   Maximize,
   Users2,
-} from "lucide-react"; 
+} from "lucide-react";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 36 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.7, ease: [0.25, 1, 0.5, 1] }
+  transition: { duration: 0.7, ease: [0.25, 1, 0.5, 1] },
 };
 
 const coreServices = [
@@ -26,36 +26,36 @@ const coreServices = [
     description:
       "Diskret och professionell sanering efter obevakade dödsfall med fokus på biologiskt material, lukt och återställande åtgärder.",
     icon: <HeartHandshake className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
-    link: "/tjanster/sanering-dodstall"
+    link: "/tjanster/sanering-dodstall",
   },
   {
     title: "Traumasanering",
     description:
       "Snabb och säker sanering efter blodspill, olyckor, våldshändelser och andra akuta biologiska föroreningar.",
     icon: <Activity className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
-    link: "/tjanster/traumasanering"
+    link: "/tjanster/traumasanering",
   },
   {
     title: "Socialsanering & hoarder-städning",
     description:
       "Vi utför professionell socialsanering och hoarder-städning — rensning och sanering av kraftigt nedskräpade bostäder med biologisk belastning, lukt och extrem uppsamling. Diskret, metodisk och med full utrustning.",
     icon: <Users2 className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
-    link: "/tjanster/socialsanering"
+    link: "/tjanster/socialsanering",
   },
   {
     title: "Luktsanering",
     description:
       "Teknisk behandling av svåra och kvarvarande lukter i bostäder, lokaler och andra miljöer där vanlig rengöring inte räcker.",
     icon: <Wind className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
-    link: "/tjanster/luktsanering"
+    link: "/tjanster/luktsanering",
   },
   {
     title: "Hantering av personliga tillhörigheter",
     description:
       "Respektfull identifiering, sortering och hantering av personliga tillhörigheter efter överenskommelse.",
     icon: <Box className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
-    link: "/Personligatillhörigheter"
-  }
+    link: "/tjanster/hantering-av-personliga-tillhorigheter",
+  },
 ];
 
 const preventativeServices = [
@@ -64,39 +64,40 @@ const preventativeServices = [
     description:
       "Teknisk behandling med torrånga och hydroxylteknik för utrymmen med luktproblem, stillastående miljöer eller behov av förebyggande hygieninsats på utvalda ytor.",
     icon: <Sparkles className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
-    link: "/tjanster/forebyggande-hygienbehandling"
+    link: "/tjanster/forebyggande-hygienbehandling",
   },
   {
     title: "Teknisk rengöring & hygienkontroll",
     description:
       "Diskret och noggrant utförd teknisk rengöring för hotell, konferensmiljöer och andra verksamheter med höga krav på hygien, dokumentation och återställning.",
     icon: <ShieldCheck className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
-    link: "/tjanster/technical-cleaning-b2b"
+    link: "/tjanster/technical-cleaning-b2b",
   },
   {
     title: "Svåråtkomliga ytor",
     description:
       "Specialiserad rengöring och desinfektion av dolda eller svåråtkomliga utrymmen där standardinsatser inte räcker.",
     icon: <Maximize className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
-    link: "/tjanster/svaratkomliga-ytor"
-  }
+    link: "/tjanster/svaratkomliga-ytor",
+  },
 ];
+
 const values = [
   {
     title: "Diskret hantering",
     description:
-      "Vi arbetar med respekt för situationen och anpassar varje insats efter miljön och människorna omkring."
+      "Vi arbetar med respekt för situationen och anpassar varje insats efter miljön och människorna omkring.",
   },
   {
     title: "Säker arbetsmetod",
     description:
-      "Varje uppdrag utförs strukturerat med fokus på hygien, riskbedömning och kontrollerad hantering."
+      "Varje uppdrag utförs strukturerat med fokus på hygien, riskbedömning och kontrollerad hantering.",
   },
   {
     title: "Noggrann återställning",
     description:
-      "Målet är inte bara att rengöra, utan att återställa miljön på ett tryggt och professionellt sätt."
-  }
+      "Målet är inte bara att rengöra, utan att återställa miljön på ett tryggt och professionellt sätt.",
+  },
 ];
 
 export default function Home() {
@@ -107,26 +108,29 @@ export default function Home() {
       exit={{ opacity: 0 }}
       className="overflow-x-hidden bg-white"
     >
-    <Helmet>
-  <title>Prio Sanering AB | Traumasanering, sanering vid dödsfall och luktsanering</title>
-  <meta
-    name="description"
-    content="Prio Sanering AB erbjuder specialiserade tjänster inom traumasanering, sanering vid dödsfall, socialsanering, luktsanering, förebyggande hygienbehandling med torrånga och hydroxylteknik, teknisk rengöring och sanering av svåråtkomliga ytor."
-  />
-  <meta
-    name="keywords"
-    content="traumasanering, sanering vid dödsfall, socialsanering, hoarder städning, luktsanering, förebyggande hygienbehandling, torrånga, hydroxylbehandling, hydroxylteknik, teknisk rengöring, svåråtkomliga ytor, biologisk sanering"
-  />
-  <link rel="canonical" href={window.location.origin} />
-</Helmet>
+      <Helmet>
+        <title>
+          Prio Sanering AB | Traumasanering, sanering vid dödsfall och
+          luktsanering
+        </title>
+        <meta
+          name="description"
+          content="Prio Sanering AB erbjuder specialiserade tjänster inom traumasanering, sanering vid dödsfall, socialsanering, luktsanering, förebyggande hygienbehandling med torrånga och hydroxylteknik, teknisk rengöring och sanering av svåråtkomliga ytor."
+        />
+        <meta
+          name="keywords"
+          content="traumasanering, sanering vid dödsfall, socialsanering, hoarder städning, luktsanering, förebyggande hygienbehandling, torrånga, hydroxylbehandling, hydroxylteknik, teknisk rengöring, svåråtkomliga ytor, biologisk sanering"
+        />
+        <link rel="canonical" href={window.location.origin} />
+      </Helmet>
 
       {/* Hero */}
       <section className="relative min-h-[100svh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=2000"
+            src="https://i.imgur.com/Bpsvbao.png"
             alt="Trygg och väl återställd miljö"
-            className="w-full h-full object-cover object-center opacity-15"
+            className="w-full h-full object-cover object-center opacity-20"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-white/80" />
@@ -172,20 +176,23 @@ export default function Home() {
       {/* Kärntjänster */}
       <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-14">
         <div className="max-w-7xl mx-auto">
-          <motion.div className="text-center mb-12 sm:mb-16 md:mb-20" {...fadeInUp}>
+          <motion.div
+            className="text-center mb-12 sm:mb-16 md:mb-20"
+            {...fadeInUp}
+          >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-midnight">
               Våra kärntjänster
             </h2>
             <p className="text-base sm:text-lg text-midnight/60 max-w-2xl mx-auto font-light leading-relaxed">
-              Specialiserade tjänster för miljöer där vanlig rengöring inte räcker
-              och där precision, säkerhet och diskretion är avgörande.
+              Specialiserade tjänster för miljöer där vanlig rengöring inte
+              räcker och där precision, säkerhet och diskretion är avgörande.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
             {coreServices.map((service, index) => (
               <motion.div
-                key={index}
+                key={service.title}
                 className="group bg-slate-50 p-5 sm:p-6 md:p-8 rounded-3xl border border-slate-200 hover:border-cyan-accent/30 hover:-translate-y-1 transition-all duration-300 flex flex-col h-full"
                 {...fadeInUp}
                 transition={{ ...fadeInUp.transition, delay: index * 0.08 }}
@@ -220,15 +227,16 @@ export default function Home() {
               Förebyggande tjänster & tillval
             </h2>
             <p className="text-base sm:text-lg text-midnight/60 max-w-2xl mx-auto font-light leading-relaxed">
-              Kompletterande insatser för utrymmen där man vill arbeta förebyggande
-              med hygien, luktkontroll och återkommande belastning i miljön.
+              Kompletterande insatser för utrymmen där man vill arbeta
+              förebyggande med hygien, luktkontroll och återkommande belastning
+              i miljön.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
             {preventativeServices.map((service, index) => (
               <motion.div
-                key={index}
+                key={service.title}
                 className="group bg-white p-5 sm:p-6 md:p-8 rounded-3xl border border-slate-200 hover:border-cyan-accent/30 hover:-translate-y-1 transition-all duration-300 flex flex-col h-full"
                 {...fadeInUp}
                 transition={{ ...fadeInUp.transition, delay: index * 0.08 }}
@@ -266,9 +274,9 @@ export default function Home() {
                   Trygg hantering i känsliga situationer
                 </h2>
                 <p className="text-base sm:text-lg text-midnight/65 font-light leading-relaxed max-w-xl">
-                  Vi arbetar metodiskt och med respekt i varje uppdrag. Fokus ligger
-                  på säker hantering, tydlig struktur och så liten påverkan som möjligt
-                  för boende, verksamhet och omgivning.
+                  Vi arbetar metodiskt och med respekt i varje uppdrag. Fokus
+                  ligger på säker hantering, tydlig struktur och så liten
+                  påverkan som möjligt för boende, verksamhet och omgivning.
                 </p>
               </div>
             </motion.div>
@@ -303,8 +311,8 @@ export default function Home() {
             </h2>
 
             <p className="text-base sm:text-lg md:text-xl font-light leading-relaxed opacity-90 mb-8 sm:mb-10 max-w-3xl mx-auto">
-              Kontakta oss för en första dialog om uppdragets omfattning, behov och
-              förutsättningar. Vi återkommer så snart som möjligt.
+              Kontakta oss för en första dialog om uppdragets omfattning, behov
+              och förutsättningar. Vi återkommer så snart som möjligt.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
