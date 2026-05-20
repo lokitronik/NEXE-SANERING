@@ -8,6 +8,15 @@ const fadeInUp = {
   transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] }
 };
 
+const personalItems = [
+  "Fotografier och fotoalbum",
+  "Smycken och klockor",
+  "Dokument, nycklar och ID-handlingar",
+  "Brev, kort och personliga anteckningar",
+  "Minnesföremål med sentimentalt värde",
+  "Mindre värdeföremål enligt överenskommelse"
+];
+
 export default function atillhörigheter() {
   return (
     <motion.div
@@ -94,6 +103,34 @@ export default function atillhörigheter() {
         </div>
       </motion.section>
 
+      <motion.section
+        className="max-w-5xl mx-auto mb-14 sm:mb-16 md:mb-20 bg-slate-50 rounded-[2rem] border border-midnight/5 p-6 sm:p-8 md:p-10"
+        {...fadeInUp}
+        transition={{ ...fadeInUp.transition, delay: 0.15 }}
+      >
+        <h2 className="text-2xl sm:text-3xl font-bold text-midnight mb-4">
+          Vilka tillhörigheter tar vi hand om?
+        </h2>
+
+        <p className="text-base sm:text-lg text-midnight/65 font-light leading-relaxed mb-6">
+          Vi samlar inte in allt i bostaden. Fokus ligger på personliga föremål
+          som kan ha praktiskt, juridiskt, ekonomiskt eller sentimentalt värde.
+          Vad som ska tas om hand bestäms alltid efter överenskommelse med
+          uppdragsgivaren.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+          {personalItems.map((item) => (
+            <div
+              key={item}
+              className="bg-white rounded-2xl border border-midnight/5 px-4 py-3 text-sm sm:text-base text-midnight/70"
+            >
+              {item}
+            </div>
+          ))}
+        </div>
+      </motion.section>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
         <motion.div
           className="bg-slate-50 p-6 sm:p-8 rounded-2xl border-2 border-midnight/5"
@@ -104,8 +141,9 @@ export default function atillhörigheter() {
             Identifiering
           </h4>
           <p className="text-sm sm:text-base text-midnight/60 font-light leading-relaxed">
-            Vi hjälper till att identifiera dokument, fotografier och personliga
-            föremål som bör tas om hand separat från saneringsarbetet.
+            Vi hjälper till att identifiera dokument, fotografier, smycken,
+            klockor, minnesföremål och andra personliga saker som bör tas om
+            hand separat från saneringsarbetet.
           </p>
         </motion.div>
 
