@@ -46,7 +46,7 @@ const workPrinciples = [
 const team = [
   {
     name: "Eduard Bosch",
-    role: "Teknisk sanering & selektiv demontering",
+    role: "Sanering & teknisk rivning",
     image: "DIN_BILD_URL_HÄR",
     desc:
       "Erfarenhet från blodbank, biologiskt material och teknisk rivning. Bidrar med förståelse för biohazard, materialpåverkan och selektiv demontering när förorening har trängt ner i golv, väggar, ventilation eller andra konstruktioner.",
