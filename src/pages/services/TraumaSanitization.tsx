@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Helmet } from "react-helmet-async";
-import { Activity, Phone, ShieldCheck } from "lucide-react";
+import { Activity, Phone, ShieldCheck, AlertTriangle, ClipboardCheck } from "lucide-react";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -20,11 +20,11 @@ export default function TraumaSanitization() {
         <title>Traumasanering | Prio Sanering AB</title>
         <meta
           name="description"
-          content="Snabb och diskret traumasanering efter olyckor, blodspill, våldshändelser och andra akuta biologiska föroreningar. Vi arbetar säkert, respektfullt och med tydliga rutiner."
+          content="Professionell traumasanering efter blodspill, olyckor, våldshändelser och andra situationer med biologiska föroreningar. Diskret, säker och respektfull hantering."
         />
         <meta
           name="keywords"
-          content="traumasanering, sanering efter blodspill, sanering efter olycka, biologisk sanering, akut sanering"
+          content="traumasanering, sanering efter blodspill, sanering efter olycka, sanering efter våldshändelse, biologisk sanering, blodsanering, akut sanering"
         />
       </Helmet>
 
@@ -34,61 +34,79 @@ export default function TraumaSanitization() {
           Traumasanering
         </h1>
         <p className="text-xl text-midnight/60 max-w-3xl mx-auto font-light leading-relaxed">
-          När en olycka, en våldshändelse eller annan akut biologisk förorening
-          inträffar krävs en snabb, säker och diskret insats. Vi sanerar miljön
-          med fokus på biologiska risker, dokumentation och respektfull hantering.
+          Vid blodspill, olyckor, våldshändelser eller andra akuta situationer
+          med biologiska föroreningar krävs mer än vanlig städning. Vi arbetar
+          snabbt, diskret och metodiskt för att säkra miljön, minska risker och
+          återställa platsen på ett tryggt och respektfullt sätt.
         </p>
       </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
         <motion.div {...fadeInUp}>
-          <h2 className="text-4xl font-bold mb-8">Snabb och säker återställning</h2>
+          <span className="inline-flex items-center rounded-full bg-cyan-accent/10 text-cyan-accent px-4 py-2 text-sm font-bold mb-6">
+            Säker hantering av biologiska risker
+          </span>
+
+          <h2 className="text-4xl font-bold mb-8">
+            När platsen behöver säkras, saneras och återställas
+          </h2>
+
           <p className="text-lg text-midnight/70 font-light leading-relaxed mb-8">
-            Traumasanering kan bli aktuell efter blodspill, olyckor,
-            våldshändelser eller andra situationer där biologiskt material måste
-            hanteras korrekt. Vi arbetar enligt tydliga rutiner för att minska
-            risker, sanera påverkade ytor och återställa miljön på ett tryggt sätt.
+            Traumasanering kan bli aktuell när blod, kroppsvätskor eller annat
+            biologiskt material finns i bostäder, trapphus, fordon, arbetsplatser
+            eller andra miljöer. Sådana situationer kan innebära både hygieniska
+            risker och stark emotionell belastning för de berörda.
+          </p>
+
+          <p className="text-lg text-midnight/70 font-light leading-relaxed mb-8">
+            Vi arbetar med tydliga skyddsrutiner, rätt utrustning och ett
+            strukturerat arbetssätt. Målet är att begränsa exponering, sanera
+            påverkade ytor och skapa en trygg miljö igen, utan onödig uppmärksamhet.
           </p>
 
           <div className="space-y-6">
             <div className="flex gap-4 items-start">
-              <ShieldCheck className="w-6 h-6 text-cyan-accent flex-shrink-0" />
+              <AlertTriangle className="w-6 h-6 text-cyan-accent flex-shrink-0 mt-1" />
               <p className="text-midnight/70 font-light">
-                Snabb insats för att minska exponering, begränsa skador och påbörja sanering utan onödigt dröjsmål.
+                Bedömning av risk, omfattning och vilka ytor eller material som
+                behöver saneras, säkras eller tas bort.
               </p>
             </div>
 
             <div className="flex gap-4 items-start">
-              <ShieldCheck className="w-6 h-6 text-cyan-accent flex-shrink-0" />
+              <ShieldCheck className="w-6 h-6 text-cyan-accent flex-shrink-0 mt-1" />
               <p className="text-midnight/70 font-light">
-                Säker hantering av blod, biologiskt material och andra föroreningar enligt tydliga skydds- och arbetsrutiner.
+                Säker hantering av blod, kroppsvätskor och biologiskt material
+                med fokus på hygien, skydd och kontrollerad sanering.
               </p>
             </div>
 
             <div className="flex gap-4 items-start">
-              <ShieldCheck className="w-6 h-6 text-cyan-accent flex-shrink-0" />
+              <ClipboardCheck className="w-6 h-6 text-cyan-accent flex-shrink-0 mt-1" />
               <p className="text-midnight/70 font-light">
-                Diskret hantering med omärkta fordon och respektfull närvaro på plats.
+                Metodiskt arbete med dokumentation, diskret närvaro och tydlig
+                kommunikation genom hela uppdraget.
               </p>
             </div>
 
             <div className="flex gap-4 items-start">
-              <ShieldCheck className="w-6 h-6 text-cyan-accent flex-shrink-0" />
+              <ShieldCheck className="w-6 h-6 text-cyan-accent flex-shrink-0 mt-1" />
               <p className="text-midnight/70 font-light">
-                <strong>Teknisk rengöring (tillval):</strong> Specialiserad rengöring av tekniska miljöer, maskiner och andra ytor för en mer komplett återställning.
+                Vid behov kan teknisk rengöring och luktreducerande åtgärder
+                läggas till för en mer komplett återställning.
               </p>
             </div>
           </div>
         </motion.div>
 
         <motion.div
-          className="rounded-3xl overflow-hidden shadow-2xl"
+          className="rounded-3xl overflow-hidden shadow-2xl bg-slate-50 border border-midnight/5"
           {...fadeInUp}
           transition={{ ...fadeInUp.transition, delay: 0.2 }}
         >
           <img
-            src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&q=80&w=1000"
-            alt="Professionellt återställd miljö"
+            src="BYT_TILL_RÄTT_BILD_URL_HÄR"
+            alt="Diskret och professionell traumasanering"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
@@ -101,8 +119,9 @@ export default function TraumaSanitization() {
       >
         <h2 className="text-4xl font-bold mb-8">Behöver du snabb hjälp?</h2>
         <p className="text-xl font-light opacity-80 mb-12 max-w-2xl mx-auto">
-          Kontakta oss för snabb rådgivning och bedömning. Vi hanterar situationen
-          med den säkerhet, diskretion och professionalism som krävs.
+          Kontakta oss för en första bedömning. Vi hanterar situationen med
+          diskretion, säkerhet och respekt för både platsen och de personer som
+          berörs.
         </p>
         <a
           href="tel:0101234567"
