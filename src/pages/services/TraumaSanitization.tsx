@@ -105,7 +105,7 @@ export default function TraumaSanitization() {
           transition={{ ...fadeInUp.transition, delay: 0.2 }}
         >
           <img
-            src="BYT_TILL_RÄTT_BILD_URL_HÄR"
+            src="https://i.imgur.com/6AS5NeW_d.webp?maxwidth=760&fidelity=grand"
             alt="Diskret och professionell traumasanering"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
