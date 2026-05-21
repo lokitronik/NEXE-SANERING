@@ -19,11 +19,7 @@ const PROCESS = [
     title: "Inokulösa desinfektionsmedel",
     body: "Certifierade produkter säkra för alla miljöer — barn, äldre, djur, elektronik.",
   },
-  {
-    icon: Microscope,
-    title: "ATP-mätning",
-    body: "Mätning av organiska rester på utvalda ytor. Objektivt underlag utöver visuell bedömning.",
-  },
+
   {
     icon: ShieldCheck,
     title: "Långtidsverkande antimikrobiellt ytskydd",
@@ -41,7 +37,7 @@ const SEGMENTS = [
     icon: Hotel,
     title: "Hotell, Airbnb & sommarstugor",
     tag: "Boende & uthyrning",
-    body: "Förebyggande hygieninsats för rum, gemensamma ytor och uthyrningsboenden. ATP-mätning som kontrollpunkt, hydroxylbehandling för luft och ytor, och dokumentation efter varje insats. Sommarstugor och privatbostäder: engångsinsats inför eller efter säsong.",
+    body: "Förebyggande hygieninsats för rum, gemensamma ytor och uthyrningsboenden. Inkluderar ATP-mätning som kontrollpunkt, hydroxylbehandling och dokumentation. Sommarstugor och privatbostäder: engångsinsats inför eller efter säsong.",
   },
   {
     icon: GraduationCap,
