@@ -33,9 +33,9 @@ const SEGMENTS = [
   },
   {
     icon: Anchor,
-    title: "Båtar, hytt & marin miljö",
+    title: "Båtar & marin hygien",
     tag: "Marin hygien",
-    body: "Hygienbehandling och bioprotektorer för kabyss, hytt, toalett och slutna utrymmen på fartyg och fritidsbåtar. Fuktig miljö kräver specifika metoder och produkter.",
+    body: "Hygienbehandling och bioprotektorer för interiör, hytter, toalett och slutna utrymmen på fartyg och fritidsbåtar. Fuktig miljö kräver specifika metoder och produkter.",
   },
   {
     icon: Microscope,
@@ -47,14 +47,6 @@ const SEGMENTS = [
 
 // ── Schools detail ───────────────────────────────────────────────────────────
 
-const SCHOOL_POINTS = [
-  "Förskolor, grundskolor och gymnasier",
-  "LSS-boenden och daglig verksamhet",
-  "Äldreboenden och serviceboenden",
-  "HVB-hem och stödboenden",
-  "Fritidshem och öppen verksamhet",
-];
-
 const SCHOOL_METHOD = [
   {
     title: "Säkra produkter",
@@ -62,7 +54,7 @@ const SCHOOL_METHOD = [
   },
   {
     title: "Hydroxylbehandling inomhus",
-    body: "Luftrening med hydroxylgenerator (TITAN 4000) utan evakuering — lämplig under eller efter verksamhetstid.",
+    body: "Luftrening med hydroxylgenerator utan evakuering — lämplig under eller efter verksamhetstid.",
   },
   {
     title: "Fokus på kontaktytor",
@@ -77,7 +69,7 @@ const SCHOOL_METHOD = [
 // ── Marine detail ────────────────────────────────────────────────────────────
 
 const MARINE_POINTS = [
-  "Kabyss och köksutrymmen ombord",
+  "Kök och mathörna ombord",
   "Hytter och sovutrymmen",
   "Toaletter och WC-utrymmen",
   "Förvaringsutrymmen med fuktproblem",
@@ -96,7 +88,7 @@ const MARINE_METHOD = [
   },
   {
     title: "Luktsanering ombord",
-    body: "Kabyss och hytt samlar lukter från mat, fukt och biologiska källor. Hydroxyl och ozon anpassas efter utrymmets storlek och ventilation.",
+    body: "Interiör och hytter samlar lukter från mat, fukt och biologiska källor. Hydroxyl och ozon anpassas efter utrymmets storlek och ventilation.",
   },
   {
     title: "Inför och efter säsong",
@@ -193,29 +185,10 @@ export default function TechnicalCleaningB2B() {
             Skolor, förskolor & stödcentrum
           </h2>
         </div>
-        <p className="text-midnight/55 font-light mb-10 max-w-2xl">
-          Känsliga miljöer kräver extra omsorg. Barn, äldre och personer med
-          funktionsnedsättning är mer sårbara för hygienbrister — och ställer
-          höga krav på metod, produktval och dokumentation.
-        </p>
+
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {/* Left — who */}
-          <div>
-            <p className="text-sm font-bold uppercase tracking-widest text-midnight/40 mb-5">
-              Verksamheter vi arbetar med
-            </p>
-            <ul className="space-y-3">
-              {SCHOOL_POINTS.map((p) => (
-                <li key={p} className="flex items-center gap-3">
-                  <ChevronRight className="w-4 h-4 text-cyan-accent flex-shrink-0" />
-                  <span className="text-midnight/70 font-light">{p}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Right — how */}
+          {/* Method */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {SCHOOL_METHOD.map(({ title, body }) => (
               <div
@@ -236,7 +209,7 @@ export default function TechnicalCleaningB2B() {
           <div className="flex items-center gap-3 mb-3">
             <Anchor className="w-6 h-6 text-cyan-accent" />
             <h2 className="text-3xl font-bold text-white">
-              Båtar, kabyss & marin miljö
+              Båtar & marin hygien
             </h2>
           </div>
           <p className="text-white/55 font-light mb-10 max-w-2xl">
@@ -313,7 +286,7 @@ export default function TechnicalCleaningB2B() {
             {[
               "Hotell, Airbnb och uthyrningsboenden",
               "Skolor, förskolor och LSS-boenden",
-              "Båtar, kabyss och marin miljö",
+              "Båtar, fartyg och marin miljö",
             ].map((item) => (
               <li key={item} className="flex items-center gap-3">
                 <ChevronRight className="w-4 h-4 text-cyan-accent flex-shrink-0" />
