@@ -27,6 +27,11 @@ const PROCESS = [
   },
   {
     icon: ShieldCheck,
+    title: "Vägglössbehandling med torrånga",
+    body: "Ånga vid hög temperatur (upp till 173°C, 8 bar) eliminerar vägglöss och ägg på tillgängliga ytor — textilier, sömmar, madrasser, sängramar och möbler. Kräver inte kemikalier.",
+  },
+  {
+    icon: ShieldCheck,
     title: "Dokumentation",
     body: "Protokoll efter varje insats — metod, ytor och kontrollpunkter.",
   },
