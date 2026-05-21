@@ -16,88 +16,49 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.7, ease: [0.25, 1, 0.5, 1], delay },
 });
 
-// ── Segment data ────────────────────────────────────────────────────────────
+// ── Service cards ────────────────────────────────────────────────────────────
 
-const SEGMENTS = [
+const SERVICES = [
   {
     icon: Hotel,
     title: "Hotell & Airbnb",
     tag: "Boende & uthyrning",
-    body: "Teknisk hygienbehandling för rum, gemensamma utrymmen och tillfälliga boenden. Packs med fasta månatliga besök — lukt, textilier, ATP-mätning och dokumentation.",
+    intro:
+      "Teknisk hygienbehandling för rum och gemensamma utrymmen där vanlig städning inte räcker.",
+    points: [
+      "Packs med fasta månatliga besök",
+      "Behandling av lukt, textilier och ytor",
+      "ATP-mätning och dokumentation vid behov",
+      "Planeras efter beläggning och verksamhet",
+    ],
   },
   {
     icon: GraduationCap,
     title: "Skolor, förskolor & stödcentrum",
     tag: "Känsliga miljöer",
-    body: "Hygienbehandling anpassad för miljöer med barn, äldre och personer med funktionsnedsättning. Certifierade metoder, säkra produkter och protokoll som uppfyller krav för offentliga verksamheter.",
+    intro:
+      "Hygienbehandling anpassad för miljöer med barn, äldre och personer med funktionsnedsättning.",
+    points: [
+      "Inokulösa desinfektionsmedel — säkra för känsliga grupper",
+      "Hydroxylbehandling utan evakuering",
+      "Anpassat efter verksamhetens tider och behov",
+      "Dokumentation för intern kontroll eller tillsyn",
+    ],
   },
   {
     icon: Anchor,
-    title: "Båtar & marin hygien",
+    title: "Båtar & marin miljö",
     tag: "Marin hygien",
-    body: "Hygienbehandling för interiör, hytter och slutna utrymmen på fartyg och fritidsbåtar. Vi använder hydroxylbehandling och inokulösa desinfektionsmedel anpassade för marin miljö.",
-  },
-  {
-    icon: Microscope,
-    title: "ATP-mätning & dokumentation",
-    tag: "Verifiering",
-    body: "Mätning av organiska rester på utvalda ytor. Ger ett mätbart underlag för hygienkontroll före och efter insats — tydligare än visuell bedömning.",
-  },
-];
-
-// ── Schools detail ───────────────────────────────────────────────────────────
-
-const SCHOOL_METHOD = [
-  {
-    title: "Säkra produkter",
-    body: "Vi använder certifierade desinfektionsmedel och metoder godkända för miljöer med barn och sköra grupper.",
-  },
-  {
-    title: "Hydroxylbehandling inomhus",
-    body: "Luftrening med hydroxylgenerator utan evakuering — lämplig under eller efter verksamhetstid.",
-  },
-  {
-    title: "Fokus på kontaktytor",
-    body: "Handtag, räcken, toaletter, leksaker, bänkytor — de ytor som bär störst smittrisk behandlas systematiskt.",
-  },
-  {
-    title: "Dokumenterad insats",
-    body: "Protokoll och rapport efter varje insats för intern kontroll, tillsyn eller kvalitetsuppföljning.",
+    intro:
+      "Hygienbehandling för interiör, hytter och slutna utrymmen på fartyg och fritidsbåtar.",
+    points: [
+      "Hydroxylbehandling och inokulösa desinfektionsmedel för marin miljö",
+      "Behandling av mögel och fuktrelaterade problem",
+      "Luktsanering i hytter, kök och WC-utrymmen",
+      "Mikrobiellt konserveringsmedel på utsatta ytor",
+    ],
   },
 ];
-
-// ── Marine detail ────────────────────────────────────────────────────────────
-
-const MARINE_POINTS = [
-  "Kök och mathörna ombord",
-  "Hytter och sovutrymmen",
-  "Toaletter och WC-utrymmen",
-  "Förvaringsutrymmen med fuktproblem",
-  "Fritidsbåtar inför eller efter säsong",
-  "Charterbåtar och uthyrningsfarkoster",
-];
-
-const MARINE_METHOD = [
-
-  {
-    title: "Mögel och fukt",
-    body: "Slutna utrymmen med hög luftfuktighet är särskilt utsatta. Vi behandlar och dokumenterar för att förhindra återkomst.",
-  },
-  {
-    title: "Luktsanering ombord",
-    body: "Interiör och hytter samlar lukter från mat, fukt och biologiska källor. Hydroxyl och ozon anpassas efter utrymmets storlek och ventilation.",
-  },
-  {
-    title: "Mikrobiellt konserveringsmedel",
-    body: "Utvalda ytor behandlas med ett mikrobiellt konserveringsmedel som bromsar återkolonisering av bakterier och mögel efter utförd rengöring. Ingår i protokollet på ytor med hög fukt- och hygienbelastning.",
-  },
-  {
-    title: "Inför och efter säsong",
-    body: "Hygienbehandling inför sjösättning eller uppläggning — ett naturligt steg i båtens underhållsrutin.",
-  },
-];
-
-// ── Why B2B ──────────────────────────────────────────────────────────────────
 
 const WHY_POINTS = [
   {
@@ -113,7 +74,7 @@ const WHY_POINTS = [
   {
     icon: ShieldCheck,
     title: "Dokumentation efter insats",
-    body: "Metod, behandlade ytor, kontrollpunkter och mätresultat — spårbarhet för fastighetsägare och driftansvariga.",
+    body: "Metod, behandlade ytor och kontrollpunkter — spårbarhet för fastighetsägare och driftansvariga.",
   },
 ];
 
@@ -150,111 +111,90 @@ export default function TechnicalCleaningB2B() {
           <span className="text-cyan-accent">vanlig städning inte räcker</span>
         </h1>
         <p className="text-lg md:text-xl text-midnight/60 font-light leading-relaxed max-w-2xl">
-          Riktade hygieninsatser för hotell, skolor, förskolor, LSS-boenden och marin miljö.
-          Vi kombinerar teknisk rengöring, hydroxylbehandling, inokulösa desinfektionsmedel, ATP-mätning och dokumentation anpassat efter varje verksamhets specifika krav.
+          Riktade hygieninsatser för verksamheter med specifika krav på metod,
+          produktval och dokumentation. Vi kombinerar hydroxylbehandling,
+          inokulösa desinfektionsmedel och ATP-mätning — anpassat efter varje uppdrag.
         </p>
       </motion.div>
 
-      {/* ── Segment cards ── */}
-      <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-20" {...fadeUp(0.1)}>
-        {SEGMENTS.map(({ icon: Icon, title, tag, body }, i) => (
-          <motion.div
-            key={title}
-            className="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-cyan-accent/30 transition-all"
-            {...fadeUp(0.1 + i * 0.07)}
-          >
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-xl bg-cyan-accent/10 flex items-center justify-center flex-shrink-0">
-                <Icon className="w-5 h-5 text-cyan-accent" />
-              </div>
-              <span className="text-xs font-bold uppercase tracking-widest text-cyan-accent">
-                {tag}
-              </span>
+      {/* ── Service tree ── */}
+      <motion.div className="mb-20" {...fadeUp(0.1)}>
+
+        {/* Root node */}
+        <div className="flex flex-col items-center mb-0">
+          <div className="w-full max-w-2xl bg-midnight text-white rounded-2xl px-10 py-8 text-center">
+            <p className="text-xs font-bold uppercase tracking-widest text-cyan-accent mb-3">
+              Teknisk rengöring B2B
+            </p>
+            <p className="text-white/70 font-light leading-relaxed text-sm">
+              Hygienbehandling med hydroxylgenerator, inokulösa desinfektionsmedel
+              och ATP-mätning. Alltid med förhandsbedömning, säkerhetsprotokoll
+              och dokumentation efter utförd insats.
+            </p>
+          </div>
+
+          {/* Connector lines */}
+          <div className="hidden sm:grid sm:grid-cols-3 w-full max-w-4xl">
+            {/* Left branch */}
+            <div className="flex flex-col items-center">
+              <div className="w-px h-6 bg-slate-300" />
+              <div className="w-full h-px bg-slate-300" style={{ marginRight: '-1px' }} />
+              <div className="w-px h-6 bg-slate-300" />
             </div>
-            <h3 className="text-xl font-bold text-midnight mb-3">{title}</h3>
-            <p className="text-midnight/65 font-light leading-relaxed text-sm">{body}</p>
-          </motion.div>
-        ))}
-      </motion.div>
+            {/* Center branch */}
+            <div className="flex flex-col items-center">
+              <div className="w-px h-12 bg-slate-300" />
+            </div>
+            {/* Right branch */}
+            <div className="flex flex-col items-center">
+              <div className="w-px h-6 bg-slate-300" />
+              <div className="w-full h-px bg-slate-300" style={{ marginLeft: '-1px' }} />
+              <div className="w-px h-6 bg-slate-300" />
+            </div>
+          </div>
 
-      {/* ── Schools & Care centers ── */}
-      <motion.div className="mb-20" {...fadeUp(0.15)}>
-        <div className="flex items-center gap-3 mb-3">
-          <GraduationCap className="w-6 h-6 text-cyan-accent" />
-          <h2 className="text-3xl font-bold text-midnight">
-            Skolor, förskolor & stödcentrum
-          </h2>
+          {/* Mobile connector */}
+          <div className="sm:hidden w-px h-8 bg-slate-300" />
         </div>
 
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {/* Method */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {SCHOOL_METHOD.map(({ title, body }) => (
-              <div
-                key={title}
-                className="bg-slate-50 rounded-xl p-6 border border-slate-100"
-              >
-                <h4 className="font-bold text-midnight mb-2 text-sm">{title}</h4>
-                <p className="text-midnight/60 font-light text-sm leading-relaxed">{body}</p>
+        {/* Service cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          {SERVICES.map(({ icon: Icon, title, tag, intro, points }, i) => (
+            <motion.div
+              key={title}
+              className="flex flex-col bg-slate-50 rounded-2xl p-7 border border-slate-100 hover:border-cyan-accent/30 transition-all"
+              {...fadeUp(0.15 + i * 0.07)}
+            >
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-9 h-9 rounded-xl bg-cyan-accent/10 flex items-center justify-center flex-shrink-0">
+                  <Icon className="w-4 h-4 text-cyan-accent" />
+                </div>
+                <span className="text-xs font-bold uppercase tracking-widest text-cyan-accent">
+                  {tag}
+                </span>
               </div>
-            ))}
-          </div>
-        </div>
-      </motion.div>
-
-      {/* ── Marine ── */}
-      <motion.div className="mb-20" {...fadeUp(0.2)}>
-        <div className="bg-midnight rounded-3xl p-8 md:p-14">
-          <div className="flex items-center gap-3 mb-3">
-            <Anchor className="w-6 h-6 text-cyan-accent" />
-            <h2 className="text-3xl font-bold text-white">
-              Båtar & marin hygien
-            </h2>
-          </div>
-          <p className="text-white/55 font-light mb-10 max-w-2xl">
-            Slutna utrymmen med hög luftfuktighet, salt och organiska rester kräver
-            specifika metoder. Vi använder hydroxylbehandling och inokulösa desinfektionsmedel. Utvalda ytor behandlas med mikrobiellt konserveringsmedel som del av protokollet.
-          </p>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            {/* Left — where */}
-            <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-white/30 mb-5">
-                Utrymmen & farkoster
+              <h3 className="text-lg font-bold text-midnight mb-3">{title}</h3>
+              <p className="text-midnight/60 font-light text-sm leading-relaxed mb-5">
+                {intro}
               </p>
-              <ul className="space-y-3">
-                {MARINE_POINTS.map((p) => (
-                  <li key={p} className="flex items-center gap-3">
-                    <ChevronRight className="w-4 h-4 text-cyan-accent flex-shrink-0" />
-                    <span className="text-white/70 font-light text-sm">{p}</span>
+              <ul className="space-y-2 mt-auto">
+                {points.map((p) => (
+                  <li key={p} className="flex items-start gap-2">
+                    <ChevronRight className="w-3.5 h-3.5 text-cyan-accent flex-shrink-0 mt-0.5" />
+                    <span className="text-midnight/60 font-light text-xs leading-snug">{p}</span>
                   </li>
                 ))}
               </ul>
-            </div>
-
-            {/* Right — method */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {MARINE_METHOD.map(({ title, body }) => (
-                <div
-                  key={title}
-                  className="bg-white/5 rounded-xl p-6 border border-white/10"
-                >
-                  <h4 className="font-bold text-cyan-accent mb-2 text-sm">{title}</h4>
-                  <p className="text-white/60 font-light text-sm leading-relaxed">{body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+            </motion.div>
+          ))}
         </div>
       </motion.div>
 
       {/* ── Why B2B + CTA ── */}
       <motion.div
         className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start"
-        {...fadeUp(0.25)}
+        {...fadeUp(0.3)}
       >
-        {/* Why */}
         <div>
           <h2 className="text-3xl font-bold text-midnight mb-8">
             Varför teknisk rengöring B2B?
@@ -274,12 +214,11 @@ export default function TechnicalCleaningB2B() {
           </div>
         </div>
 
-        {/* CTA */}
         <div className="bg-midnight rounded-2xl p-8 text-white">
           <h3 className="text-xl font-bold mb-2">Boka en konsultation</h3>
           <p className="text-white/50 text-sm font-light mb-8 leading-relaxed">
-            Kontakta oss för en första bedömning av lokal, verksamhet, behov
-            och lämplig hygieninsats. Ingen bindning.
+            Kontakta oss för en första bedömning av lokal, verksamhet och
+            lämplig hygieninsats. Ingen bindning.
           </p>
           <ul className="space-y-3 mb-8">
             {[
