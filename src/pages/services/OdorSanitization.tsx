@@ -11,7 +11,7 @@ const fadeUp = (delay = 0) => ({
 const METHODS = [
   {
     icon: Wind,
-    title: "Hydroxylbehandling — TITAN 4000",
+    title: "Hydroxylbehandling",
     tag: "Primär metod",
     tagColor: "bg-cyan-accent/10 text-cyan-accent",
     body:
