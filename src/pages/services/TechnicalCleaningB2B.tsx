@@ -33,7 +33,7 @@ const SEGMENTS = [
   },
   {
     icon: Anchor,
-    title: "Båtar, kabyss & marin miljö",
+    title: "Båtar, hytt & marin miljö",
     tag: "Marin hygien",
     body: "Hygienbehandling och bioprotektorer för kabyss, hytt, toalett och slutna utrymmen på fartyg och fritidsbåtar. Fuktig miljö kräver specifika metoder och produkter.",
   },
