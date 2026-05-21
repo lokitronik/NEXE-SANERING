@@ -35,7 +35,7 @@ const SEGMENTS = [
     icon: Anchor,
     title: "Båtar & marin hygien",
     tag: "Marin hygien",
-    body: "Hygienbehandling och bioprotektorer för interiör, hytter, toalett och slutna utrymmen på fartyg och fritidsbåtar. Fuktig miljö kräver specifika metoder och produkter.",
+    body: "Hygienbehandling för interiör, hytter och slutna utrymmen på fartyg och fritidsbåtar. Vi använder hydroxylbehandling och inokulösa desinfektionsmedel anpassade för marin miljö.",
   },
   {
     icon: Microscope,
@@ -78,10 +78,7 @@ const MARINE_POINTS = [
 ];
 
 const MARINE_METHOD = [
-  {
-    title: "Bioprotektorer",
-    body: "Behandling med bioprotektorer som bildar ett skyddande skikt på ytor och hindrar återväxt av bakterier, mögel och biofilm under längre tid.",
-  },
+
   {
     title: "Mögel och fukt",
     body: "Slutna utrymmen med hög luftfuktighet är särskilt utsatta. Vi behandlar och dokumenterar för att förhindra återkomst.",
@@ -89,6 +86,10 @@ const MARINE_METHOD = [
   {
     title: "Luktsanering ombord",
     body: "Interiör och hytter samlar lukter från mat, fukt och biologiska källor. Hydroxyl och ozon anpassas efter utrymmets storlek och ventilation.",
+  },
+  {
+    title: "Mikrobiellt konserveringsmedel",
+    body: "Utvalda ytor behandlas med ett mikrobiellt konserveringsmedel som bromsar återkolonisering av bakterier och mögel efter utförd rengöring. Ingår i protokollet på ytor med hög fukt- och hygienbelastning.",
   },
   {
     title: "Inför och efter säsong",
@@ -130,11 +131,11 @@ export default function TechnicalCleaningB2B() {
         <title>Teknisk rengöring B2B | Prio Sanering AB</title>
         <meta
           name="description"
-          content="Teknisk rengöring för hotell, skolor, förskolor, LSS-boenden och båtar. Hygienbehandling, bioprotektorer och ATP-mätning. Stockholm."
+          content="Teknisk rengöring för hotell, skolor, förskolor, LSS-boenden och båtar. Hygienbehandling med hydroxyl, inokulösa desinfektionsmedel och ATP-mätning. Stockholm."
         />
         <meta
           name="keywords"
-          content="teknisk rengöring, hygienkontroll hotell, skola sanering, förskola desinfection, LSS hygien, båt sanering, bioprotektorer, ATP-mätning, B2B sanering Stockholm"
+          content="teknisk rengöring, hygienkontroll hotell, skola sanering, förskola desinfektion, LSS hygien, båt sanering, hydroxylbehandling, ATP-mätning, B2B sanering Stockholm"
         />
       </Helmet>
 
@@ -150,8 +151,7 @@ export default function TechnicalCleaningB2B() {
         </h1>
         <p className="text-lg md:text-xl text-midnight/60 font-light leading-relaxed max-w-2xl">
           Riktade hygieninsatser för hotell, skolor, förskolor, LSS-boenden och marin miljö.
-          Vi kombinerar teknisk rengöring, bioprotektorer, ATP-mätning och dokumentation
-          anpassat efter varje verksamhets specifika krav.
+          Vi kombinerar teknisk rengöring, hydroxylbehandling, inokulösa desinfektionsmedel, ATP-mätning och dokumentation anpassat efter varje verksamhets specifika krav.
         </p>
       </motion.div>
 
@@ -214,8 +214,7 @@ export default function TechnicalCleaningB2B() {
           </div>
           <p className="text-white/55 font-light mb-10 max-w-2xl">
             Slutna utrymmen med hög luftfuktighet, salt och organiska rester kräver
-            specifika metoder. Vi erbjuder hygienbehandling och bioprotektorer
-            anpassade för marin miljö.
+            specifika metoder. Vi använder hydroxylbehandling och inokulösa desinfektionsmedel. Utvalda ytor behandlas med mikrobiellt konserveringsmedel som del av protokollet.
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
