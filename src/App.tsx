@@ -19,7 +19,7 @@ import Socialsanering from "./pages/services/Socialsanering";
 import Personligatillhörigheter from "./pages/services/Personligatillhörigheter";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
-import BastuHygienkontroll from "./pages/services/BastuHygienkontroll.txt";
+import BastuHygienkontroll from "./pages/services/BastuHygienkontroll";
 
 function AnimatedRoutes() {
   const location = useLocation();
