@@ -55,6 +55,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           >
             Kontakt
           </Link>
+
           <a
             href="tel:0101234567"
             className="pulse-cyan bg-cyan-accent text-white px-5 lg:px-6 py-2.5 rounded-full font-semibold flex items-center gap-2 whitespace-nowrap"
@@ -74,7 +75,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </button>
       </nav>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu */}
       {isMenuOpen && (
         <motion.div
           initial={{ opacity: 0, y: -16 }}
@@ -98,6 +99,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Footer */}
       <footer className="py-14 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 bg-slate-50 border-t border-slate-200">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 sm:gap-12 mb-12 sm:mb-16">
+
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="inline-block mb-6 sm:mb-8">
               <Logo className="scale-75 sm:scale-80 md:scale-90 origin-left" />
@@ -114,43 +116,32 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </h4>
             <ul className="space-y-3 sm:space-y-4 text-sm font-medium text-midnight/70">
               <li>
-                <Link
-                  to="/tjanster/sanering-dodstall"
-                  className="hover:text-cyan-accent transition-colors"
-                >
+                <Link to="/tjanster/sanering-dodstall" className="hover:text-cyan-accent">
                   Sanering vid dödsfall
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/tjanster/traumasanering"
-                  className="hover:text-cyan-accent transition-colors"
-                >
+                <Link to="/tjanster/traumasanering" className="hover:text-cyan-accent">
                   Traumasanering
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/tjanster/socialsanering"
-                  className="hover:text-cyan-accent transition-colors"
-                >
+                <Link to="/tjanster/socialsanering" className="hover:text-cyan-accent">
                   Socialsanering & hoarder-städning
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/tjanster/luktsanering"
-                  className="hover:text-cyan-accent transition-colors"
-                >
+                <Link to="/tjanster/luktsanering" className="hover:text-cyan-accent">
                   Luktsanering
                 </Link>
               </li>
+
               <li>
                 <Link
-                  to="/hantering-av-personliga-tillhorigheter"
-                  className="hover:text-cyan-accent transition-colors"
+                  to="/tjanster/bastu-hygienkontroll"
+                  className="hover:text-cyan-accent"
                 >
-                  Hantering av personliga tillhörigheter
+                  Bastu Hygienkontroll
                 </Link>
               </li>
             </ul>
@@ -160,26 +151,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </h4>
             <ul className="space-y-3 sm:space-y-4 text-sm font-medium text-midnight/70">
               <li>
-                <Link
-                  to="/tjanster/forebyggande-hygienbehandling"
-                  className="hover:text-cyan-accent transition-colors"
-                >
+                <Link to="/tjanster/forebyggande-hygienbehandling" className="hover:text-cyan-accent">
                   Förebyggande hygienbehandling
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/tjanster/technical-cleaning-b2b"
-                  className="hover:text-cyan-accent transition-colors"
-                >
+                <Link to="/tjanster/technical-cleaning-b2b" className="hover:text-cyan-accent">
                   Teknisk rengöring & hygienkontroll
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/tjanster/svaratkomliga-ytor"
-                  className="hover:text-cyan-accent transition-colors"
-                >
+                <Link to="/tjanster/svaratkomliga-ytor" className="hover:text-cyan-accent">
                   Svåråtkomliga ytor
                 </Link>
               </li>
@@ -191,36 +173,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               Företaget
             </h4>
             <ul className="space-y-3 sm:space-y-4 text-sm font-medium text-midnight/70">
-              <li>
-                <Link to="/om-oss" className="hover:text-cyan-accent transition-colors">
-                  Om oss
-                </Link>
-              </li>
-              <li>
-                <Link to="/kontakt" className="hover:text-cyan-accent transition-colors">
-                  Kontakt
-                </Link>
-              </li>
-              <li>
-                <a href="tel:0101234567" className="hover:text-cyan-accent transition-colors">
-                  Jour dygnet runt
-                </a>
-              </li>
+              <li><Link to="/om-oss" className="hover:text-cyan-accent">Om oss</Link></li>
+              <li><Link to="/kontakt" className="hover:text-cyan-accent">Kontakt</Link></li>
+              <li><a href="tel:0101234567">Jour dygnet runt</a></li>
             </ul>
           </div>
+
         </div>
 
         <div className="max-w-7xl mx-auto pt-6 sm:pt-8 border-t border-midnight/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs sm:text-sm text-midnight/40">
-          <div className="text-center md:text-left">
-            © 2026 Prio Sanering AB. Alla rättigheter förbehållna.
-          </div>
+          <div>© 2026 Prio Sanering AB. Alla rättigheter förbehållna.</div>
+
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-            <Link to="/integritetspolicy" className="hover:text-cyan-accent transition-colors">
-              Integritetspolicy
-            </Link>
-            <Link to="/allmanna-villkor" className="hover:text-cyan-accent transition-colors">
-              Allmänna villkor
-            </Link>
+            <Link to="/integritetspolicy">Integritetspolicy</Link>
+            <Link to="/allmanna-villkor">Allmänna villkor</Link>
           </div>
         </div>
       </footer>
