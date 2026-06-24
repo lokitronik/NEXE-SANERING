@@ -57,12 +57,9 @@ export default function About() {
           name="description"
           content="Lär känna Prio Sanering AB. Vi är ett specialiserat saneringsföretag med erfarenhet från laboratoriemiljöer, biologisk dekontaminering, teknisk sanering och kontrollerade arbetsrutiner."
         />
-        <meta
-          name="keywords"
-          content="om prio sanering, saneringsföretag, teknisk sanering, biologisk dekontaminering, laboratoriemiljö, blodbank, renrum, biologiska risker, diskret sanering"
-        />
       </Helmet>
 
+      {/* HERO */}
       <motion.section
         className="text-center mb-14 sm:mb-16 md:mb-24"
         {...fadeInUp}
@@ -79,136 +76,16 @@ export default function About() {
         <p className="text-base sm:text-lg md:text-xl text-midnight/60 max-w-3xl mx-auto font-light leading-relaxed">
           Prio Sanering AB är ett specialiserat saneringsföretag med erfarenhet
           från miljöer där hygien, skyddsrutiner, biologiska risker och
-          kontrollerade arbetsmetoder är avgörande. Vi arbetar med teknisk
-          sanering i känsliga och krävande miljöer där vanlig rengöring inte
-          räcker.
+          kontrollerade arbetsmetoder är avgörande.
         </p>
       </motion.section>
 
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-14 items-center mb-14 sm:mb-16 md:mb-24">
-        <motion.div {...fadeInUp}>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-midnight mb-5 sm:mb-6 leading-tight">
-            Erfarenhet från kontrollerade och biologiskt känsliga miljöer
-          </h2>
-
-          <div className="space-y-4 text-sm sm:text-base md:text-lg text-midnight/65 font-light leading-relaxed">
-            <p>
-              Vår bakgrund omfattar arbete i laboratoriemiljöer, blodbank,
-              renrum, biologisk dekontaminering och teknisk hantering av
-              material som kräver särskild försiktighet. Det är miljöer där
-              hygien, spårbarhet, zonindelning och kontroll är en del av det
-              dagliga arbetet.
-            </p>
-
-            <p>
-              Den erfarenheten ger oss en teknisk förståelse för situationer där
-              det kan finnas blod, kroppsvätskor, lukt, organiskt material eller
-              kontaminerade ytor. För oss handlar sanering därför inte bara om
-              att något ska se rent ut, utan om att arbetet ska utföras med rätt
-              metod, skydd och kontroll.
-            </p>
-
-            <p>
-              Vid behov kan vi även hantera material som kräver selektiv
-              demontering, till exempel när förorening har påverkat golv,
-              väggar, kök, ventilation eller andra delar av bostaden. Det gör
-              att vi kan kombinera teknisk sanering med praktiskt genomförande
-              på plats.
-            </p>
-          </div>
-        </motion.div>
-
-        <motion.div
-          className="bg-midnight text-white p-6 sm:p-8 md:p-10 rounded-[2rem] md:rounded-[3rem]"
-          {...fadeInUp}
-          transition={{ ...fadeInUp.transition, delay: 0.15 }}
-        >
-          <ClipboardCheck className="w-12 h-12 sm:w-14 sm:h-14 text-cyan-accent mb-6" />
-
-          <h3 className="text-2xl sm:text-3xl font-bold mb-5 leading-tight">
-            Mer än visuell rengöring
-          </h3>
-
-          <p className="text-sm sm:text-base text-white/70 font-light leading-relaxed mb-6">
-            I våra uppdrag räcker det inte att en yta ser ren ut. Arbetet
-            behöver vara säkert, kontrollerat och anpassat efter risknivå,
-            material och miljö. Därför arbetar vi med tydliga rutiner,
-            skyddsutrustning, checklistor och kontroll före, under och efter
-            insatsen.
-          </p>
-
-          <div className="space-y-4">
-            {workPrinciples.map((item) => (
-              <div key={item} className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-cyan-accent flex-shrink-0 mt-0.5" />
-                <span className="text-sm sm:text-base text-white/85 leading-relaxed">
-                  {item}
-                </span>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
-
-      <section className="mb-14 sm:mb-16 md:mb-24">
-        <motion.div className="text-center mb-10 sm:mb-12" {...fadeInUp}>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-midnight mb-4">
-            Teamet bakom Prio Sanering
-          </h2>
-
-          <p className="text-base sm:text-lg text-midnight/60 max-w-3xl mx-auto font-light leading-relaxed">
-            Bakom Prio Sanering AB finns ett team med praktisk erfarenhet från
-            laboratoriemiljöer, blodbank, biologisk dekontaminering, teknisk sanering
-            och selektiv demontering. Det ger oss en teknisk grund i arbetet med
-            biologiska risker, kontaminerade material och känsliga miljöer.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
-          {team.map((member, index) => (
-            <motion.div
-              key={member.name}
-              className="bg-slate-50 rounded-3xl border border-midnight/5 overflow-hidden"
-              {...fadeInUp}
-              transition={{ ...fadeInUp.transition, delay: index * 0.1 }}
-            >
-              <div className="aspect-[4/3] bg-midnight/5 overflow-hidden">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-
-              <div className="p-6 sm:p-7">
-                <h3 className="text-xl sm:text-2xl font-bold text-midnight mb-2">
-                  {member.name}
-                </h3>
-
-                <p className="text-cyan-accent font-bold text-sm sm:text-base mb-4 leading-snug">
-                  {member.role}
-                </p>
-
-                <p className="text-sm sm:text-base text-midnight/60 font-light leading-relaxed">
-                  {member.desc}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
+      {/* VALUES */}
       <section className="mb-14 sm:mb-16 md:mb-24">
         <motion.div className="text-center mb-10 sm:mb-12" {...fadeInUp}>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-midnight mb-4">
             Det vi står för
           </h2>
-
-          <p className="text-base sm:text-lg text-midnight/60 max-w-2xl mx-auto font-light leading-relaxed">
-            Våra uppdrag kan se olika ut, men grunden i vårt arbete är alltid
-            densamma.
-          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
@@ -235,18 +112,26 @@ export default function About() {
         </div>
       </section>
 
+      {/* PRINCIPLES */}
       <section className="bg-slate-50 p-6 sm:p-8 md:p-12 lg:p-16 rounded-[2rem] md:rounded-[3rem] border border-midnight/5">
         <motion.div className="max-w-4xl mx-auto text-center" {...fadeInUp}>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-midnight mb-5 sm:mb-6 leading-tight">
-            Ett tryggt val när uppdraget kräver teknisk förståelse
+            Ett tryggt arbetssätt
           </h2>
 
-          <p className="text-base sm:text-lg md:text-xl text-midnight/60 font-light leading-relaxed">
-            Prio Sanering AB finns för uppdrag där det behövs mer än en snabb
-            städinsats. Vi kombinerar teknisk erfarenhet, strukturerade
-            arbetsrutiner och mänskligt bemötande, så att kunden får en lösning
-            som känns trygg, tydlig och professionell.
-          </p>
+          <div className="grid sm:grid-cols-2 gap-4 mt-10 text-left">
+            {workPrinciples.map((item) => (
+              <div
+                key={item}
+                className="flex items-start gap-3 bg-white border border-slate-200 p-5 rounded-2xl"
+              >
+                <CheckCircle2 className="w-5 h-5 text-cyan-accent flex-shrink-0 mt-0.5" />
+                <span className="text-sm sm:text-base text-midnight/70 leading-relaxed">
+                  {item}
+                </span>
+              </div>
+            ))}
+          </div>
         </motion.div>
       </section>
     </motion.div>
