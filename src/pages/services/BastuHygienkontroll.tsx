@@ -1,164 +1,205 @@
 import { motion } from "motion/react";
 import { Helmet } from "react-helmet-async";
-import { Wind, AlertTriangle, CheckCircle2, Sparkles } from "lucide-react";
+import { Wind } from "lucide-react";
 
 const fade = {
-  initial: { opacity: 0, y: 30 },
+  initial: { opacity: 0, y: 35 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.7, ease: [0.25, 1, 0.5, 1] },
+  transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] },
 };
 
-export default function Bastu() {
+export default function BastuHygienkontroll() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="max-w-7xl mx-auto px-4 md:px-10 py-16 md:py-28"
+      className="bg-white"
     >
       <Helmet>
-        <title>Bastu hygien</title>
+        <title>Bastu – teknisk hygienbehandling</title>
       </Helmet>
 
-      {/* HERO — CLEAN EDITORIAL */}
-      <motion.section {...fade} className="max-w-4xl">
-        <div className="flex items-center gap-2 text-cyan-accent mb-4">
+      {/* HERO */}
+      <motion.section
+        {...fade}
+        className="max-w-6xl mx-auto px-6 md:px-16 pt-28 pb-24"
+      >
+        <div className="flex items-center gap-2 text-cyan-accent mb-6">
           <Wind className="w-5 h-5" />
-          <span className="uppercase text-xs tracking-widest font-bold">
+          <span className="uppercase tracking-[0.3em] text-xs font-semibold">
             Bastu & wellness
           </span>
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-bold text-midnight leading-tight">
-          Teknisk hygien för bastu- och wellnessmiljöer
+        <h1 className="text-5xl md:text-7xl font-light tracking-tight text-midnight leading-[1.05] max-w-4xl">
+          Teknisk hygienbehandling för bastu- och wellnessmiljöer
         </h1>
 
-        <p className="mt-6 text-lg text-midnight/60 max-w-2xl">
-          Djupgående behandling av träytor och fuktutsatta miljöer där
-          standardstädning inte räcker.
+        <p className="mt-10 text-xl text-midnight/60 max-w-2xl leading-relaxed">
+          Vi arbetar där traditionell städning slutar: i materialets struktur,
+          inte på ytan.
         </p>
       </motion.section>
 
-      {/* SPLIT SECTION — PROBLEM */}
-      <motion.section
-        {...fade}
-        className="mt-24 grid md:grid-cols-2 gap-12 items-start"
-      >
-        <div>
-          <h2 className="text-3xl font-bold text-midnight mb-6">
+      {/* PROBLEM */}
+      <motion.section {...fade} className="bg-slate-50 py-28 px-6 md:px-16">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-light text-midnight mb-12">
             Problemet
           </h2>
 
-          <div className="space-y-6 text-midnight/70">
-            <p>Biofilm utvecklas i porösa träytor</p>
-            <p>Lukt fastnar i fuktiga miljöer</p>
-            <p>Kontaktytor återkontamineras snabbt</p>
-          </div>
-        </div>
-
-        <div className="bg-slate-50 p-10 rounded-3xl">
-          <AlertTriangle className="text-cyan-accent mb-4" />
-          <p className="text-midnight/70 leading-relaxed">
-            Standardstädning tar endast bort det synliga.
-            Problemen ligger djupt i material och struktur.
-          </p>
-        </div>
-      </motion.section>
-
-      {/* DARK FEATURE BLOCK — SOLUTION */}
-      <motion.section
-        {...fade}
-        className="mt-24 bg-midnight text-white rounded-[2.5rem] p-14"
-      >
-        <h2 className="text-3xl font-bold mb-6">
-          Teknisk hygienbehandling
-        </h2>
-
-        <p className="text-white/70 max-w-2xl mb-10">
-          Vi arbetar på materialnivå, inte ytnivå.
-        </p>
-
-        <div className="grid md:grid-cols-2 gap-6 text-white/80">
-          <p>• Termisk behandling (ånga)</p>
-          <p>• Mekanisk borttagning av beläggning</p>
-          <p>• Riktad hygienbehandling</p>
-          <p>• Verifiering vid behov</p>
-        </div>
-      </motion.section>
-
-      {/* FULL WIDTH AREA BLOCK — CLEAN GRID */}
-      <motion.section {...fade} className="mt-24">
-        <h2 className="text-3xl font-bold mb-8 text-midnight">
-          Användningsområden
-        </h2>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {[
-            "Gym",
-            "Spa",
-            "Bastu",
-            "Hotell",
-            "Omklädning",
-            "Fuktmiljöer",
-          ].map((x) => (
-            <div
-              key={x}
-              className="border border-midnight/10 rounded-2xl p-5 hover:shadow-sm transition"
-            >
-              {x}
-            </div>
-          ))}
-        </div>
-      </motion.section>
-
-      {/* SERVICE DEEP FOCUS — NO CARDS */}
-      <motion.section
-        {...fade}
-        className="mt-24 border-t pt-20 max-w-4xl"
-      >
-        <h2 className="text-3xl font-bold mb-6">
-          Bastuhygien som teknisk tjänst
-        </h2>
-
-        <p className="text-midnight/60 leading-relaxed">
-          En bastu är en av de mest krävande hygienmiljöerna.
-          Kombinationen av värme, fukt och organiskt material kräver
-          metodisk behandling på djup nivå.
-        </p>
-
-        <div className="mt-10 grid md:grid-cols-2 gap-10">
-          <div>
-            <h3 className="font-bold mb-2">Process</h3>
-            <p className="text-midnight/60">
-              Inspektion → behandling → rengöring → kontroll
+          <div className="space-y-8 text-midnight/70 text-lg leading-relaxed">
+            <p>
+              De flesta bastu- och wellnessmiljöer är inte hygieniskt
+              kontrollerade – de är bara visuellt rena.
             </p>
-          </div>
 
-          <div>
-            <h3 className="font-bold mb-2">Resultat</h3>
-            <p className="text-midnight/60">
-              Stabil hygiennivå och förbättrad miljökvalitet
+            <p>
+              Biofilm etableras i porösa träytor, fukt driver mikrobiell
+              tillväxt och kontaktzoner återkontamineras snabbt.
+            </p>
+
+            <p className="font-medium text-midnight">
+              Standardstädning adresserar endast ytan – inte orsaken.
             </p>
           </div>
         </div>
       </motion.section>
 
-      {/* CTA — BIG AND CLEAN */}
-      <motion.section
-        {...fade}
-        className="mt-28 text-center"
-      >
-        <div className="bg-cyan-accent text-white rounded-[2.5rem] p-14">
-          <h2 className="text-3xl font-bold mb-4">
-            Behöver du bastuhygien?
+      {/* MISCONCEPTION */}
+      <motion.section {...fade} className="py-28 px-6 md:px-16">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-light text-midnight mb-12">
+            Vanligt fel i branschen
           </h2>
 
-          <p className="text-white/80 mb-8 max-w-xl mx-auto">
-            För professionella miljöer där hygienstandard är avgörande.
+          <div className="space-y-8 text-midnight/70 text-lg">
+            <p>
+              Antagandet att bastu kan hanteras med vanlig städning är fel
+              från grunden.
+            </p>
+
+            <p>Ytan behandlas istället för orsaken i materialet.</p>
+
+            <p>Fuktens påverkan på trä och biofilm underskattas systematiskt.</p>
+
+            <p className="font-medium text-midnight">
+              Resultatet blir alltid återkommande problem.
+            </p>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* SOLUTION */}
+      <motion.section
+        {...fade}
+        className="bg-midnight text-white py-28 px-6 md:px-16"
+      >
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-light mb-10">
+            Teknisk hygienbehandling
+          </h2>
+
+          <div className="space-y-8 text-white/80 text-lg leading-relaxed">
+            <p>
+              Vi arbetar inte med rengöring. Vi arbetar med kontroll av
+              biologisk belastning i material utsatta för värme och fukt.
+            </p>
+
+            <div className="space-y-4 mt-10">
+              <p>Termisk påverkan för att bryta biologiska strukturer</p>
+              <p>Mekanisk extraktion av organisk beläggning</p>
+              <p>Riktad hygienkontroll av kontaktzoner</p>
+            </div>
+
+            <p className="mt-10 text-white/70">
+              Målet är inte visuell renhet – utan stabil hygiennivå över tid.
+            </p>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* SERVICE */}
+      <motion.section {...fade} className="py-28 px-6 md:px-16">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-light text-midnight mb-12">
+            Teknisk hygienbehandling av bastu
+          </h2>
+
+          <div className="space-y-8 text-midnight/70 text-lg leading-relaxed">
+            <p>
+              Bastu är en av de mest komplexa hygienmiljöerna där värme, fukt
+              och trä samverkar kontinuerligt.
+            </p>
+
+            <p>
+              Traditionella metoder misslyckas eftersom de inte når
+              materialnivån där problemet uppstår.
+            </p>
+
+            <div className="mt-10 space-y-4">
+              <p>• Kartläggning av belastningszoner</p>
+              <p>• Termisk behandling av trästrukturer</p>
+              <p>• Mekanisk behandling av kontaktpunkter</p>
+              <p>• Djup hygienkontroll av golv och dränering</p>
+              <p>• Verifiering vid behov</p>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* RESULTS */}
+      <motion.section
+        {...fade}
+        className="bg-slate-50 py-28 px-6 md:px-16"
+      >
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-light text-midnight mb-12">
+            Resultat
+          </h2>
+
+          <div className="space-y-6 text-midnight/70 text-lg">
+            <p>Reducerad lukt vid källan</p>
+            <p>Stabil hygiennivå i materialet</p>
+            <p>Minskad återkontaminering</p>
+            <p>Förbättrad upplevd miljökvalitet</p>
+          </div>
+
+          <p className="mt-10 font-medium text-midnight">
+            Effekten är strukturell, inte kosmetisk.
           </p>
+        </div>
+      </motion.section>
+
+      {/* AUDIENCE */}
+      <motion.section {...fade} className="py-28 px-6 md:px-16">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-light text-midnight mb-12">
+            För vem detta är
+          </h2>
+
+          <div className="space-y-6 text-midnight/70 text-lg">
+            <p>Gym och träningsanläggningar</p>
+            <p>Spa och wellnessmiljöer</p>
+            <p>Hotell och resort</p>
+            <p>Bastu- och fuktutrymmen</p>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* CTA */}
+      <motion.section
+        {...fade}
+        className="bg-cyan-accent text-white py-28 px-6 md:px-16"
+      >
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-light">
+            Behöver du en bastu med kontrollerad hygiennivå?
+          </h2>
 
           <a
             href="tel:0101234567"
-            className="bg-white text-midnight px-8 py-4 rounded-full font-bold inline-block"
+            className="inline-block mt-12 bg-white text-midnight px-10 py-5 rounded-full font-medium"
           >
             Kontakta oss
           </a>
