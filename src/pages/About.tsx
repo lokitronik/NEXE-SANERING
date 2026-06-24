@@ -43,30 +43,6 @@ const workPrinciples = [
   "Kontroll och dokumentation före, under och efter insats",
 ];
 
-const team = [
-  {
-    name: "Eduard Bosch",
-    role: "Sanering & teknisk rivning",
-    image: "DIN_BILD_URL_HÄR",
-    desc:
-      "Erfarenhet från blodbank, biologiskt material och praktiskt arbete med teknisk rivning. Bidrar med förståelse för hur kontaminerade material kan identifieras, tas bort och hanteras när förorening har påverkat golv, väggar, ventilation eller andra delar av bostaden.",
-  },
-  {
-    name: "Jordi Bosch",
-    role: "Biologiskt material & dekontaminering",
-    image: "DIN_BILD_URL_HÄR",
-    desc:
-      "Lång erfarenhet från blodbank, komponenthantering och arbete med biologiskt material. Bidrar med biosäkerhet, dekontaminering, avfallshantering och erfarenhet av hygienrutiner i vårdnära miljöer där kontroll och förebyggande arbete är avgörande.",
-  },
-  {
-    name: "Manel Zurita",
-    role: "Laboratorierutiner & biologisk riskförståelse",
-    image: "DIN_BILD_URL_HÄR",
-    desc:
-      "Erfarenhet från laboratoriemiljöer, blodbank, renrum och dekontaminering av biologiskt material. Bidrar med struktur, hygienrutiner, dokumentation och förståelse för hur rena och påverkade områden hålls separerade i kontrollerade arbetsflöden.",
-  },
-];
-
 export default function About() {
   return (
     <motion.div
