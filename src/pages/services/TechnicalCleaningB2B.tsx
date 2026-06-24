@@ -29,11 +29,11 @@ const PROCESS = [
     title: "Vägglössbehandling med torrånga",
     body: "Ånga vid hög temperatur (upp till 173°C, 8 bar) eliminerar vägglöss och ägg på tillgängliga ytor — textilier, sömmar, madrasser, sängramar och möbler. Kräver inte kemikalier.",
   },
-  {
-    icon: ShieldCheck,
-    title: "Dokumentation",
-    body: "Protokoll efter varje insats — metod, ytor och kontrollpunkter.",
-  },
+{
+  icon: ShieldCheck,
+  title: "Dokumentation",
+  body: "Protokoll efter varje insats — metod, ytor och kontrollpunkter. Vid behov används ATP-mätning (t.ex. Hygiena AquaSnap Total) för snabb verifiering av hygiennivå och rengöringseffektivitet.",
+},
 ];
 
 const SEGMENTS = [
@@ -51,6 +51,20 @@ const SEGMENTS = [
     body:
       "Hygieninsats för hostel och vandrarhem med hög belastning. Fokus på toaletter, hygienutrymmen, gemensamma ytor och kontaktintensiva ytor med snabb återanvändning av lokaler.",
   },
+  {
+  icon: Hotel,
+  title: "Övernattningslägenheter & korttidsboende",
+  tag: "Boende & uthyrning",
+  body:
+    "Hygieninsats för övernattningslägenheter, serviced apartments och korttidsboenden. Fokus på toaletter, hygienutrymmen, kök och gemensamma kontaktytor. Anpassat för hög omsättning av gäster och snabb återanvändning av lokaler.",
+},
+  {
+  icon: ShieldCheck,
+  title: "Omklädningsrum & personalutrymmen",
+  tag: "Arbetsmiljö",
+  body:
+    "Teknisk hygienbehandling av omklädningsrum, duschar och personalutrymmen i företag och industri. Fokus på högtrafikerade kontaktytor, toaletter och hygienutrymmen med krav på renlighet och arbetsmiljöstandard.",
+},
   {
     icon: GraduationCap,
     title: "Skolor, förskolor & stödcentrum",
@@ -79,6 +93,7 @@ const SEGMENTS = [
     body:
       "Hygienkontroll och teknisk behandling i kliniker och privata vårdmottagningar. Fokus på behandlingsrum, hygienutrymmen, toaletter och kontaktpunkter med krav på hög hygienstandard och dokumentation.",
   },
+  
   {
     icon: Anchor,
     title: "Båtar, färjor & marin miljö",
