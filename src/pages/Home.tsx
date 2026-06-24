@@ -85,7 +85,7 @@ const preventativeServices = [
   description:
     "Specialiserad hygienbehandling av bastu- och wellnessmiljöer med hög värme och fukt. Fokus på porösa träytor, kontaktytor och områden där biofilm och organiskt material ackumuleras över tid. Anpassad för gym, spa och hotellmiljöer.",
   icon: <Wind className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
-  link: "/tjanster/BastuHygienkontroll",
+  link: "/tjanster/bastu-hygienkontroll",
 },
 ];
 
