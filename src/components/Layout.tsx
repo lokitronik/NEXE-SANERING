@@ -135,15 +135,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   Luktsanering
                 </Link>
               </li>
-
-              <li>
-                <Link
-                  to="/tjanster/bastu-hygienkontroll"
-                  className="hover:text-cyan-accent"
-                >
-                  Bastu Hygienkontroll
-                </Link>
-              </li>
+              
             </ul>
 
             <h4 className="font-bold mt-7 sm:mt-8 mb-5 sm:mb-6 uppercase tracking-widest text-xs text-midnight/40">
@@ -163,6 +155,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <li>
                 <Link to="/tjanster/svaratkomliga-ytor" className="hover:text-cyan-accent">
                   Svåråtkomliga ytor
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/tjanster/bastu-hygienkontroll"
+                  className="hover:text-cyan-accent"
+                >
+                  Bastu Hygienkontroll
                 </Link>
               </li>
             </ul>
