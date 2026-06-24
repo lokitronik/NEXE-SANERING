@@ -45,6 +45,13 @@ const SEGMENTS = [
       "Förebyggande hygieninsats för rum, gemensamma ytor, toaletter och hygienutrymmen i uthyrningsboenden. Inkluderar ATP-mätning som kontrollpunkt, hydroxylbehandling och dokumentation. Sommarstugor och privatbostäder: engångsinsats inför eller efter säsong.",
   },
   {
+    icon: Hotel,
+    title: "Hostel & vandrarhem",
+    tag: "Boende & hög genomströmning",
+    body:
+      "Hygieninsats för hostel och vandrarhem med hög belastning. Fokus på toaletter, hygienutrymmen, gemensamma ytor och kontaktintensiva ytor med snabb återanvändning av lokaler.",
+  },
+  {
     icon: GraduationCap,
     title: "Skolor, förskolor & stödcentrum",
     tag: "Känsliga miljöer",
@@ -57,6 +64,20 @@ const SEGMENTS = [
     tag: "Hög belastning",
     body:
       "Hygieninsatser för gym, omklädningsrum, duschar, toaletter och andra högtrafikerade hygienutrymmen. Fokus på kontaktintensiva ytor, svettpåverkade miljöer och luktproblematik.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Äldreboenden & omsorgsboenden",
+    tag: "Vård & omsorg",
+    body:
+      "Teknisk hygienbehandling i äldreboenden och omsorgsmiljöer med särskilt fokus på hygienutrymmen, toaletter och kontaktytor. Anpassat för känsliga grupper och höga hygienkrav.",
+  },
+  {
+    icon: Microscope,
+    title: "Kliniker & vårdmottagningar",
+    tag: "Vård & medicin",
+    body:
+      "Hygienkontroll och teknisk behandling i kliniker och privata vårdmottagningar. Fokus på behandlingsrum, hygienutrymmen, toaletter och kontaktpunkter med krav på hög hygienstandard och dokumentation.",
   },
   {
     icon: Anchor,
@@ -79,15 +100,15 @@ export default function TechnicalCleaningB2B() {
         <title>Teknisk hygienbehandling | Prio Sanering AB</title>
         <meta
           name="description"
-          content="Teknisk hygienbehandling för hotell, skolor, förskolor, gym, sommarstugor och båtar. Hydroxyl, inokulösa desinfektionsmedel och ATP-mätning. Stockholm."
+          content="Teknisk hygienbehandling för hotell, hostel, skolor, förskolor, gym, äldreboenden, kliniker och marin miljö. Hydroxyl, desinfektion och dokumentation."
         />
         <meta
           name="keywords"
-          content="teknisk rengöring, hygienkontroll hotell, skola sanering, gym hygien, förskola desinfektion, sommarstuga hygien, båt sanering, hydroxylbehandling, ATP-mätning Stockholm"
+          content="teknisk hygien, hotell städning, hostel hygien, äldreboende rengöring, klinik desinfektion, gym hygien, ATP mätning Stockholm"
         />
       </Helmet>
 
-      {/* ── Hero ── */}
+      {/* HERO */}
       <motion.div className="mb-16 md:mb-20" {...fadeUp(0)}>
         <div className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-accent uppercase tracking-widest mb-6">
           <ShieldCheck className="w-4 h-4" />
@@ -100,12 +121,12 @@ export default function TechnicalCleaningB2B() {
         </h1>
 
         <p className="text-lg md:text-xl text-midnight/60 font-light leading-relaxed max-w-2xl">
-          Teknisk hygienbehandling för hotell, skolor, förskolor, gym, sommarstugor, toaletter med hög användningsgrad och marin miljö.
-          Vi använder samma certifierade metoder oavsett miljö — anpassat efter varje uppdrag och verksamhetens förutsättningar.
+          Teknisk hygienbehandling för hotell, hostel, skolor, förskolor, gym, äldreboenden, kliniker, sommarstugor och marin miljö.
+          Samma certifierade metod — anpassad efter varje verksamhets behov.
         </p>
       </motion.div>
 
-      {/* ── Tree ── */}
+      {/* PROCESS */}
       <motion.div className="mb-20" {...fadeUp(0.1)}>
         <div className="flex justify-center mb-0">
           <div className="w-full max-w-3xl bg-midnight rounded-2xl px-8 py-8">
@@ -127,7 +148,7 @@ export default function TechnicalCleaningB2B() {
           </div>
         </div>
 
-        {/* Segments */}
+        {/* SEGMENTS */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {SEGMENTS.map(({ icon: Icon, title, tag, body }, i) => (
             <motion.div
@@ -151,7 +172,7 @@ export default function TechnicalCleaningB2B() {
         </div>
       </motion.div>
 
-      {/* ── CTA ── */}
+      {/* CTA */}
       <motion.div
         className="bg-midnight rounded-2xl p-8 md:p-12 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
         {...fadeUp(0.35)}
@@ -160,17 +181,17 @@ export default function TechnicalCleaningB2B() {
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
             Boka en teknisk bedömning
           </h2>
+
           <p className="text-white/50 font-light leading-relaxed mb-6">
-            Vi tittar på lokalen, verksamheten och behovet — och föreslår
-            en insats anpassad efter era förutsättningar. Ingen bindning.
+            Vi analyserar lokalen och föreslår en anpassad insats utan bindning.
           </p>
 
           <ul className="space-y-2">
             {[
-              "Hotell, Airbnb, sommarstugor och uthyrningsboenden",
-              "Skolor, förskolor, gym och LSS-boenden",
-              "Sommarstugor och vilohem",
-              "Båtar, fartyg, färjor och marin miljö",
+              "Hotell, hostel och uthyrningsboenden",
+              "Skolor, förskolor och gym",
+              "Äldreboenden och kliniker",
+              "Båtar, färjor och marin miljö",
             ].map((item) => (
               <li key={item} className="flex items-center gap-3">
                 <ChevronRight className="w-4 h-4 text-cyan-accent flex-shrink-0" />
@@ -182,7 +203,7 @@ export default function TechnicalCleaningB2B() {
 
         <div className="flex flex-col items-center text-center">
           <p className="text-white/40 text-sm font-medium mb-6">
-            Kontakta oss för en första bedömning
+            Kontakta oss för bedömning
           </p>
 
           <a
