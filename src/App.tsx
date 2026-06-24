@@ -50,7 +50,7 @@ function AnimatedRoutes() {
 
         <Route path="/integritetspolicy" element={<PrivacyPolicy />} />
         <Route path="/allmanna-villkor" element={<TermsAndConditions />} />
-        <Route  path="/tjanster/BastuHygienkontroll" element={<BastuHygienkontroll />}
+        <Route  path="/tjanster/bastu-hygienkontroll" element={<BastuHygienkontroll />}
 />
       </Routes>
     </AnimatePresence>
