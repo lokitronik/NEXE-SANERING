@@ -8,35 +8,6 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.7, ease: [0.25, 1, 0.5, 1], delay },
 });
 
-const PROBLEM = [
-  "Bastun kan se ren ut men ändå bära på osynlig hygienpåverkan",
-  "Fukt och värme skapar naturliga förutsättningar för beläggningar i träytor",
-  "Kontaktpunkter som bänkar och ryggstöd påverkas snabbast",
-  "Lukt kan uppstå trots regelbunden städning",
-];
-
-const PROCESS = [
-  "Termisk behandling av träytor",
-  "Mekanisk rengöring av kontaktpunkter",
-  "Djup behandling av golv och fuktutsatta zoner",
-  "Anpassad hygienbehandling för bastumiljö",
-];
-
-const RESULTS = [
-  "Fräschare och mer neutral miljö",
-  "Minskad lukt i utrymmet",
-  "Renare kontaktpunkter",
-  "Förbättrad känsla av hygien",
-  "Längre hållbar renhet mellan behandlingar",
-];
-
-const AREAS = [
-  "Gym och träningsanläggningar",
-  "Spa och wellness",
-  "Hotell och resort",
-  "Privata bastur och relaxutrymmen",
-];
-
 export default function BastuHygienkontroll() {
   return (
     <motion.div
@@ -48,7 +19,7 @@ export default function BastuHygienkontroll() {
         <title>Bastu – teknisk hygienbehandling</title>
       </Helmet>
 
-      {/* HERO */}
+      {/* HERO (con bloque visual) */}
       <motion.div {...fadeUp(0)}>
         <div className="flex items-center gap-2 text-cyan-accent mb-6">
           <Wind className="w-5 h-5" />
@@ -57,51 +28,77 @@ export default function BastuHygienkontroll() {
           </span>
         </div>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-midnight leading-tight mb-6 max-w-3xl">
-          Bastuhygien på en teknisk nivå
-        </h1>
+        <div className="bg-slate-50 border border-slate-200 rounded-3xl p-10 md:p-14">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-midnight leading-tight mb-6 max-w-3xl">
+            Bastuhygien på en teknisk nivå
+          </h1>
 
-        <p className="text-lg md:text-xl text-midnight/60 font-light leading-relaxed max-w-2xl">
-          En bastu utsätts dagligen för värme, fukt och direkt kontakt med träytor.
-          Det skapar en miljö där hygienpåverkan byggs upp över tid – även vid regelbunden städning.
-        </p>
+          <p className="text-lg md:text-xl text-midnight/60 font-light leading-relaxed max-w-2xl">
+            En bastu utsätts dagligen för värme, fukt och kontakt med träytor.
+            Det skapar en miljö där hygienpåverkan byggs upp över tid.
+          </p>
+        </div>
       </motion.div>
 
-      {/* PROBLEM */}
+      {/* PROBLEM BOXES */}
       <motion.div {...fadeUp(0.1)} className="mt-20">
         <h2 className="text-2xl md:text-3xl font-bold text-midnight mb-8">
           Utmaningen
         </h2>
 
-        <div className="space-y-5 text-midnight/70 text-lg leading-relaxed">
-          {PROBLEM.map((item) => (
-            <p key={item}>{item}</p>
+        <div className="grid md:grid-cols-2 gap-6">
+          {[
+            "Bastun kan se ren ut men vara hygieniskt instabil",
+            "Biofilm fastnar i porösa träytor",
+            "Fukt driver kontinuerlig mikrobiell aktivitet",
+            "Kontaktpunkter återkontamineras snabbt"
+          ].map((item) => (
+            <div
+              key={item}
+              className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm"
+            >
+              <p className="text-midnight/70 leading-relaxed">{item}</p>
+            </div>
           ))}
         </div>
       </motion.div>
 
-      {/* PROCESS */}
+      {/* PROCESS SECTION (midnight blocks) */}
       <motion.div {...fadeUp(0.2)} className="mt-24">
         <h2 className="text-2xl md:text-3xl font-bold text-midnight mb-8">
-          Behandlingen
+          Behandling
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-6 text-midnight/70 text-lg">
-          {PROCESS.map((item) => (
-            <p key={item}>• {item}</p>
+        <div className="grid md:grid-cols-2 gap-6">
+          {[
+            "Termisk behandling av träytor",
+            "Mekanisk rengöring av kontaktzoner",
+            "Djup behandling av fuktutsatta ytor",
+            "Anpassad hygieninsats för bastumiljö"
+          ].map((item) => (
+            <div className="bg-midnight text-white rounded-2xl p-6">
+              <p className="text-white/80">{item}</p>
+            </div>
           ))}
         </div>
       </motion.div>
 
-      {/* RESULT */}
+      {/* RESULTS (soft cards) */}
       <motion.div {...fadeUp(0.3)} className="mt-24">
         <h2 className="text-2xl md:text-3xl font-bold text-midnight mb-8">
           Resultat
         </h2>
 
-        <div className="space-y-4 text-midnight/70 text-lg">
-          {RESULTS.map((item) => (
-            <p key={item}>{item}</p>
+        <div className="grid sm:grid-cols-2 gap-6">
+          {[
+            "Minskad lukt i rummet",
+            "Renare kontaktpunkter",
+            "Förbättrad hygienkänsla",
+            "Längre hållbar renhet mellan behandlingar"
+          ].map((item) => (
+            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+              <p className="text-midnight/70">{item}</p>
+            </div>
           ))}
         </div>
       </motion.div>
@@ -112,24 +109,31 @@ export default function BastuHygienkontroll() {
           Användningsområden
         </h2>
 
-        <div className="space-y-4 text-midnight/70 text-lg">
-          {AREAS.map((item) => (
-            <p key={item}>{item}</p>
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+          {[
+            "Gym",
+            "Spa",
+            "Hotell",
+            "Privata bastur"
+          ].map((item) => (
+            <div className="border border-slate-200 rounded-xl p-4 text-center">
+              <p className="text-midnight/70 text-sm">{item}</p>
+            </div>
           ))}
         </div>
       </motion.div>
 
-      {/* CTA */}
+      {/* CTA (strong block) */}
       <motion.div
         {...fadeUp(0.5)}
-        className="mt-24 bg-midnight text-white p-10 rounded-2xl text-center"
+        className="mt-24 bg-midnight text-white rounded-3xl p-12 text-center"
       >
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
-          Vill du förbättra hygienen i din bastu?
+          Vill du ha en bastu som verkligen är hygieniskt kontrollerad?
         </h2>
 
         <p className="text-white/60 mb-8 max-w-xl mx-auto">
-          Vi anpassar behandlingen efter din miljö och användning.
+          Vi behandlar inte ytan — vi behandlar miljön.
         </p>
 
         <a
