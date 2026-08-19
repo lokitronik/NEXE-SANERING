@@ -17,15 +17,15 @@ export default function PrivacyPolicy() {
       className="py-24 px-6 md:px-12 max-w-4xl mx-auto"
     >
       <Helmet>
-        <title>Integritetspolicy | Prio Sanering AB</title>
-        <meta name="description" content="Information om hur Prio Sanering AB hanterar dina personuppgifter i enlighet med GDPR." />
+        <title>Integritetspolicy | Nexe Sanering AB</title>
+        <meta name="description" content="Information om hur Nexe Sanering AB hanterar dina personuppgifter i enlighet med GDPR." />
       </Helmet>
 
       <motion.div {...fadeInUp} className="mb-12">
         <Shield className="w-12 h-12 text-cyan-accent mb-6" />
         <h1 className="text-4xl md:text-5xl font-bold mb-8">Integritetspolicy</h1>
         <p className="text-midnight/60 text-lg leading-relaxed mb-8">
-          Din integritet är av högsta prioritet för oss på Prio Sanering AB. Denna policy beskriver hur vi samlar in, använder och skyddar dina personuppgifter i enlighet med dataskyddsförordningen (GDPR).
+          Din integritet är av högsta prioritet för oss på Nexe Sanering AB. Denna policy beskriver hur vi samlar in, använder och skyddar dina personuppgifter i enlighet med dataskyddsförordningen (GDPR).
         </p>
       </motion.div>
 
@@ -75,8 +75,8 @@ export default function PrivacyPolicy() {
           <p>
             Om du har frågor gällande vår integritetspolicy eller vår behandling av dina personuppgifter, vänligen kontakta oss på:
             <br /><br />
-            <strong>Prio Sanering AB</strong><br />
-            E-post: info@priosanering.se<br />
+            <strong>Nexe Sanering AB</strong><br />
+            E-post: info@nexesanering.se<br />
             Telefon: 010-XXX XX XX
           </p>
         </section>
