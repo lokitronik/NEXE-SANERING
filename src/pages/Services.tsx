@@ -98,7 +98,7 @@ export default function Services() {
       className="py-14 sm:py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-12 max-w-7xl mx-auto"
     >
       <Helmet>
-        <title>Våra tjänster | Prio Sanering AB</title>
+        <title>Våra tjänster | Nexe Sanering AB</title>
         <meta
           name="description"
           content="Utforska våra specialiserade tjänster inom biologisk sanering, traumasanering, luktsanering, socialsanering, förebyggande hygienbehandling med torrånga och hydroxylteknik, teknisk rengöring och sanering av svåråtkomliga ytor."
@@ -194,7 +194,7 @@ export default function Services() {
           <Users className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-cyan-accent mx-auto mb-6 sm:mb-7 md:mb-8" />
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-7 md:mb-8 leading-tight">
-            Varför välja Prio Sanering?
+            Varför välja Nexe Sanering?
           </h2>
 
           <p className="text-base sm:text-lg md:text-xl font-light leading-relaxed opacity-90 mb-8 sm:mb-10 md:mb-12">
