@@ -45,7 +45,7 @@ export default function Logo({ className = "" }: { className?: string }) {
         </span>
 
         <span className="text-xl md:text-2xl font-black text-[#0A192F] tracking-tighter">
-          SANERING AB
+          SANERING
         </span>
       </div>
     </div>
