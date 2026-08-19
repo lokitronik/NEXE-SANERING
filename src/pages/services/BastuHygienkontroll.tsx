@@ -39,7 +39,7 @@ export default function BastuHygienkontroll() {
       className="py-24 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden"
     >
       <Helmet>
-        <title>Bastuhygien – Teknisk mikrobiell kontroll | Prio Sanering AB</title>
+        <title>Bastuhygien – Teknisk mikrobiell kontroll | Nexe Sanering AB</title>
         <meta
           name="description"
           content="Avancerad bastuhygien med teknisk desinfektion, ATP-verifiering och borttagning av biofilm i kommersiella miljöer."
