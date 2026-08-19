@@ -26,7 +26,7 @@ export default function atillhörigheter() {
       className="py-14 sm:py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-12 max-w-7xl mx-auto"
     >
       <Helmet>
-        <title>Hantering av personliga tillhörigheter | Prio Sanering AB</title>
+        <title>Hantering av personliga tillhörigheter | Nexe Sanering AB</title>
         <meta
           name="description"
           content="Vi hanterar personliga tillhörigheter med respekt och omsorg vid sanering efter dödsfall eller trauma. Identifiering, desinfektion, säkring och återlämning på ett tryggt sätt."
@@ -60,7 +60,7 @@ export default function atillhörigheter() {
         <div className="bg-slate-50 rounded-[2rem] border border-midnight/5 p-4 sm:p-5 md:p-6 shadow-sm">
           <img
             src="https://i.imgur.com/4eaPmXY_d.webp?maxwidth=760&fidelity=grand"
-            alt="Prio Sanering låda för personliga tillhörigheter"
+            alt="Nexe Sanering låda för personliga tillhörigheter"
             className="w-full h-auto rounded-[1.5rem] object-cover"
             referrerPolicy="no-referrer"
           />
