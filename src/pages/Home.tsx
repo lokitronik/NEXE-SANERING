@@ -117,12 +117,12 @@ export default function Home() {
     >
       <Helmet>
         <title>
-          Prio Sanering AB | Traumasanering, sanering vid dödsfall och
+          Nexe Sanering AB | Traumasanering, sanering vid dödsfall och
           luktsanering
         </title>
         <meta
           name="description"
-          content="Prio Sanering AB erbjuder specialiserade tjänster inom traumasanering, sanering vid dödsfall, socialsanering, luktsanering, förebyggande hygienbehandling med torrånga och hydroxylteknik, teknisk rengöring och sanering av svåråtkomliga ytor."
+          content="Nexe Sanering AB erbjuder specialiserade tjänster inom traumasanering, sanering vid dödsfall, socialsanering, luktsanering, förebyggande hygienbehandling med torrånga och hydroxylteknik, teknisk rengöring och sanering av svåråtkomliga ytor."
         />
         <meta
           name="keywords"
