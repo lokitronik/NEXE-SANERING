@@ -37,7 +37,7 @@ export default function Logo({ className = "" }: { className?: string }) {
         />
       </svg>
       <div className="flex flex-col leading-none">
-        <span className="text-xl md:text-2xl font-bold text-[#808080] tracking-tight">PRIO</span>
+        <span className="text-xl md:text-2xl font-bold text-[#808080] tracking-tight">NEXE</span>
         <span className="text-xl md:text-2xl font-black text-[#0A192F] tracking-tighter">SANERING AB</span>
       </div>
     </div>
