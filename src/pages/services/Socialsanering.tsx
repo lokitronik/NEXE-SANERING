@@ -55,7 +55,7 @@ export default function Socialsanering() {
       className="py-10 sm:py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-12 max-w-7xl mx-auto"
     >
       <Helmet>
-        <title>Socialsanering & hoarder-städning | Prio Sanering AB</title>
+        <title>Socialsanering & hoarder-städning | Nexe Sanering AB</title>
         <meta
           name="description"
           content="Professionell socialsanering och hoarder-städning. Vi hjälper till vid kraftig uppsamling, lukt, biologisk belastning och känsliga bostadssituationer med diskretion och respekt."
