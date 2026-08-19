@@ -19,6 +19,7 @@ export default function Logo({ className = "" }: { className?: string }) {
           stroke="#B0B0B0"
           strokeWidth="4"
         />
+
         {/* Inner Dark Blue Circle */}
         <circle
           cx="50"
@@ -26,6 +27,7 @@ export default function Logo({ className = "" }: { className?: string }) {
           r="38"
           fill="#0A192F"
         />
+
         {/* Diagonal Line */}
         <line
           x1="15"
@@ -36,9 +38,15 @@ export default function Logo({ className = "" }: { className?: string }) {
           strokeWidth="2"
         />
       </svg>
+
       <div className="flex flex-col leading-none">
-        <span className="text-xl md:text-2xl font-bold text-[#808080] tracking-tight">NEXE</span>
-        <span className="text-xl md:text-2xl font-black text-[#0A192F] tracking-tighter">SANERING AB</span>
+        <span className="text-xl md:text-2xl font-bold text-[#0A192F] tracking-tight">
+          N<span className="text-[#808080]">X</span>E
+        </span>
+
+        <span className="text-xl md:text-2xl font-black text-[#0A192F] tracking-tighter">
+          SANERING AB
+        </span>
       </div>
     </div>
   );
