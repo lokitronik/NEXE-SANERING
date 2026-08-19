@@ -23,7 +23,7 @@ export default function HardToReachDisinfection() {
       className="py-24 px-6 md:px-12 max-w-7xl mx-auto"
     >
       <Helmet>
-        <title>Svåråtkomliga ytor | Prio Sanering AB - Specialiserad Desinfektion</title>
+        <title>Svåråtkomliga ytor | Nexe Sanering AB - Specialiserad Desinfektion</title>
         <meta name="description" content="Specialiserad desinfektion av dolda och svåråtkomliga utrymmen. Vi når där andra går bet för att säkerställa en helt smittfri miljö." />
         <meta name="keywords" content="desinfektion svåråtkomliga ytor, sanering dolda utrymmen, teknisk rengöring, smittskydd" />
       </Helmet>
