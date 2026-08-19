@@ -17,15 +17,15 @@ export default function TermsAndConditions() {
       className="py-24 px-6 md:px-12 max-w-4xl mx-auto"
     >
       <Helmet>
-        <title>Allmänna villkor | Prio Sanering AB</title>
-        <meta name="description" content="Allmänna villkor för tjänster utförda av Prio Sanering AB." />
+        <title>Allmänna villkor | Nexe Sanering AB</title>
+        <meta name="description" content="Allmänna villkor för tjänster utförda av Nexe Sanering AB." />
       </Helmet>
 
       <motion.div {...fadeInUp} className="mb-12">
         <FileText className="w-12 h-12 text-cyan-accent mb-6" />
         <h1 className="text-4xl md:text-5xl font-bold mb-8">Allmänna villkor</h1>
         <p className="text-midnight/60 text-lg leading-relaxed mb-8">
-          Dessa allmänna villkor gäller för alla tjänster som tillhandahålls av Prio Sanering AB till privatpersoner och företagskunder.
+          Dessa allmänna villkor gäller för alla tjänster som tillhandahålls av Nexe Sanering AB till privatpersoner och företagskunder.
         </p>
       </motion.div>
 
@@ -33,7 +33,7 @@ export default function TermsAndConditions() {
         <section>
           <h2 className="text-2xl font-bold mb-4 text-midnight">1. Omfattning</h2>
           <p>
-            Prio Sanering AB åtar sig att utföra sanerings- och rengöringstjänster enligt överenskommelse med kunden. Specifikation av tjänsten sker i offert eller orderbekräftelse.
+            Nexe Sanering AB åtar sig att utföra sanerings- och rengöringstjänster enligt överenskommelse med kunden. Specifikation av tjänsten sker i offert eller orderbekräftelse.
           </p>
         </section>
 
@@ -54,28 +54,28 @@ export default function TermsAndConditions() {
         <section>
           <h2 className="text-2xl font-bold mb-4 text-midnight">4. Ansvar och försäkring</h2>
           <p>
-            Prio Sanering AB innehar ansvarsförsäkring för de arbeten vi utför. Vi ansvarar för skador orsakade genom vårdslöshet av vår personal. Kunden ansvarar för att informera om särskilda förhållanden på platsen som kan påverka arbetets utförande.
+            Nexe Sanering AB innehar ansvarsförsäkring för de arbeten vi utför. Vi ansvarar för skador orsakade genom vårdslöshet av vår personal. Kunden ansvarar för att informera om särskilda förhållanden på platsen som kan påverka arbetets utförande.
           </p>
         </section>
 
         <section>
           <h2 className="text-2xl font-bold mb-4 text-midnight">5. Reklamation</h2>
           <p>
-            Eventuella anmärkningar på utfört arbete ska framföras skriftligen till Prio Sanering AB så snart som möjligt, dock senast 7 dagar efter avslutat arbete. Vi förbehåller oss rätten att i första hand åtgärda eventuella brister.
+            Eventuella anmärkningar på utfört arbete ska framföras skriftligen till Nexe Sanering AB så snart som möjligt, dock senast 7 dagar efter avslutat arbete. Vi förbehåller oss rätten att i första hand åtgärda eventuella brister.
           </p>
         </section>
 
         <section>
           <h2 className="text-2xl font-bold mb-4 text-midnight">6. Sekretess</h2>
           <p>
-            På grund av verksamhetens natur (traumasanering, dödsfall etc.) iakttar Prio Sanering AB strikt sekretess gällande alla förhållanden hos kunden som vi får kännedom om under uppdragets utförande.
+            På grund av verksamhetens natur (traumasanering, dödsfall etc.) iakttar Nexe Sanering AB strikt sekretess gällande alla förhållanden hos kunden som vi får kännedom om under uppdragets utförande.
           </p>
         </section>
 
         <section>
           <h2 className="text-2xl font-bold mb-4 text-midnight">7. Force Majeure</h2>
           <p>
-            Prio Sanering AB är befriat från påföljd för underlåtenhet att fullgöra viss förpliktelse enligt detta avtal, om underlåtenheten har sin grund i omständighet utanför vår kontroll (t.ex. naturkatastrofer, krig, strejk eller myndighetsbeslut).
+            Nexe Sanering AB är befriat från påföljd för underlåtenhet att fullgöra viss förpliktelse enligt detta avtal, om underlåtenheten har sin grund i omständighet utanför vår kontroll (t.ex. naturkatastrofer, krig, strejk eller myndighetsbeslut).
           </p>
         </section>
       </div>
