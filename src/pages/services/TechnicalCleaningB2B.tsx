@@ -112,7 +112,7 @@ export default function TechnicalCleaningB2B() {
       className="py-14 sm:py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-12 max-w-7xl mx-auto"
     >
       <Helmet>
-        <title>Teknisk hygienbehandling | Prio Sanering AB</title>
+        <title>Teknisk hygienbehandling | Nexe Sanering AB</title>
         <meta
           name="description"
           content="Teknisk hygienbehandling för hotell, hostel, skolor, förskolor, gym, äldreboenden, kliniker och marin miljö. Hydroxyl, desinfektion och dokumentation."
