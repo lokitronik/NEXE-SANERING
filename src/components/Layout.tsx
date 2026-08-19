@@ -105,7 +105,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Logo className="scale-75 sm:scale-80 md:scale-90 origin-left" />
             </Link>
             <p className="text-sm sm:text-base text-midnight/60 font-light leading-relaxed max-w-md">
-              Prio Sanering AB är specialiserat på sanering i känsliga och krävande miljöer.
+              Nexe Sanering AB är specialiserat på sanering i känsliga och krävande miljöer.
               Vi arbetar med teknisk noggrannhet, diskret hantering och respekt för varje situation.
             </p>
           </div>
@@ -182,7 +182,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
 
         <div className="max-w-7xl mx-auto pt-6 sm:pt-8 border-t border-midnight/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs sm:text-sm text-midnight/40">
-          <div>© 2026 Prio Sanering AB. Alla rättigheter förbehållna.</div>
+          <div>© 2026 Nexe Sanering AB. Alla rättigheter förbehållna.</div>
 
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             <Link to="/integritetspolicy">Integritetspolicy</Link>
