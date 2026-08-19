@@ -17,7 +17,7 @@ export default function TraumaSanitization() {
       className="py-24 px-6 md:px-12 max-w-7xl mx-auto"
     >
       <Helmet>
-        <title>Traumasanering | Prio Sanering AB</title>
+        <title>Traumasanering | Nexe Sanering AB</title>
         <meta
           name="description"
           content="Professionell traumasanering efter blodspill, olyckor, våldshändelser och andra situationer med biologiska föroreningar. Diskret, säker och respektfull hantering."
