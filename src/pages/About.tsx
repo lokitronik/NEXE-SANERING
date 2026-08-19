@@ -52,10 +52,10 @@ export default function About() {
       className="py-14 sm:py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-12 max-w-7xl mx-auto"
     >
       <Helmet>
-        <title>Om oss | Prio Sanering AB</title>
+        <title>Om oss | Nexe Sanering AB</title>
         <meta
           name="description"
-          content="Lär känna Prio Sanering AB. Vi är ett specialiserat saneringsföretag med erfarenhet från laboratoriemiljöer, biologisk dekontaminering, teknisk sanering och kontrollerade arbetsrutiner."
+          content="Lär känna Nexe Sanering AB. Vi är ett specialiserat saneringsföretag med erfarenhet från laboratoriemiljöer, biologisk dekontaminering, teknisk sanering och kontrollerade arbetsrutiner."
         />
       </Helmet>
 
@@ -70,11 +70,11 @@ export default function About() {
         </div>
 
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-midnight mb-5 sm:mb-6 leading-tight">
-          Om Prio Sanering AB
+          Om Nexe Sanering AB
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-midnight/60 max-w-3xl mx-auto font-light leading-relaxed">
-          Prio Sanering AB är ett specialiserat saneringsföretag med erfarenhet
+          Nexe Sanering AB är ett specialiserat saneringsföretag med erfarenhet
           från miljöer där hygien, skyddsrutiner, biologiska risker och
           kontrollerade arbetsmetoder är avgörande.
         </p>
