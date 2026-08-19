@@ -75,7 +75,7 @@ export default function OdorSanitization() {
       className="py-24 px-6 md:px-12 max-w-7xl mx-auto"
     >
       <Helmet>
-        <title>Luktsanering | Prio Sanering AB — Hydroxyl & Ozon</title>
+        <title>Luktsanering | Nexe Sanering AB — Hydroxyl & Ozon</title>
         <meta
           name="description"
           content="Professionell luktsanering med hydroxylgenerator (TITAN 4000) och ozon. Hydroxyl för vardagliga fall utan evakuering — ozon för de svåraste situationerna. Stockholm."
