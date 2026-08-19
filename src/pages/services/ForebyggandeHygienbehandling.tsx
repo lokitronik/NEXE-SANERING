@@ -17,7 +17,7 @@ export default function ForebyggandeHygienbehandling() {
       className="py-14 sm:py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-12 max-w-7xl mx-auto"
     >
       <Helmet>
-        <title>Förebyggande hygienbehandling | Prio Sanering AB</title>
+        <title>Förebyggande hygienbehandling | Nexe Sanering AB</title>
         <meta
           name="description"
           content="Förebyggande hygienbehandling med torrånga, teknisk rengöring och hydroxylbehandling för sommarstugor, bostäder, uthyrningsmiljöer och andra utrymmen med luktproblem, stillastående luft eller behov av teknisk hygieninsats."
