@@ -40,8 +40,8 @@ export default function Logo({ className = "" }: { className?: string }) {
       </svg>
 
       <div className="flex flex-col leading-none">
-        <span className="text-xl md:text-2xl font-bold text-[#808080] tracking-tight">
-          NE<span className="text-[#0A192F]">X</span>E
+        <span className="text-xl md:text-2xl font-bold text-[#0A192F] tracking-tight">
+          NE<span className="text-[#808080]">X</span>E
         </span>
 
         <span className="text-xl md:text-2xl font-black text-[#0A192F] tracking-tighter">
