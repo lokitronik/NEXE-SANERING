@@ -73,7 +73,7 @@ export default function DeathSanitization() {
       className="py-10 sm:py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-12 max-w-7xl mx-auto"
     >
       <Helmet>
-        <title>Teknisk sanering vid obevakat dödsfall | Prio Sanering AB</title>
+        <title>Teknisk sanering vid obevakat dödsfall | Nexe Sanering AB</title>
         <meta
           name="description"
           content="Teknisk sanering vid obevakat dödsfall. Vi hanterar biologiska risker, lukt, kontaminerat material, dokumentation och personliga tillhörigheter med diskretion och respekt."
