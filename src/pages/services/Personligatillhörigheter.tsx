@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Helmet } from "react-helmet-async";
 import { Box, ShieldCheck, HeartHandshake } from "lucide-react";
+import personligaBoxImg from "../../assets/personliga-tillhorigheter.png";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -57,11 +58,11 @@ export default function atillhörigheter() {
         {...fadeInUp}
         transition={{ ...fadeInUp.transition, delay: 0.1 }}
       >
-        <div className="bg-slate-50 rounded-[2rem] border border-midnight/5 p-4 sm:p-5 md:p-6 shadow-sm">
+        <div className="bg-slate-50 rounded-[2rem] border border-midnight/5 p-4 sm:p-5 md:p-6 shadow-sm overflow-hidden">
           <img
-            src="https://i.imgur.com/4eaPmXY_d.webp?maxwidth=760&fidelity=grand"
+            src={personligaBoxImg}
             alt="NEXE SPECIALSANERING låda för personliga tillhörigheter"
-            className="w-full h-auto rounded-[1.5rem] object-cover"
+            className="w-full h-auto rounded-[1.5rem] object-cover aspect-square"
             referrerPolicy="no-referrer"
           />
         </div>
