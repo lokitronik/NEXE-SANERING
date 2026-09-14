@@ -96,8 +96,8 @@ const SEGMENTS = [
   
   {
     icon: Anchor,
-    title: "Båtar, färjor & marin miljö",
-    tag: "Marin hygien",
+    title: "Båtar, färjor & maritin miljö",
+    tag: "Maritin hygien",
     body:
       "Interiör, hytter, toaletter, hygienutrymmen och slutna utrymmen på fritidsbåtar, fartyg och färjor. Inför och efter säsong, eller vid behov under drift.",
   },
@@ -115,7 +115,7 @@ export default function TechnicalCleaningB2B() {
         <title>Teknisk hygienbehandling | NEXE SPECIALSANERING</title>
         <meta
           name="description"
-          content="Teknisk hygienbehandling för hotell, hostel, skolor, förskolor, gym, äldreboenden, kliniker och marin miljö. Hydroxyl, desinfektion och dokumentation."
+          content="Teknisk hygienbehandling för hotell, hostel, skolor, förskolor, gym, äldreboenden, kliniker och maritin miljö. Hydroxyl, desinfektion och dokumentation."
         />
         <meta
           name="keywords"
@@ -136,7 +136,7 @@ export default function TechnicalCleaningB2B() {
         </h1>
 
         <p className="text-lg md:text-xl text-midnight/60 font-light leading-relaxed max-w-2xl">
-          Teknisk hygienbehandling för hotell, hostel, skolor, förskolor, gym, äldreboenden, kliniker, sommarstugor och marin miljö.
+          Teknisk hygienbehandling för hotell, hostel, skolor, förskolor, gym, äldreboenden, kliniker, sommarstugor och maritin miljö.
           Samma certifierade metod — anpassad efter varje verksamhets behov.
         </p>
       </motion.div>
@@ -206,7 +206,7 @@ export default function TechnicalCleaningB2B() {
               "Hotell, hostel och uthyrningsboenden",
               "Skolor, förskolor och gym",
               "Äldreboenden och kliniker",
-              "Båtar, färjor och marin miljö",
+              "Båtar, färjor och maritin miljö",
             ].map((item) => (
               <li key={item} className="flex items-center gap-3">
                 <ChevronRight className="w-4 h-4 text-cyan-accent flex-shrink-0" />
