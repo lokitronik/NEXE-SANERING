@@ -1,5 +1,5 @@
 import React from 'react';
-import logoSolar from './logo.png';
+import logoIMG from './logo.png';
 
 interface LogoProps {
   variant?: 'light' | 'dark';
@@ -13,12 +13,11 @@ export const Logo: React.FC<LogoProps> = ({
   size = 'md',
   className = '',
 }) => {
-  // Height mappings for responsive sizing
   const heightMap = {
-    sm: 'h-8 sm:h-9 max-h-9',
-    md: 'h-11 sm:h-13 max-h-14',
-    lg: 'h-16 sm:h-20 max-h-20',
-    xl: 'h-24 sm:h-28 max-h-28',
+    sm: 'h-12 sm:h-14',
+    md: 'h-16 sm:h-20',
+    lg: 'h-20 sm:h-24',
+    xl: 'h-24 sm:h-28',
   };
 
   return (
