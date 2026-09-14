@@ -1,5 +1,4 @@
 import React from 'react';
-import logoIMG from './logo.png';
 
 interface LogoProps {
   variant?: 'light' | 'dark';
@@ -23,7 +22,7 @@ export const Logo: React.FC<LogoProps> = ({
   return (
     <div className={`inline-flex items-center select-none ${className}`}>
       <img
-        src={logoIMG}
+        src={`${import.meta.env.BASE_URL}logo.png`}
         alt="NEXE SPECIALSANERING"
         className={`w-auto ${heightMap[size]} object-contain block transition-transform duration-200`}
         loading="eager"
