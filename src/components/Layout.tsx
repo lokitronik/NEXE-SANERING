@@ -18,7 +18,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Global Sticky Header */}
       <nav className="fixed top-0 w-full z-[9999] bg-white/70 backdrop-blur-xl border-b border-midnight/5 py-3 sm:py-4 px-6 sm:px-8 md:px-14 flex justify-between items-center">
         <Link to="/" className="flex items-center min-w-0" id="header-brand-logo">
-          <Logo imgClassName="h-8 sm:h-9 md:h-10 w-auto" />
+          <Logo imgClassName="h-12 sm:h-14 md:h-16 w-auto" />
         </Link>
 
         {/* Desktop Nav */}
@@ -111,7 +111,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       )}
 
       {/* Main Content */}
-      <main className="pt-20 sm:pt-20">{children}</main>
+      <main className="pt-20 sm:pt-24">{children}</main>
 
       {/* Footer */}
       <footer className="py-14 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 bg-slate-50 border-t border-slate-200">
