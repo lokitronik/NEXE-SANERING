@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "motion/react";
 import { Phone, Menu, X } from "lucide-react";
-import Logo from "./Logo";
+import { Logo } from "./Logo";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
