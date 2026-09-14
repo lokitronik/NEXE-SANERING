@@ -33,7 +33,7 @@ const METHODS = [
 
 const CASES_HYDROXYL = [
   "Stängda sommarstugor och outhyrda lägenheter",
-  "Hotelrum och Airbnb med kvarstående lukt",
+  "Hotellrum och Airbnb med kvarstående lukt",
   "Fukt och instängd luft i källare eller kontor",
   "Lukt efter intensiv husdjurshållning (ej extremfall)",
   "Kvarstående olukt efter städning eller renovering",
