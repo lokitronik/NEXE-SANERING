@@ -114,33 +114,35 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <main className="pt-20 sm:pt-24">{children}</main>
 
       {/* Footer */}
-      <footer className="py-14 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 bg-slate-50 border-t border-slate-200">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 sm:gap-12 mb-12 sm:mb-16">
+      <footer className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-12 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
 
           {/* Brand */}
-          <div className="col-span-1 md:col-span-2">
-            <Link to="/" className="inline-block mb-6 sm:mb-8" id="footer-brand-logo">
-              <Logo imgClassName="h-9 sm:h-10 md:h-11 w-auto" />
+          <div>
+            <Link to="/" className="inline-block mb-3" id="footer-brand-logo">
+              <Logo imgClassName="h-7 sm:h-8 w-auto" />
             </Link>
 
-            <p className="text-sm sm:text-base text-midnight/60 font-light leading-relaxed max-w-md">
-              NEXE SPECIALSANERING är en del av NEXE GROUP AB och är specialiserat på
-              sanering i känsliga och krävande miljöer. Vi arbetar med teknisk
-              noggrannhet, diskret hantering och respekt för varje situation.
+            <p className="text-xs text-midnight/60 font-light leading-relaxed max-w-xs mb-3">
+              Specialiserade på sanering i känsliga och krävande miljöer med teknisk precision, diskretion och respekt.
             </p>
+
+            <div className="text-xs font-medium text-midnight/70">
+              En del av <span className="font-semibold text-midnight">NEXE GROUP AB</span>
+            </div>
           </div>
 
-          {/* Services */}
+          {/* Kärntjänster */}
           <div>
-            <h4 className="font-bold mb-5 sm:mb-6 uppercase tracking-widest text-xs text-midnight/40">
+            <h4 className="font-bold mb-3 uppercase tracking-wider text-xs text-midnight/40">
               Kärntjänster
             </h4>
 
-            <ul className="space-y-3 sm:space-y-4 text-sm font-medium text-midnight/70">
+            <ul className="space-y-2 text-xs sm:text-sm font-medium text-midnight/70">
               <li>
                 <Link
                   to="/tjanster/sanering-dodstall"
-                  className="hover:text-cyan-accent"
+                  className="hover:text-cyan-accent transition-colors"
                 >
                   Sanering vid dödsfall
                 </Link>
@@ -149,7 +151,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <li>
                 <Link
                   to="/tjanster/traumasanering"
-                  className="hover:text-cyan-accent"
+                  className="hover:text-cyan-accent transition-colors"
                 >
                   Traumasanering
                 </Link>
@@ -158,31 +160,34 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <li>
                 <Link
                   to="/tjanster/socialsanering"
-                  className="hover:text-cyan-accent"
+                  className="hover:text-cyan-accent transition-colors"
                 >
-                  Socialsanering & hoarder-städning
+                  Socialsanering & hoarder
                 </Link>
               </li>
 
               <li>
                 <Link
                   to="/tjanster/luktsanering"
-                  className="hover:text-cyan-accent"
+                  className="hover:text-cyan-accent transition-colors"
                 >
                   Luktsanering
                 </Link>
               </li>
             </ul>
+          </div>
 
-            <h4 className="font-bold mt-7 sm:mt-8 mb-5 sm:mb-6 uppercase tracking-widest text-xs text-midnight/40">
+          {/* Förebyggande */}
+          <div>
+            <h4 className="font-bold mb-3 uppercase tracking-wider text-xs text-midnight/40">
               Förebyggande
             </h4>
 
-            <ul className="space-y-3 sm:space-y-4 text-sm font-medium text-midnight/70">
+            <ul className="space-y-2 text-xs sm:text-sm font-medium text-midnight/70">
               <li>
                 <Link
                   to="/tjanster/forebyggande-hygienbehandling"
-                  className="hover:text-cyan-accent"
+                  className="hover:text-cyan-accent transition-colors"
                 >
                   Förebyggande hygienbehandling
                 </Link>
@@ -191,16 +196,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <li>
                 <Link
                   to="/tjanster/technical-cleaning-b2b"
-                  className="hover:text-cyan-accent"
+                  className="hover:text-cyan-accent transition-colors"
                 >
-                  Teknisk rengöring & hygienkontroll
+                  Teknisk rengöring & hygien
                 </Link>
               </li>
 
               <li>
                 <Link
                   to="/tjanster/svaratkomliga-ytor"
-                  className="hover:text-cyan-accent"
+                  className="hover:text-cyan-accent transition-colors"
                 >
                   Svåråtkomliga ytor
                 </Link>
@@ -209,7 +214,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <li>
                 <Link
                   to="/tjanster/bastu-hygienkontroll"
-                  className="hover:text-cyan-accent"
+                  className="hover:text-cyan-accent transition-colors"
                 >
                   Bastu Hygienkontroll
                 </Link>
@@ -219,15 +224,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           {/* Company */}
           <div>
-            <h4 className="font-bold mb-5 sm:mb-6 uppercase tracking-widest text-xs text-midnight/40">
+            <h4 className="font-bold mb-3 uppercase tracking-wider text-xs text-midnight/40">
               Företaget
             </h4>
 
-            <ul className="space-y-3 sm:space-y-4 text-sm font-medium text-midnight/70">
+            <ul className="space-y-2 text-xs sm:text-sm font-medium text-midnight/70">
               <li>
                 <Link
                   to="/om-oss"
-                  className="hover:text-cyan-accent"
+                  className="hover:text-cyan-accent transition-colors"
                 >
                   Om oss
                 </Link>
@@ -236,15 +241,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <li>
                 <Link
                   to="/kontakt"
-                  className="hover:text-cyan-accent"
+                  className="hover:text-cyan-accent transition-colors"
                 >
                   Kontakt
                 </Link>
               </li>
 
               <li>
-                <a href="tel:0101234567">
-                  Jour dygnet runt
+                <a
+                  href="tel:0101234567"
+                  className="inline-flex items-center gap-1.5 text-cyan-accent font-semibold hover:underline"
+                >
+                  Jour dygnet runt: 010-123 45 67
                 </a>
               </li>
             </ul>
@@ -252,17 +260,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
 
         {/* Legal Footer */}
-        <div className="max-w-7xl mx-auto pt-6 sm:pt-8 border-t border-midnight/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs sm:text-sm text-midnight/40">
+        <div className="max-w-7xl mx-auto pt-4 sm:pt-5 border-t border-midnight/5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-midnight/40">
           <div>
             © 2026 NEXE GROUP AB. Alla rättigheter förbehållna.
           </div>
 
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-            <Link to="/integritetspolicy">
+            <Link to="/integritetspolicy" className="hover:text-midnight transition-colors">
               Integritetspolicy
             </Link>
 
-            <Link to="/allmanna-villkor">
+            <Link to="/allmanna-villkor" className="hover:text-midnight transition-colors">
               Allmänna villkor
             </Link>
           </div>
