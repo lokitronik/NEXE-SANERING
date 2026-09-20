@@ -109,7 +109,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {/* Brand */}
           <div>
             <Link to="/" className="inline-block mb-3" id="footer-brand-logo">
-              <Logo imgClassName="h-7 sm:h-8 w-auto" />
+             <Logo imgClassName="h-12 sm:h-14 w-auto" />
             </Link>
 
             <p className="text-xs text-midnight/60 font-light leading-relaxed max-w-xs mb-3">
