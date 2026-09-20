@@ -46,9 +46,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Link
             to="/om-oss"
             className={`hover:text-cyan-accent transition-colors ${
-              location.pathname === "/om-oss"
-                ? "text-cyan-accent"
-                : ""
+              location.pathname === "/om-oss" ? "text-cyan-accent" : ""
             }`}
           >
             Om oss
@@ -57,21 +55,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Link
             to="/kontakt"
             className={`hover:text-cyan-accent transition-colors ${
-              location.pathname === "/kontakt"
-                ? "text-cyan-accent"
-                : ""
+              location.pathname === "/kontakt" ? "text-cyan-accent" : ""
             }`}
           >
             Kontakt
           </Link>
 
-          <a
-            href="tel:0101234567"
-            className="pulse-cyan bg-cyan-accent text-white px-5 lg:px-6 py-2.5 rounded-full font-semibold flex items-center gap-2 whitespace-nowrap"
-          >
+          <span className="pulse-cyan bg-cyan-accent text-white px-5 lg:px-6 py-2.5 rounded-full font-semibold flex items-center gap-2 whitespace-nowrap">
             <Phone className="w-4 h-4" />
             010-XXX XX XX
-          </a>
+          </span>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -100,13 +93,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Link to="/om-oss">Om oss</Link>
           <Link to="/kontakt">Kontakt</Link>
 
-          <a
-            href="tel:0101234567"
-            className="text-cyan-accent flex items-center gap-2 pt-2"
-          >
+          <span className="text-cyan-accent flex items-center gap-2 pt-2">
             <Phone className="w-5 h-5" />
             010-XXX XX XX
-          </a>
+          </span>
         </motion.div>
       )}
 
@@ -116,7 +106,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Footer */}
       <footer className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-12 bg-slate-50 border-t border-slate-200">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-
           {/* Brand */}
           <div>
             <Link to="/" className="inline-block mb-3" id="footer-brand-logo">
@@ -124,11 +113,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </Link>
 
             <p className="text-xs text-midnight/60 font-light leading-relaxed max-w-xs mb-3">
-              Specialiserade på sanering i känsliga och krävande miljöer med teknisk precision, diskretion och respekt.
+              Specialiserade på sanering i känsliga och krävande miljöer med
+              teknisk precision, diskretion och respekt.
             </p>
 
             <div className="text-xs font-medium text-midnight/70">
-              En del av <span className="font-semibold text-midnight">NEXE GROUP AB</span>
+              En del av{" "}
+              <a
+                href="https://lokitronik.github.io/NEXE-GROUP-AB/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-midnight hover:text-cyan-accent transition-colors underline underline-offset-2"
+              >
+                NEXE GROUP AB
+              </a>
             </div>
           </div>
 
@@ -248,12 +246,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </li>
 
               <li>
-                <a
-                  href="tel:0101234567"
-                  className="inline-flex items-center gap-1.5 text-cyan-accent font-semibold hover:underline"
-                >
-                  Jour dygnet runt: 010-123 45 67
-                </a>
+                <span className="inline-flex items-center gap-1.5 text-cyan-accent font-semibold">
+                  Jour dygnet runt: 010-XXX XX XX
+                </span>
               </li>
             </ul>
           </div>
@@ -262,15 +257,22 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {/* Legal Footer */}
         <div className="max-w-7xl mx-auto pt-4 sm:pt-5 border-t border-midnight/5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-midnight/40">
           <div>
-            © 2026 NEXE GROUP AB. Alla rättigheter förbehållna.
+            © {new Date().getFullYear()} NEXE GROUP AB. Alla rättigheter
+            förbehållna.
           </div>
 
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-            <Link to="/integritetspolicy" className="hover:text-midnight transition-colors">
+            <Link
+              to="/integritetspolicy"
+              className="hover:text-midnight transition-colors"
+            >
               Integritetspolicy
             </Link>
 
-            <Link to="/allmanna-villkor" className="hover:text-midnight transition-colors">
+            <Link
+              to="/allmanna-villkor"
+              className="hover:text-midnight transition-colors"
+            >
               Allmänna villkor
             </Link>
           </div>
