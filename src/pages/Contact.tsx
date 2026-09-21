@@ -75,25 +75,6 @@ export default function Contact() {
     setFiles((prev) => prev.filter((_, i) => i !== index));
   };
 
-  const uploadFileToFreeHost = async (file: File): Promise<string | null> => {
-    try {
-      const data = new FormData();
-      data.append("image", file);
-      // Endpoint público de ImgBB para carga anónima
-      const res = await fetch("https://api.imgbb.com/1/upload?key=6d207e02198a847aa5ad1095b4634074", {
-        method: "POST",
-        body: data
-      });
-      const result = await res.json();
-      if (result.success) {
-        return result.data.url;
-      }
-    } catch {
-      // Si falla la carga remota, continúa con el resto
-    }
-    return null;
-  };
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitError("");
@@ -106,14 +87,34 @@ export default function Contact() {
     setIsSending(true);
 
     try {
-      // 1. Subir fotos a la nube en paralelo si el cliente las seleccionó
-      let uploadedUrls: string[] = [];
+      let imageUrls: string[] = [];
+
+      // Ladda upp bilderna direkt via tmpfiles (utan behov av API-nyckel eller backend)
       if (files.length > 0) {
-        const uploads = await Promise.all(files.map((file) => uploadFileToFreeHost(file)));
-        uploadedUrls = uploads.filter((url): url is string => Boolean(url));
+        const uploadPromises = files.map(async (file) => {
+          try {
+            const body = new FormData();
+            body.append("input_file", file);
+            const res = await fetch("https://tmpfiles.org/api/v1/upload", {
+              method: "POST",
+              body,
+            });
+            const json = await res.json();
+            if (json.status === "success" && json.data?.url) {
+              // Gör om URL:en till en direkt nedladdnings-/visningslänk
+              return json.data.url.replace("tmpfiles.org/", "tmpfiles.org/dl/") as string;
+            }
+          } catch {
+            return null;
+          }
+          return null;
+        });
+
+        const results = await Promise.all(uploadPromises);
+        imageUrls = results.filter((url): url is string => Boolean(url));
       }
 
-      // 2. Construir FormData nativo para Formspree (endpoint ya verificado xkjgrjkb)
+      // Förbered data för Formspree
       const formPayload = new FormData();
       formPayload.append("Ärende", formState.caseType || "Ej angett");
       formPayload.append("Brådska", formState.urgency || "Ej angett");
@@ -124,10 +125,10 @@ export default function Contact() {
       formPayload.append("Beskrivning", formState.message.trim());
       formPayload.append("_subject", "Ny förfrågan med bilder – NEXE SPECIALSANERING");
 
-      if (uploadedUrls.length > 0) {
-        formPayload.append("Bifogade bilder (Klicka för att se)", uploadedUrls.join("  \n"));
+      if (imageUrls.length > 0) {
+        formPayload.append("Bifogade bilder (Länkar)", imageUrls.join("\n\n"));
       } else if (files.length > 0) {
-        formPayload.append("Bilder", "Kunden valde bilder men överföringen misslyckades.");
+        formPayload.append("Bilder", "Kunden valde bilder men överföringen kunde inte slutföras.");
       } else {
         formPayload.append("Bilder", "Inga bilder bifogades.");
       }
@@ -424,7 +425,7 @@ export default function Contact() {
                     className="w-full bg-midnight text-white py-5 rounded-2xl font-bold text-lg md:text-xl flex items-center justify-center gap-3 hover:bg-midnight/90 transition-all shadow-xl shadow-midnight/10 disabled:opacity-50"
                   >
                     <Send className="w-6 h-6" />
-                    <span>{isSending ? "Skickar..." : "Skicka förfrågan"}</span>
+                    <span>{isSending ? "Laddar upp och skickar..." : "Skicka förfrågan"}</span>
                   </button>
                 </fieldset>
 
@@ -438,7 +439,7 @@ export default function Contact() {
           )}
         </motion.div>
 
-        {/* Columna derecha */}
+        {/* Högerkolumn */}
         <div className="space-y-8 lg:sticky lg:top-24">
           <motion.div
             className="bg-midnight text-white p-7 sm:p-9 md:p-10 rounded-[2rem] md:rounded-[3rem]"
