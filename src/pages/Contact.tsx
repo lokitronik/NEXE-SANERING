@@ -12,7 +12,8 @@ import {
   AlertTriangle,
   Clock,
   Lock,
-  MapPin
+  MapPin,
+  CheckCircle2
 } from "lucide-react";
 
 const fadeInUp = {
@@ -52,6 +53,7 @@ export default function Contact() {
 
   const [files, setFiles] = useState<File[]>([]);
   const [isSending, setIsSending] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [filePreviews, setFilePreviews] = useState<{ file: File; url: string }[]>([]);
@@ -73,7 +75,26 @@ export default function Contact() {
     setFiles((prev) => prev.filter((_, i) => i !== index));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const uploadFileToFreeHost = async (file: File): Promise<string | null> => {
+    try {
+      const data = new FormData();
+      data.append("image", file);
+      // Endpoint público de ImgBB para carga anónima
+      const res = await fetch("https://api.imgbb.com/1/upload?key=6d207e02198a847aa5ad1095b4634074", {
+        method: "POST",
+        body: data
+      });
+      const result = await res.json();
+      if (result.success) {
+        return result.data.url;
+      }
+    } catch {
+      // Si falla la carga remota, continúa con el resto
+    }
+    return null;
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitError("");
 
@@ -82,57 +103,52 @@ export default function Contact() {
       return;
     }
 
-    const totalSize = files.reduce((sum, file) => sum + file.size, 0);
-    if (totalSize > 10_000_000) {
-      setSubmitError("Bilderna är för stora. Välj mindre bilder, högst 10 MB totalt.");
-      return;
-    }
-
     setIsSending(true);
 
     try {
-      const submission = document.createElement("form");
-      submission.method = "POST";
-      submission.action = "https://formsubmit.co/kontakt@nexegroup.se";
-      submission.enctype = "multipart/form-data";
-      submission.hidden = true;
-
-      const addHidden = (name: string, value: string) => {
-        const input = document.createElement("input");
-        input.type = "hidden";
-        input.name = name;
-        input.value = value;
-        submission.appendChild(input);
-      };
-
-      addHidden("caseType", formState.caseType || "Ej angett");
-      addHidden("urgency", formState.urgency || "Ej angett");
-      addHidden("name", formState.name);
-      addHidden("email", formState.email);
-      addHidden("phone", formState.phone);
-      addHidden("location", formState.location);
-      addHidden("message", formState.message);
-      addHidden("_subject", "Ny förfrågan – NEXE SPECIALSANERING");
-      addHidden("_captcha", "false");
-
+      // 1. Subir fotos a la nube en paralelo si el cliente las seleccionó
+      let uploadedUrls: string[] = [];
       if (files.length > 0) {
-        const fileInput = document.createElement("input");
-        fileInput.type = "file";
-        fileInput.name = "attachment";
-        fileInput.multiple = true;
-
-        const dataTransfer = new DataTransfer();
-        files.forEach((file) => dataTransfer.items.add(file));
-        fileInput.files = dataTransfer.files;
-
-        submission.appendChild(fileInput);
+        const uploads = await Promise.all(files.map((file) => uploadFileToFreeHost(file)));
+        uploadedUrls = uploads.filter((url): url is string => Boolean(url));
       }
 
-      document.body.appendChild(submission);
-      submission.submit();
+      // 2. Construir FormData nativo para Formspree (endpoint ya verificado xkjgrjkb)
+      const formPayload = new FormData();
+      formPayload.append("Ärende", formState.caseType || "Ej angett");
+      formPayload.append("Brådska", formState.urgency || "Ej angett");
+      formPayload.append("Namn", formState.name.trim());
+      formPayload.append("Ort", formState.location.trim());
+      formPayload.append("Telefon", formState.phone.trim());
+      formPayload.append("E-post", formState.email.trim());
+      formPayload.append("Beskrivning", formState.message.trim());
+      formPayload.append("_subject", "Ny förfrågan med bilder – NEXE SPECIALSANERING");
+
+      if (uploadedUrls.length > 0) {
+        formPayload.append("Bifogade bilder (Klicka för att se)", uploadedUrls.join("  \n"));
+      } else if (files.length > 0) {
+        formPayload.append("Bilder", "Kunden valde bilder men överföringen misslyckades.");
+      } else {
+        formPayload.append("Bilder", "Inga bilder bifogades.");
+      }
+
+      const response = await fetch("https://formspree.io/f/xkjgrjkb", {
+        method: "POST",
+        headers: {
+          Accept: "application/json"
+        },
+        body: formPayload
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        setSubmitError("Förfrågan kunde inte skickas. Försök igen eller mejla direkt till kontakt@nexegroup.se.");
+      }
     } catch {
+      setSubmitError("Nätverksfel. Kontrollera din anslutning eller mejla direkt till kontakt@nexegroup.se.");
+    } finally {
       setIsSending(false);
-      setSubmitError("Formuläret kunde inte skickas. Försök igen eller mejla direkt till kontakt@nexegroup.se.");
     }
   };
 
@@ -147,7 +163,7 @@ export default function Contact() {
         <title>Kontakta oss | NEXE SPECIALSANERING</title>
         <meta
           name="description"
-          content="Kontakta NEXE SPECIALSANERING för hjälp med sanering, trauma, dödsfall, luktproblem, hygienbehandling och teknisk rengöring. Beskriv ditt ärende och bifoga bilder vid behov."
+          content="Kontakta NEXE SPECIALSANERING för hjälp med sanering, trauma, dödsfall, luktproblem, hygienbehandling och teknisk rengöring."
         />
       </Helmet>
 
@@ -162,9 +178,7 @@ export default function Contact() {
         </h1>
 
         <p className="text-lg md:text-xl text-midnight/60 max-w-3xl mx-auto font-light leading-relaxed">
-          Beskriv vad som har hänt eller vad du behöver hjälp med. Du behöver
-          inte veta exakt vilken typ av sanering som krävs. Vi hjälper dig att
-          bedöma nästa steg.
+          Beskriv vad som har hänt eller vad du behöver hjälp med. Vi hjälper dig att bedöma nästa steg.
         </p>
       </motion.div>
 
@@ -173,249 +187,255 @@ export default function Contact() {
           className="bg-slate-50 p-6 sm:p-8 md:p-12 rounded-[2rem] md:rounded-[3rem] border-2 border-midnight/5"
           {...fadeInUp}
         >
-          <div className="mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-midnight mb-3">
-              Beskriv ditt ärende
-            </h2>
-            <p className="text-midnight/60 leading-relaxed">
-              Fyll i det du kan. Bilder är frivilliga, men kan hjälpa oss att
-              göra en snabbare bedömning.
-            </p>
-          </div>
-
-          <form onSubmit={handleSubmit} className="space-y-8" aria-busy={isSending}>
-            <fieldset disabled={isSending} className="space-y-8 min-w-0 border-0 p-0 m-0">
-              <div>
-                <label className="block text-sm font-bold mb-3 text-midnight/60 uppercase tracking-widest">
-                  Vad gäller din förfrågan?
-                </label>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {caseTypes.map((type) => (
-                    <button
-                      key={type}
-                      type="button"
-                      onClick={() =>
-                        setFormState({ ...formState, caseType: type })
-                      }
-                      className={`text-left rounded-2xl px-5 py-4 border-2 transition-all ${
-                        formState.caseType === type
-                          ? "border-cyan-accent bg-white shadow-md"
-                          : "border-midnight/5 bg-white hover:border-cyan-accent/50"
-                      }`}
-                    >
-                      <span className="font-bold text-midnight">{type}</span>
-                    </button>
-                  ))}
-                </div>
+          {isSubmitted ? (
+            <div className="text-center py-10 space-y-5">
+              <div className="w-16 h-16 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto">
+                <CheckCircle2 className="w-9 h-9" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-midnight">
+                Tack för din förfrågan!
+              </h2>
+              <p className="text-midnight/70 max-w-md mx-auto leading-relaxed">
+                Vi har tagit emot ditt meddelande och bilderna. Vi återkommer snarast möjligt.
+              </p>
+              <button
+                type="button"
+                onClick={() => {
+                  setIsSubmitted(false);
+                  setFiles([]);
+                  setFormState({
+                    caseType: "",
+                    urgency: "",
+                    name: "",
+                    email: "",
+                    phone: "",
+                    location: "",
+                    message: "",
+                    consent: false
+                  });
+                }}
+                className="mt-4 px-6 py-3 bg-midnight text-white text-sm font-bold rounded-xl hover:bg-midnight/90 transition-all cursor-pointer"
+              >
+                Skicka en ny förfrågan
+              </button>
+            </div>
+          ) : (
+            <>
+              <div className="mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-midnight mb-3">
+                  Beskriv ditt ärende
+                </h2>
+                <p className="text-midnight/60 leading-relaxed">
+                  Fyll i det du kan. Bilder är frivilliga, men hjälper oss att göra en snabbare bedömning.
+                </p>
               </div>
 
-              <div>
-                <label className="block text-sm font-bold mb-3 text-midnight/60 uppercase tracking-widest">
-                  Hur brådskande är det?
-                </label>
+              <form onSubmit={handleSubmit} className="space-y-8" aria-busy={isSending}>
+                <fieldset disabled={isSending} className="space-y-8 min-w-0 border-0 p-0 m-0">
+                  <div>
+                    <label className="block text-sm font-bold mb-3 text-midnight/60 uppercase tracking-widest">
+                      Vad gäller din förfrågan?
+                    </label>
 
-                <div className="grid grid-cols-1 gap-3">
-                  {urgencyOptions.map((option) => (
-                    <button
-                      key={option}
-                      type="button"
-                      onClick={() =>
-                        setFormState({ ...formState, urgency: option })
-                      }
-                      className={`flex items-center gap-3 text-left rounded-2xl px-5 py-4 border-2 transition-all ${
-                        formState.urgency === option
-                          ? "border-cyan-accent bg-white shadow-md"
-                          : "border-midnight/5 bg-white hover:border-cyan-accent/50"
-                      }`}
-                    >
-                      <Clock className="w-5 h-5 text-cyan-accent shrink-0" />
-                      <span className="font-bold text-midnight">{option}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-bold mb-2 text-midnight/60 uppercase tracking-widest">
-                  Beskriv situationen
-                </label>
-
-                <textarea
-                  rows={6}
-                  required
-                  maxLength={1200}
-                  placeholder="Exempel: Vad har hänt? Var finns problemet? Finns det lukt, vätska, biologiskt material, skador eller något annat vi bör känna till?"
-                  className="w-full bg-white border-2 border-midnight/5 rounded-2xl px-5 py-4 focus:border-cyan-accent outline-none transition-all resize-none"
-                  value={formState.message}
-                  onChange={(e) =>
-                    setFormState({ ...formState, message: e.target.value })
-                  }
-                />
-
-                <div className="text-right text-sm text-midnight/40 mt-2">
-                  {formState.message.length} / 1200
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-bold mb-2 text-midnight/60 uppercase tracking-widest">
-                  Ladda upp bilder
-                </label>
-
-                <label className="flex flex-col items-center justify-center gap-3 bg-white border-2 border-dashed border-midnight/10 rounded-2xl px-5 py-8 cursor-pointer hover:border-cyan-accent transition-all">
-                  <Upload className="w-8 h-8 text-cyan-accent" />
-                  <div className="text-center">
-                    <p className="font-bold text-midnight">
-                      Välj bilder
-                    </p>
-                    <p className="text-sm text-midnight/50">
-                      Frivilligt · max 6 bilder · 10 MB totalt
-                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {caseTypes.map((type) => (
+                        <button
+                          key={type}
+                          type="button"
+                          onClick={() => setFormState({ ...formState, caseType: type })}
+                          className={`text-left rounded-2xl px-5 py-4 border-2 transition-all ${
+                            formState.caseType === type
+                              ? "border-cyan-accent bg-white shadow-md"
+                              : "border-midnight/5 bg-white hover:border-cyan-accent/50"
+                          }`}
+                        >
+                          <span className="font-bold text-midnight">{type}</span>
+                        </button>
+                      ))}
+                    </div>
                   </div>
 
-                  <input
-                    ref={fileInputRef}
-                    type="file"
-                    accept="image/*"
-                    multiple
-                    className="hidden"
-                    onChange={handleFileChange}
-                  />
-                </label>
+                  <div>
+                    <label className="block text-sm font-bold mb-3 text-midnight/60 uppercase tracking-widest">
+                      Hur brådskande är det?
+                    </label>
 
-                {filePreviews.length > 0 && (
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-4">
-                    {filePreviews.map(({ file, url }, index) => (
-                      <div
-                        key={`${file.name}-${file.lastModified}-${index}`}
-                        className="relative bg-white rounded-2xl border border-midnight/5 p-3"
-                      >
+                    <div className="grid grid-cols-1 gap-3">
+                      {urgencyOptions.map((option) => (
                         <button
+                          key={option}
                           type="button"
-                          onClick={() => removeFile(index)}
-                          className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-midnight text-white flex items-center justify-center shadow-md"
-                          aria-label="Ta bort bild"
+                          onClick={() => setFormState({ ...formState, urgency: option })}
+                          className={`flex items-center gap-3 text-left rounded-2xl px-5 py-4 border-2 transition-all ${
+                            formState.urgency === option
+                              ? "border-cyan-accent bg-white shadow-md"
+                              : "border-midnight/5 bg-white hover:border-cyan-accent/50"
+                          }`}
                         >
-                          <X className="w-4 h-4" />
+                          <Clock className="w-5 h-5 text-cyan-accent shrink-0" />
+                          <span className="font-bold text-midnight">{option}</span>
                         </button>
+                      ))}
+                    </div>
+                  </div>
 
-                        <div className="aspect-square rounded-xl overflow-hidden bg-slate-100 mb-2">
-                          <img
-                            src={url}
-                            alt={file.name}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
+                  <div>
+                    <label className="block text-sm font-bold mb-2 text-midnight/60 uppercase tracking-widest">
+                      Beskriv situationen
+                    </label>
 
-                        <p className="text-xs text-midnight/60 truncate">
-                          {file.name}
-                        </p>
+                    <textarea
+                      rows={6}
+                      required
+                      maxLength={1200}
+                      placeholder="Exempel: Vad har hänt? Var finns problemet? Finns det lukt, vätska, biologiskt material, skador eller något annat vi bör känna till?"
+                      className="w-full bg-white border-2 border-midnight/5 rounded-2xl px-5 py-4 focus:border-cyan-accent outline-none transition-all resize-none"
+                      value={formState.message}
+                      onChange={(e) => setFormState({ ...formState, message: e.target.value })}
+                    />
+                    <div className="text-right text-sm text-midnight/40 mt-2">
+                      {formState.message.length} / 1200
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-bold mb-2 text-midnight/60 uppercase tracking-widest">
+                      Ladda upp bilder
+                    </label>
+
+                    <label className="flex flex-col items-center justify-center gap-3 bg-white border-2 border-dashed border-midnight/10 rounded-2xl px-5 py-8 cursor-pointer hover:border-cyan-accent transition-all">
+                      <Upload className="w-8 h-8 text-cyan-accent" />
+                      <div className="text-center">
+                        <p className="font-bold text-midnight">Välj bilder</p>
+                        <p className="text-sm text-midnight/50">Frivilligt · max 6 bilder</p>
                       </div>
-                    ))}
+
+                      <input
+                        ref={fileInputRef}
+                        type="file"
+                        accept="image/*"
+                        multiple
+                        className="hidden"
+                        onChange={handleFileChange}
+                      />
+                    </label>
+
+                    {filePreviews.length > 0 && (
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-4">
+                        {filePreviews.map(({ file, url }, index) => (
+                          <div
+                            key={`${file.name}-${index}`}
+                            className="relative bg-white rounded-2xl border border-midnight/5 p-3"
+                          >
+                            <button
+                              type="button"
+                              onClick={() => removeFile(index)}
+                              className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-midnight text-white flex items-center justify-center shadow-md"
+                              aria-label="Ta bort bild"
+                            >
+                              <X className="w-4 h-4" />
+                            </button>
+
+                            <div className="aspect-square rounded-xl overflow-hidden bg-slate-100 mb-2">
+                              <img src={url} alt={file.name} className="w-full h-full object-cover" />
+                            </div>
+
+                            <p className="text-xs text-midnight/60 truncate">{file.name}</p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                      <label className="block text-sm font-bold mb-2 text-midnight/60 uppercase tracking-widest">
+                        Namn
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        className="w-full bg-white border-2 border-midnight/5 rounded-2xl px-5 py-4 focus:border-cyan-accent outline-none transition-all"
+                        value={formState.name}
+                        onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-bold mb-2 text-midnight/60 uppercase tracking-widest">
+                        Ort
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="Ex. Stockholm"
+                        className="w-full bg-white border-2 border-midnight/5 rounded-2xl px-5 py-4 focus:border-cyan-accent outline-none transition-all"
+                        value={formState.location}
+                        onChange={(e) => setFormState({ ...formState, location: e.target.value })}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                      <label className="block text-sm font-bold mb-2 text-midnight/60 uppercase tracking-widest">
+                        Telefon
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        className="w-full bg-white border-2 border-midnight/5 rounded-2xl px-5 py-4 focus:border-cyan-accent outline-none transition-all"
+                        value={formState.phone}
+                        onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-bold mb-2 text-midnight/60 uppercase tracking-widest">
+                        E-post
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        className="w-full bg-white border-2 border-midnight/5 rounded-2xl px-5 py-4 focus:border-cyan-accent outline-none transition-all"
+                        value={formState.email}
+                        onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                      />
+                    </div>
+                  </div>
+
+                  <label className="flex items-start gap-3 bg-white rounded-2xl border-2 border-midnight/5 p-5 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      required
+                      checked={formState.consent}
+                      onChange={(e) => setFormState({ ...formState, consent: e.target.checked })}
+                      className="mt-1 w-5 h-5 accent-cyan-accent"
+                    />
+
+                    <span className="text-sm text-midnight/60 leading-relaxed">
+                      Jag samtycker till att NEXE SPECIALSANERING behandlar mina personuppgifter.
+                    </span>
+                  </label>
+
+                  <button
+                    type="submit"
+                    disabled={isSending}
+                    className="w-full bg-midnight text-white py-5 rounded-2xl font-bold text-lg md:text-xl flex items-center justify-center gap-3 hover:bg-midnight/90 transition-all shadow-xl shadow-midnight/10 disabled:opacity-50"
+                  >
+                    <Send className="w-6 h-6" />
+                    <span>{isSending ? "Skickar..." : "Skicka förfrågan"}</span>
+                  </button>
+                </fieldset>
+
+                {submitError && (
+                  <div role="alert" className="bg-red-50 text-red-800 rounded-2xl p-4">
+                    {submitError}
                   </div>
                 )}
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-sm font-bold mb-2 text-midnight/60 uppercase tracking-widest">
-                    Namn
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    className="w-full bg-white border-2 border-midnight/5 rounded-2xl px-5 py-4 focus:border-cyan-accent outline-none transition-all"
-                    value={formState.name}
-                    onChange={(e) =>
-                      setFormState({ ...formState, name: e.target.value })
-                    }
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-bold mb-2 text-midnight/60 uppercase tracking-widest">
-                    Ort
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="Ex. Stockholm"
-                    className="w-full bg-white border-2 border-midnight/5 rounded-2xl px-5 py-4 focus:border-cyan-accent outline-none transition-all"
-                    value={formState.location}
-                    onChange={(e) =>
-                      setFormState({ ...formState, location: e.target.value })
-                    }
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-sm font-bold mb-2 text-midnight/60 uppercase tracking-widest">
-                    Telefon
-                  </label>
-                  <input
-                    type="tel"
-                    required
-                    className="w-full bg-white border-2 border-midnight/5 rounded-2xl px-5 py-4 focus:border-cyan-accent outline-none transition-all"
-                    value={formState.phone}
-                    onChange={(e) =>
-                      setFormState({ ...formState, phone: e.target.value })
-                    }
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-bold mb-2 text-midnight/60 uppercase tracking-widest">
-                    E-post
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    className="w-full bg-white border-2 border-midnight/5 rounded-2xl px-5 py-4 focus:border-cyan-accent outline-none transition-all"
-                    value={formState.email}
-                    onChange={(e) =>
-                      setFormState({ ...formState, email: e.target.value })
-                    }
-                  />
-                </div>
-              </div>
-
-              <label className="flex items-start gap-3 bg-white rounded-2xl border-2 border-midnight/5 p-5 cursor-pointer">
-                <input
-                  type="checkbox"
-                  required
-                  checked={formState.consent}
-                  onChange={(e) =>
-                    setFormState({ ...formState, consent: e.target.checked })
-                  }
-                  className="mt-1 w-5 h-5 accent-cyan-accent"
-                />
-
-                <span className="text-sm text-midnight/60 leading-relaxed">
-                  Jag samtycker till att NEXE SPECIALSANERING (NEXE GROUP AB) behandlar mina
-                  personuppgifter för att kunna hantera min förfrågan. Läs mer i
-                  vår integritetspolicy.
-                </span>
-              </label>
-
-              <button
-                type="submit"
-                disabled={isSending}
-                className="w-full bg-midnight text-white py-5 rounded-2xl font-bold text-lg md:text-xl flex items-center justify-center gap-3 hover:bg-midnight/90 transition-all shadow-xl shadow-midnight/10 disabled:opacity-50"
-              >
-                <Send className="w-6 h-6" />
-                {isSending ? "Skickar…" : "Skicka förfrågan"}
-              </button>
-            </fieldset>
-
-            {submitError && (
-              <div role="alert" className="bg-red-50 text-red-800 rounded-2xl p-4">
-                {submitError}
-              </div>
-            )}
-          </form>
+              </form>
+            </>
+          )}
         </motion.div>
 
         {/* Columna derecha */}
@@ -428,9 +448,7 @@ export default function Contact() {
             <div className="flex items-start gap-3 mb-8">
               <AlertTriangle className="w-6 h-6 text-cyan-accent shrink-0 mt-1" />
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-2">
-                  Är det akut?
-                </h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-2">Är det akut?</h2>
                 <p className="text-white/60 leading-relaxed">
                   Vid akuta ärenden är det bättre att ringa direkt.
                 </p>
@@ -443,12 +461,8 @@ export default function Contact() {
                   <Phone className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <p className="text-xs font-bold opacity-40 uppercase tracking-widest">
-                    Jour / Direktkontakt
-                  </p>
-                  <p className="text-xl md:text-2xl font-bold">
-                    010-XXX XX XX
-                  </p>
+                  <p className="text-xs font-bold opacity-40 uppercase tracking-widest">Jour / Direktkontakt</p>
+                  <p className="text-xl md:text-2xl font-bold">010-XXX XX XX</p>
                 </div>
               </a>
 
@@ -462,29 +476,18 @@ export default function Contact() {
                   <MessageCircle className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <p className="text-xs font-bold opacity-40 uppercase tracking-widest">
-                    WhatsApp Business
-                  </p>
-                  <p className="text-xl md:text-2xl font-bold">
-                    Chatta med oss
-                  </p>
+                  <p className="text-xs font-bold opacity-40 uppercase tracking-widest">WhatsApp Business</p>
+                  <p className="text-xl md:text-2xl font-bold">Chatta med oss</p>
                 </div>
               </a>
 
-              <a
-                href="mailto:kontakt@nexegroup.se"
-                className="flex items-center gap-5 group"
-              >
+              <a href="mailto:kontakt@nexegroup.se" className="flex items-center gap-5 group">
                 <div className="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
                   <Mail className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <p className="text-xs font-bold opacity-40 uppercase tracking-widest">
-                    E-post
-                  </p>
-                  <p className="text-lg md:text-xl font-bold break-all">
-                    kontakt@nexegroup.se
-                  </p>
+                  <p className="text-xs font-bold opacity-40 uppercase tracking-widest">E-post</p>
+                  <p className="text-lg md:text-xl font-bold break-all">kontakt@nexegroup.se</p>
                 </div>
               </a>
             </div>
@@ -498,13 +501,9 @@ export default function Contact() {
             <div className="flex items-start gap-4 mb-5">
               <Lock className="w-7 h-7 text-cyan-accent shrink-0" />
               <div>
-                <h3 className="text-2xl font-bold text-midnight mb-2">
-                  Diskretion och respekt
-                </h3>
+                <h3 className="text-2xl font-bold text-midnight mb-2">Diskretion och respekt</h3>
                 <p className="text-midnight/60 font-light leading-relaxed">
-                  Vi hanterar alla ärenden med respekt, sekretess och lugn
-                  kommunikation. Du behöver inte förklara mer än du känner dig
-                  bekväm med.
+                  Vi hanterar alla ärenden med respekt, sekretess och lugn kommunikation.
                 </p>
               </div>
             </div>
@@ -518,12 +517,9 @@ export default function Contact() {
             <div className="flex items-start gap-4">
               <MapPin className="w-7 h-7 text-cyan-accent shrink-0" />
               <div>
-                <h3 className="text-2xl font-bold text-midnight mb-2">
-                  Var arbetar vi?
-                </h3>
+                <h3 className="text-2xl font-bold text-midnight mb-2">Var arbetar vi?</h3>
                 <p className="text-midnight/60 font-light leading-relaxed">
-                  Ange din ort i formuläret så återkommer vi med besked om
-                  tillgänglighet och nästa steg.
+                  Ange din ort i formuläret så återkommer vi med besked om tillgänglighet.
                 </p>
               </div>
             </div>
