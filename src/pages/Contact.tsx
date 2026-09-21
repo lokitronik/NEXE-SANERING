@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { Helmet } from "react-helmet-async";
 import {
@@ -51,16 +51,17 @@ export default function Contact() {
   });
 
   const [files, setFiles] = useState<File[]>([]);
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const filePreviews = useMemo(
-    () =>
-      files.map((file) => ({
-        file,
-        url: URL.createObjectURL(file)
-      })),
-    [files]
-  );
+  const [isSending, setIsSending] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const sendingRef = useRef(false);
+  const [filePreviews, setFilePreviews] = useState<{ file: File; url: string }[]>([]);
+
+  useEffect(() => {
+    const previews = files.map((file) => ({ file, url: URL.createObjectURL(file) }));
+    setFilePreviews(previews);
+    return () => previews.forEach(({ url }) => URL.revokeObjectURL(url));
+  }, [files]);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files) return;
@@ -78,24 +79,74 @@ export default function Contact() {
     setFiles((prev) => prev.filter((_, i) => i !== index));
   };
 
+  // Reset the button when returning from FormSubmit with the browser Back button.
+  useEffect(() => {
+    const resetSending = () => {
+      sendingRef.current = false;
+      setIsSending(false);
+    };
+    window.addEventListener("pageshow", resetSending);
+    return () => window.removeEventListener("pageshow", resetSending);
+  }, []);
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (sendingRef.current) return;
+    setSubmitError("");
+    if (!formState.consent) {
+      setSubmitError("Du behöver godkänna behandlingen av dina personuppgifter.");
+      return;
+    }
+    if (files.reduce((sum, file) => sum + file.size, 0) > 10_000_000) {
+      setSubmitError("Bilderna är för stora. Välj mindre bilder, högst 10 MB totalt.");
+      return;
+    }
 
-    const formData = new FormData();
+    // Native multipart submission: FormSubmit's AJAX endpoint does not
+    // provide the documented file-upload flow. Keep its CAPTCHA enabled.
+    const submission = document.createElement("form");
+    submission.method = "POST";
+    submission.action = "https://formsubmit.co/kontakt@nexegroup.se";
+    submission.enctype = "multipart/form-data";
+    submission.hidden = true;
+    const addField = (name: string, value: string) => {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = name;
+      input.value = value;
+      submission.appendChild(input);
+    };
 
-    Object.entries(formState).forEach(([key, value]) => {
-      formData.append(key, String(value));
-    });
-
-    files.forEach((file) => {
-      formData.append("images", file);
-    });
-
-    console.log("Form data ready:", Object.fromEntries(formData.entries()));
-    console.log("Files:", files);
-
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 5000);
+    try {
+      Object.entries(formState).forEach(([key, value]) => {
+        if (key === "email" && !String(value).trim()) return;
+        addField(key, String(value));
+      });
+      addField("_subject", "Ny förfrågan – NEXE SPECIALSANERING");
+      addField("_template", "table");
+      addField("_url", window.location.href);
+      // Separate file inputs ensure each selected image is submitted,
+      // including images retained across multiple selections.
+      files.forEach((file, index) => {
+        const input = document.createElement("input");
+        input.type = "file";
+        input.name = `attachment${index + 1}`;
+        const transfer = new DataTransfer();
+        transfer.items.add(file);
+        input.files = transfer.files;
+        submission.appendChild(input);
+      });
+      document.body.appendChild(submission);
+      sendingRef.current = true;
+      setIsSending(true);
+      HTMLFormElement.prototype.submit.call(submission);
+    } catch {
+      sendingRef.current = false;
+      setIsSending(false);
+      setSubmitError("Formuläret kunde inte skickas. Försök igen eller mejla kontakt@nexegroup.se med dina bilder.");
+    } finally {
+      submission.remove();
+    }
   };
 
   return (
@@ -149,7 +200,8 @@ export default function Contact() {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-8">
+          <form onSubmit={handleSubmit} className="space-y-8" aria-busy={isSending}>
+            <fieldset disabled={isSending} className="space-y-8 min-w-0 border-0 p-0 m-0">
             <div>
               <label className="block text-sm font-bold mb-3 text-midnight/60 uppercase tracking-widest">
                 Vad gäller din förfrågan?
@@ -232,10 +284,10 @@ export default function Contact() {
                 <Upload className="w-8 h-8 text-cyan-accent" />
                 <div className="text-center">
                   <p className="font-bold text-midnight">
-                    Välj bilder eller dra hit dem
+                    Välj bilder
                   </p>
                   <p className="text-sm text-midnight/50">
-                    Frivilligt · max 6 bilder
+                    Frivilligt · max 6 bilder · 10 MB totalt
                   </p>
                 </div>
 
@@ -368,18 +420,14 @@ export default function Contact() {
               className="w-full bg-midnight text-white py-5 rounded-2xl font-bold text-lg md:text-xl flex items-center justify-center gap-3 hover:bg-midnight/90 transition-all shadow-xl shadow-midnight/10"
             >
               <Send className="w-6 h-6" />
-              Skicka förfrågan
+              {isSending ? "Skickar…" : "Skicka förfrågan"}
             </button>
 
-            {isSubmitted && (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="bg-cyan-accent/10 text-midnight font-bold text-center flex items-center justify-center gap-2 rounded-2xl p-4"
-              >
-                <ShieldCheck className="w-5 h-5 text-cyan-accent" />
-                Tack. Vi kontaktar dig så snart som möjligt.
-              </motion.div>
+            </fieldset>
+            {submitError && (
+              <div role="alert" className="bg-red-50 text-red-800 rounded-2xl p-4">
+                {submitError}
+              </div>
             )}
           </form>
         </motion.div>
