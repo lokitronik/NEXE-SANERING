@@ -439,7 +439,7 @@ export default function Contact() {
               </a>
 
               <a
-                href="mailto:info@nexegroup.se"
+                href="mailto:kontakt@nexegroup.se"
                 className="flex items-center gap-5 group"
               >
                 <div className="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
@@ -451,7 +451,7 @@ export default function Contact() {
                     E-post
                   </p>
                   <p className="text-lg md:text-xl font-bold break-all">
-                    info@nexegroup.se
+                    kontakt@nexegroup.se
                   </p>
                 </div>
               </a>

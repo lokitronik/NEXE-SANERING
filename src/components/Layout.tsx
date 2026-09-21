@@ -120,7 +120,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="text-xs font-medium text-midnight/70">
               En del av{" "}
               <a
-                href="https://lokitronik.github.io/NEXE-GROUP-AB/"
+                href="https://nexegroup.se"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-midnight hover:text-cyan-accent transition-colors underline underline-offset-2"
@@ -243,6 +243,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 >
                   Kontakt
                 </Link>
+              </li>
+
+              <li>
+                <a
+                  href="mailto:kontakt@nexegroup.se"
+                  className="hover:text-cyan-accent transition-colors"
+                >
+                  kontakt@nexegroup.se
+                </a>
               </li>
 
               <li>
