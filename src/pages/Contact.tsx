@@ -68,11 +68,53 @@ export default function Contact() {
     if (!e.target.files) return;
     const selectedFiles: File[] = Array.from(e.target.files);
     const allowedFiles = selectedFiles.filter((file) => file.type.startsWith("image/"));
-    setFiles((prev) => [...prev, ...allowedFiles].slice(0, 6));
+    setFiles((prev) => [...prev, ...allowedFiles].slice(0, 4));
   };
 
   const removeFile = (index: number) => {
     setFiles((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  // Función interna para comprimir la imagen en el cliente y pasarla a Base64 sin servidores externos
+  const compressImageToBase64 = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = (event) => {
+        const img = new Image();
+        img.src = event.target?.result as string;
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          const MAX_WIDTH = 800;
+          const MAX_HEIGHT = 800;
+          let width = img.width;
+          let height = img.height;
+
+          if (width > height) {
+            if (width > MAX_WIDTH) {
+              height *= MAX_WIDTH / width;
+              width = MAX_WIDTH;
+            }
+          } else {
+            if (height > MAX_HEIGHT) {
+              width *= MAX_HEIGHT / height;
+              height = MAX_HEIGHT;
+            }
+          }
+
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext("2d");
+          ctx?.drawImage(img, 0, 0, width, height);
+
+          // Comprime a JPEG de 60% calidad (reduce archivos de 5MB a ~70KB sin perder legibilidad)
+          const base64Url = canvas.toDataURL("image/jpeg", 0.6);
+          resolve(base64Url);
+        };
+        img.onerror = (err) => reject(err);
+      };
+      reader.onerror = (err) => reject(err);
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -87,34 +129,6 @@ export default function Contact() {
     setIsSending(true);
 
     try {
-      let imageUrls: string[] = [];
-
-      // Ladda upp bilderna direkt via tmpfiles (utan behov av API-nyckel eller backend)
-      if (files.length > 0) {
-        const uploadPromises = files.map(async (file) => {
-          try {
-            const body = new FormData();
-            body.append("input_file", file);
-            const res = await fetch("https://tmpfiles.org/api/v1/upload", {
-              method: "POST",
-              body,
-            });
-            const json = await res.json();
-            if (json.status === "success" && json.data?.url) {
-              // Gör om URL:en till en direkt nedladdnings-/visningslänk
-              return json.data.url.replace("tmpfiles.org/", "tmpfiles.org/dl/") as string;
-            }
-          } catch {
-            return null;
-          }
-          return null;
-        });
-
-        const results = await Promise.all(uploadPromises);
-        imageUrls = results.filter((url): url is string => Boolean(url));
-      }
-
-      // Förbered data för Formspree
       const formPayload = new FormData();
       formPayload.append("Ärende", formState.caseType || "Ej angett");
       formPayload.append("Brådska", formState.urgency || "Ej angett");
@@ -125,10 +139,15 @@ export default function Contact() {
       formPayload.append("Beskrivning", formState.message.trim());
       formPayload.append("_subject", "Ny förfrågan med bilder – NEXE SPECIALSANERING");
 
-      if (imageUrls.length > 0) {
-        formPayload.append("Bifogade bilder (Länkar)", imageUrls.join("\n\n"));
-      } else if (files.length > 0) {
-        formPayload.append("Bilder", "Kunden valde bilder men överföringen kunde inte slutföras.");
+      // Si el cliente subió fotos, las procesamos directamente en el navegador
+      if (files.length > 0) {
+        const base64Images = await Promise.all(
+          files.map((file) => compressImageToBase64(file))
+        );
+
+        base64Images.forEach((imgData, index) => {
+          formPayload.append(`Bild_${index + 1}`, imgData);
+        });
       } else {
         formPayload.append("Bilder", "Inga bilder bifogades.");
       }
@@ -308,7 +327,7 @@ export default function Contact() {
                       <Upload className="w-8 h-8 text-cyan-accent" />
                       <div className="text-center">
                         <p className="font-bold text-midnight">Välj bilder</p>
-                        <p className="text-sm text-midnight/50">Frivilligt · max 6 bilder</p>
+                        <p className="text-sm text-midnight/50">Frivilligt · upp till 4 bilder</p>
                       </div>
 
                       <input
@@ -322,7 +341,7 @@ export default function Contact() {
                     </label>
 
                     {filePreviews.length > 0 && (
-                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-4">
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
                         {filePreviews.map(({ file, url }, index) => (
                           <div
                             key={`${file.name}-${index}`}
@@ -422,10 +441,10 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSending}
-                    className="w-full bg-midnight text-white py-5 rounded-2xl font-bold text-lg md:text-xl flex items-center justify-center gap-3 hover:bg-midnight/90 transition-all shadow-xl shadow-midnight/10 disabled:opacity-50"
+                    className="w-full bg-midnight text-white py-5 rounded-2xl font-bold text-lg md:text-xl flex items-center justify-center gap-3 hover:bg-midnight/90 transition-all shadow-xl shadow-midnight/10 disabled:opacity-50 cursor-pointer"
                   >
                     <Send className="w-6 h-6" />
-                    <span>{isSending ? "Laddar upp och skickar..." : "Skicka förfrågan"}</span>
+                    <span>{isSending ? "Behandlar och skickar..." : "Skicka förfrågan"}</span>
                   </button>
                 </fieldset>
 
@@ -439,7 +458,7 @@ export default function Contact() {
           )}
         </motion.div>
 
-        {/* Högerkolumn */}
+        {/* Columna de contacto rápido */}
         <div className="space-y-8 lg:sticky lg:top-24">
           <motion.div
             className="bg-midnight text-white p-7 sm:p-9 md:p-10 rounded-[2rem] md:rounded-[3rem]"
