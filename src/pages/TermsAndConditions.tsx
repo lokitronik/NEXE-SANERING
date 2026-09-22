@@ -171,11 +171,11 @@ export default function TermsAndConditions() {
             </p>
 
             <p className="mt-2">
-              Org.nr: [XXXXXX-XXXX]
+              Org.nr: 559602-9404
             </p>
 
             <p>
-              Adress: [ADRESS]
+              Adress: Forngränd 2B, 169 68 Solna
             </p>
 
             <p>
@@ -183,7 +183,7 @@ export default function TermsAndConditions() {
             </p>
 
             <p>
-              Telefon: [TELEFON]
+              Telefon: 010-XXX XX XX
             </p>
           </div>
         </section>

@@ -524,11 +524,11 @@ export default function Contact() {
             transition={{ ...fadeInUp.transition, delay: 0.35 }}
           >
             <div className="flex items-start gap-4">
-              <MapPin className="w-7 h-7 text-cyan-accent shrink-0" />
+              <MapPin className="w-7 h-7 text-cyan-accent shrink-0 mt-0.5" />
               <div>
                 <h3 className="text-2xl font-bold text-midnight mb-2">Var arbetar vi?</h3>
                 <p className="text-midnight/60 font-light leading-relaxed">
-                  Ange din ort i formuläret så återkommer vi med besked om tillgänglighet.
+                  Vi utför sanering och utryckningar direkt på plats hos kund. Ange din ort i formuläret så återkommer vi med besked om tillgänglighet och inställelsetid.
                 </p>
               </div>
             </div>

@@ -129,6 +129,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 NEXE GROUP AB
               </a>
             </div>
+
+            <p className="text-[11px] text-midnight/45 mt-2 leading-relaxed">
+              Org.nr: 559602-9404
+            </p>
           </div>
 
           {/* Kärntjänster */}
