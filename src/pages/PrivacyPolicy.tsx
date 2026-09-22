@@ -174,7 +174,7 @@ export default function PrivacyPolicy() {
             </p>
 
             <p>
-              E-post: kontakt@nexegroup.se
+              E-post: <span translate="no" className="notranslate">kontakt@nexegroup.se</span>
             </p>
 
             <p>

@@ -123,7 +123,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 href="https://nexegroup.se"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold text-midnight hover:text-cyan-accent transition-colors underline underline-offset-2"
+                translate="no"
+                className="notranslate font-semibold text-midnight hover:text-cyan-accent transition-colors underline underline-offset-2"
               >
                 NEXE GROUP AB
               </a>
@@ -248,7 +249,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <li>
                 <a
                   href="mailto:kontakt@nexegroup.se"
-                  className="hover:text-cyan-accent transition-colors"
+                  translate="no"
+                  className="notranslate hover:text-cyan-accent transition-colors"
                 >
                   kontakt@nexegroup.se
                 </a>

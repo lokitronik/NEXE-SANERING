@@ -179,7 +179,7 @@ export default function TermsAndConditions() {
             </p>
 
             <p>
-              E-post: kontakt@nexegroup.se
+              E-post: <span translate="no" className="notranslate">kontakt@nexegroup.se</span>
             </p>
 
             <p>

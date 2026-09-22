@@ -425,7 +425,15 @@ export default function Contact() {
 
                 {submitError && (
                   <div role="alert" className="bg-red-50 text-red-800 rounded-2xl p-4">
-                    {submitError}
+                    {submitError.includes("kontakt@nexegroup.se") ? (
+                      <>
+                        {submitError.split("kontakt@nexegroup.se")[0]}
+                        <span translate="no" className="notranslate font-semibold">kontakt@nexegroup.se</span>
+                        {submitError.split("kontakt@nexegroup.se")[1]}
+                      </>
+                    ) : (
+                      submitError
+                    )}
                   </div>
                 )}
               </form>
@@ -476,13 +484,19 @@ export default function Contact() {
                 </div>
               </a>
 
-              <a href="mailto:kontakt@nexegroup.se" className="flex items-center gap-5 group">
+              <a
+                href="mailto:kontakt@nexegroup.se"
+                translate="no"
+                className="notranslate flex items-center gap-5 group"
+              >
                 <div className="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
                   <Mail className="w-7 h-7 text-white" />
                 </div>
                 <div>
                   <p className="text-xs font-bold opacity-40 uppercase tracking-widest">E-post</p>
-                  <p className="text-lg md:text-xl font-bold break-all">kontakt@nexegroup.se</p>
+                  <p className="text-lg md:text-xl font-bold break-all notranslate" translate="no">
+                    kontakt@nexegroup.se
+                  </p>
                 </div>
               </a>
             </div>
