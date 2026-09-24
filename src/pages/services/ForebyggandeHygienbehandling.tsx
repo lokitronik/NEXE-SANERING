@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Helmet } from "react-helmet-async";
-import { Sparkles, Shield, Wind, CheckCircle2, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Sparkles, Shield, Wind, CheckCircle2, Phone, Clock } from "lucide-react";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -29,7 +30,11 @@ export default function ForebyggandeHygienbehandling() {
       </Helmet>
 
       {/* Hero */}
-      <motion.div className="text-center mb-14 sm:mb-16 md:mb-20" {...fadeInUp}>
+      <motion.div className="text-center mb-10 sm:mb-12 md:mb-14" {...fadeInUp}>
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-midnight/70 text-xs font-semibold uppercase tracking-wider mb-6">
+          <Clock className="w-3.5 h-3.5 text-cyan-accent" />
+          Kommande tjänst · Under utveckling
+        </div>
         <Sparkles className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-cyan-accent mx-auto mb-5 sm:mb-6 md:mb-8" />
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-midnight mb-4 sm:mb-5 md:mb-6 leading-tight">
           Förebyggande hygienbehandling
@@ -40,6 +45,30 @@ export default function ForebyggandeHygienbehandling() {
           luft, säsongsstängda miljöer eller hygienisk belastning kräver mer än
           vanlig rengöring.
         </p>
+      </motion.div>
+
+      {/* Development Notice */}
+      <motion.div
+        {...fadeInUp}
+        className="mb-12 sm:mb-16 p-5 sm:p-6 rounded-2xl md:rounded-3xl bg-slate-50 border border-dashed border-slate-300 text-midnight flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+      >
+        <div className="flex items-start sm:items-center gap-3">
+          <Clock className="w-5 h-5 text-cyan-accent shrink-0 mt-0.5 sm:mt-0" />
+          <div>
+            <span className="text-xs font-bold tracking-wider uppercase text-cyan-accent block">
+              Koncept & förberedelse
+            </span>
+            <p className="text-xs sm:text-sm text-midnight/70 font-light mt-0.5">
+              Denna tjänst och metodik förbereds och lanseras framöver. Kontakta oss gärna vid intresse eller för rådgivning.
+            </p>
+          </div>
+        </div>
+        <Link
+          to="/kontakt"
+          className="shrink-0 text-xs sm:text-sm font-semibold px-4 py-2 rounded-full border border-midnight/20 hover:border-cyan-accent hover:text-cyan-accent transition-colors bg-white"
+        >
+          Kontakta oss inför lansering
+        </Link>
       </motion.div>
 
       {/* Main intro */}

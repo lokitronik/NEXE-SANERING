@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Helmet } from "react-helmet-async";
-import { ShieldCheck, Phone, Hotel, GraduationCap, Anchor, Microscope, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ShieldCheck, Phone, Hotel, GraduationCap, Anchor, Microscope, ChevronRight, Clock } from "lucide-react";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 40 },
@@ -124,8 +125,13 @@ export default function TechnicalCleaningB2B() {
       </Helmet>
 
       {/* HERO */}
-      <motion.div className="mb-16 md:mb-20" {...fadeUp(0)}>
-        <div className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-accent uppercase tracking-widest mb-6">
+      <motion.div className="mb-10 md:mb-12" {...fadeUp(0)}>
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-midnight/70 text-xs font-semibold uppercase tracking-wider mb-6">
+          <Clock className="w-3.5 h-3.5 text-cyan-accent" />
+          Kommande tjänst · Under utveckling
+        </div>
+
+        <div className="flex items-center gap-2 text-sm font-semibold text-cyan-accent uppercase tracking-widest mb-4">
           <ShieldCheck className="w-4 h-4" />
           <span>Teknisk hygienbehandling</span>
         </div>
@@ -135,10 +141,31 @@ export default function TechnicalCleaningB2B() {
           <span className="text-cyan-accent">Anpassad efter miljön.</span>
         </h1>
 
-        <p className="text-lg md:text-xl text-midnight/60 font-light leading-relaxed max-w-2xl">
+        <p className="text-lg md:text-xl text-midnight/60 font-light leading-relaxed max-w-2xl mb-8">
           Teknisk hygienbehandling för hotell, hostel, skolor, förskolor, gym, äldreboenden, kliniker, sommarstugor och maritin miljö.
           Samma certifierade metod — anpassad efter varje verksamhets behov.
         </p>
+
+        {/* Development Notice */}
+        <div className="p-5 sm:p-6 rounded-2xl md:rounded-3xl bg-slate-50 border border-dashed border-slate-300 text-midnight flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="flex items-start sm:items-center gap-3">
+            <Clock className="w-5 h-5 text-cyan-accent shrink-0 mt-0.5 sm:mt-0" />
+            <div>
+              <span className="text-xs font-bold tracking-wider uppercase text-cyan-accent block">
+                Koncept under utveckling
+              </span>
+              <p className="text-xs sm:text-sm text-midnight/70 font-light mt-0.5">
+                Denna tjänst utvecklas och förbereds för närvarande. Kontakta oss gärna vid förhandsförfrågningar för din verksamhet.
+              </p>
+            </div>
+          </div>
+          <Link
+            to="/kontakt"
+            className="shrink-0 text-xs sm:text-sm font-semibold px-4 py-2 rounded-full border border-midnight/20 hover:border-cyan-accent hover:text-cyan-accent transition-colors bg-white"
+          >
+            Kontakta oss inför lansering
+          </Link>
+        </div>
       </motion.div>
 
       {/* PROCESS */}

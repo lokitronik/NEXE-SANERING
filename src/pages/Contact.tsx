@@ -26,9 +26,9 @@ const caseTypes = [
   "Akut sanering",
   "Traumasanering",
   "Sanering vid dödsfall",
-  "Lukt eller hygienproblem",
-  "Förebyggande hygienbehandling",
-  "Teknisk rengöring / B2B",
+  "Socialsanering & hoarder-städning",
+  "Luktsanering",
+  "Hantering av personliga tillhörigheter",
   "Jag är osäker"
 ];
 

@@ -7,10 +7,7 @@ import {
   HeartHandshake,
   ArrowRight,
   Wind,
-  ShieldCheck,
   Box,
-  Sparkles,
-  Maximize,
   Users2,
 } from "lucide-react";
 
@@ -25,69 +22,68 @@ const coreServices = [
     title: "Sanering vid obevakat dödsfall",
     description:
       "Diskret och professionell sanering efter obevakade dödsfall med fokus på biologiskt material, lukt och återställande åtgärder.",
-    icon: <HeartHandshake className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
+    icon: <HeartHandshake className="w-5 h-5 text-cyan-accent" />,
     link: "/tjanster/sanering-dodstall",
   },
   {
     title: "Traumasanering",
     description:
       "Snabb och säker sanering efter blodspill, olyckor, våldshändelser och andra akuta biologiska föroreningar.",
-    icon: <Activity className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
+    icon: <Activity className="w-5 h-5 text-cyan-accent" />,
     link: "/tjanster/traumasanering",
   },
   {
     title: "Socialsanering & hoarder-städning",
     description:
       "Vi utför professionell socialsanering och hoarder-städning, rensning och sanering av kraftigt nedskräpade bostäder med biologisk belastning, lukt och extrem uppsamling. Diskret, metodisk och med full utrustning.",
-    icon: <Users2 className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
+    icon: <Users2 className="w-5 h-5 text-cyan-accent" />,
     link: "/tjanster/socialsanering",
   },
   {
     title: "Luktsanering",
     description:
       "Teknisk behandling av svåra och kvarvarande lukter i bostäder, lokaler och andra miljöer där vanlig rengöring inte räcker.",
-    icon: <Wind className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
+    icon: <Wind className="w-5 h-5 text-cyan-accent" />,
     link: "/tjanster/luktsanering",
   },
-{
-  title: "Hantering av personliga tillhörigheter",
-  description:
-    "Respektfull identifiering, sortering och hantering av personliga tillhörigheter efter överenskommelse.",
-  icon: <Box className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
-  link: "/hantering-av-personliga-tillhorigheter",
-},
+  {
+    title: "Hantering av personliga tillhörigheter",
+    description:
+      "Respektfull identifiering, sortering och hantering av personliga tillhörigheter efter överenskommelse.",
+    icon: <Box className="w-5 h-5 text-cyan-accent" />,
+    link: "/hantering-av-personliga-tillhorigheter",
+  },
 ];
 
+// Sparas intakt för framtida återaktivering:
+/*
 const preventativeServices = [
   {
     title: "Förebyggande hygienbehandling",
     description:
       "Teknisk behandling med torrånga och hydroxylteknik för utrymmen med luktproblem, stillastående miljöer eller behov av förebyggande hygieninsats på utvalda ytor.",
-    icon: <Sparkles className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
     link: "/tjanster/forebyggande-hygienbehandling",
   },
   {
     title: "Teknisk rengöring & hygienkontroll",
     description:
       "Diskret och noggrant utförd teknisk rengöring för hotell, konferensmiljöer och andra verksamheter med höga krav på hygien, dokumentation och återställning.",
-    icon: <ShieldCheck className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
     link: "/tjanster/technical-cleaning-b2b",
   },
   {
     title: "Svåråtkomliga ytor",
     description:
       "Specialiserad rengöring och desinfektion av dolda eller svåråtkomliga utrymmen där standardinsatser inte räcker.",
-    icon: <Maximize className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
     link: "/tjanster/svaratkomliga-ytor",
   },
   {
-  title: "Bastu Hygienkontroll",
-  description:
-    "Specialiserad hygienbehandling av bastu- och wellnessmiljöer med hög värme och fukt. Fokus på porösa träytor, kontaktytor och områden där biofilm och organiskt material ackumuleras över tid. Anpassad för gym, spa och hotellmiljöer.",
-  icon: <Wind className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
-  link: "/tjanster/bastu-hygienkontroll",
-},
+    title: "Bastu Hygienkontroll",
+    description:
+      "Specialiserad hygienbehandling av bastu- och wellnessmiljöer med hög värme och fukt. Fokus på porösa träytor, kontaktytor och områden där biofilm och organiskt material ackumuleras över tid. Anpassad för gym, spa och hotellmiljöer.",
+    link: "/tjanster/bastu-hygienkontroll",
+  },
 ];
+*/
 
 const values = [
   {
@@ -181,94 +177,63 @@ export default function Home() {
       </section>
 
       {/* Kärntjänster */}
-      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-14">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-10 lg:px-14">
         <div className="max-w-7xl mx-auto">
           <motion.div
-            className="text-center mb-12 sm:mb-16 md:mb-20"
+            className="text-center mb-8 sm:mb-12"
             {...fadeInUp}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-midnight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-midnight">
               Våra kärntjänster
             </h2>
-            <p className="text-base sm:text-lg text-midnight/60 max-w-2xl mx-auto font-light leading-relaxed">
+            <p className="text-sm sm:text-base text-midnight/60 max-w-2xl mx-auto font-light leading-relaxed">
               Specialiserade tjänster för miljöer där vanlig rengöring inte
               räcker och där precision, säkerhet och diskretion är avgörande.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {coreServices.map((service, index) => (
               <motion.div
                 key={service.title}
-                className="group bg-slate-50 p-5 sm:p-6 md:p-8 rounded-3xl border border-slate-200 hover:border-cyan-accent/30 hover:-translate-y-1 transition-all duration-300 flex flex-col h-full"
+                className="group bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 hover:border-cyan-accent/40 hover:shadow-md transition-all duration-300 flex flex-col h-full"
                 {...fadeInUp}
-                transition={{ ...fadeInUp.transition, delay: index * 0.08 }}
+                transition={{ ...fadeInUp.transition, delay: index * 0.06 }}
               >
-                <div className="mb-4 sm:mb-6">{service.icon}</div>
+                <div className="w-10 h-10 rounded-xl bg-cyan-accent/10 flex items-center justify-center mb-3.5 group-hover:bg-cyan-accent group-hover:text-white transition-colors shrink-0">
+                  {service.icon}
+                </div>
 
-                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-midnight leading-snug">
+                <h3 className="text-base sm:text-lg font-bold mb-2 text-midnight leading-snug">
                   {service.title}
                 </h3>
 
-                <p className="text-sm sm:text-base text-midnight/70 font-light leading-relaxed mb-6 flex-grow">
+                <p className="text-xs sm:text-sm text-midnight/70 font-light leading-relaxed mb-4 flex-grow">
                   {service.description}
                 </p>
 
-                <Link
-                  to={service.link}
-                  className="text-cyan-accent font-semibold inline-flex items-center gap-2 hover:gap-3 transition-all text-sm sm:text-base"
-                >
-                  Läs mer <ArrowRight className="w-4 h-4 shrink-0" />
-                </Link>
+                <div className="pt-3 border-t border-slate-100 mt-auto">
+                  <Link
+                    to={service.link}
+                    className="text-cyan-accent font-semibold inline-flex items-center gap-1.5 hover:gap-2.5 transition-all text-xs sm:text-sm"
+                  >
+                    Läs mer <ArrowRight className="w-3.5 h-3.5 shrink-0" />
+                  </Link>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Förebyggande tjänster & tillval */}
+      {/* Förebyggande tjänster döljs från startsidan enligt önskemål och sparas för framtida lansering */}
+      {/* 
       <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-14 bg-slate-50">
         <div className="max-w-7xl mx-auto">
-          <motion.div className="text-center mb-12 sm:mb-16" {...fadeInUp}>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-midnight">
-              Förebyggande tjänster & tillval
-            </h2>
-            <p className="text-base sm:text-lg text-midnight/60 max-w-2xl mx-auto font-light leading-relaxed">
-              Kompletterande insatser för utrymmen där man vill arbeta
-              förebyggande med hygien, luktkontroll och återkommande belastning
-              i miljön.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
-            {preventativeServices.map((service, index) => (
-              <motion.div
-                key={service.title}
-                className="group bg-white p-5 sm:p-6 md:p-8 rounded-3xl border border-slate-200 hover:border-cyan-accent/30 hover:-translate-y-1 transition-all duration-300 flex flex-col h-full"
-                {...fadeInUp}
-                transition={{ ...fadeInUp.transition, delay: index * 0.08 }}
-              >
-                <div className="mb-4 sm:mb-6">{service.icon}</div>
-
-                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-midnight leading-snug">
-                  {service.title}
-                </h3>
-
-                <p className="text-sm sm:text-base text-midnight/70 font-light leading-relaxed mb-6 flex-grow">
-                  {service.description}
-                </p>
-
-                <Link
-                  to={service.link}
-                  className="text-cyan-accent font-semibold inline-flex items-center gap-2 hover:gap-3 transition-all text-sm sm:text-base"
-                >
-                  Läs mer <ArrowRight className="w-4 h-4 shrink-0" />
-                </Link>
-              </motion.div>
-            ))}
-          </div>
+          ...
         </div>
-      </section>
+      </section> 
+      */}
 
       {/* Values */}
       <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-14">

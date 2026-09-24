@@ -180,47 +180,34 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </ul>
           </div>
 
-          {/* Förebyggande */}
+          {/* Kommande tjänster */}
           <div>
-            <h4 className="font-bold mb-3 uppercase tracking-wider text-xs text-midnight/40">
-              Förebyggande
+            <h4 className="font-bold mb-3 uppercase tracking-wider text-xs text-midnight/40 flex items-center gap-1.5">
+              <span>Kommande tjänster</span>
+              <span className="text-[10px] text-cyan-accent font-semibold lowercase">
+                (snart)
+              </span>
             </h4>
 
-            <ul className="space-y-2 text-xs sm:text-sm font-medium text-midnight/70">
-              <li>
-                <Link
-                  to="/tjanster/forebyggande-hygienbehandling"
-                  className="hover:text-cyan-accent transition-colors"
-                >
-                  Förebyggande hygienbehandling
-                </Link>
+            <ul className="space-y-2 text-xs sm:text-sm font-medium text-midnight/40 select-none">
+              <li className="flex items-center justify-between cursor-not-allowed">
+                <span>Förebyggande hygienbehandling</span>
+                <span className="text-[10px] text-midnight/35 font-normal">snart</span>
               </li>
 
-              <li>
-                <Link
-                  to="/tjanster/technical-cleaning-b2b"
-                  className="hover:text-cyan-accent transition-colors"
-                >
-                  Teknisk rengöring & hygien
-                </Link>
+              <li className="flex items-center justify-between cursor-not-allowed">
+                <span>Teknisk rengöring & hygien</span>
+                <span className="text-[10px] text-midnight/35 font-normal">snart</span>
               </li>
 
-              <li>
-                <Link
-                  to="/tjanster/svaratkomliga-ytor"
-                  className="hover:text-cyan-accent transition-colors"
-                >
-                  Svåråtkomliga ytor
-                </Link>
+              <li className="flex items-center justify-between cursor-not-allowed">
+                <span>Svåråtkomliga ytor</span>
+                <span className="text-[10px] text-midnight/35 font-normal">snart</span>
               </li>
 
-              <li>
-                <Link
-                  to="/tjanster/bastu-hygienkontroll"
-                  className="hover:text-cyan-accent transition-colors"
-                >
-                  Bastu Hygienkontroll
-                </Link>
+              <li className="flex items-center justify-between cursor-not-allowed">
+                <span>Bastu Hygienkontroll</span>
+                <span className="text-[10px] text-midnight/35 font-normal">snart</span>
               </li>
             </ul>
           </div>

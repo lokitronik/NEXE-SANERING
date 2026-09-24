@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import {
   Wind,
   ShieldAlert,
@@ -13,6 +14,7 @@ import {
   Activity,
   Heart,
   Droplets,
+  Clock,
 } from "lucide-react";
 
 const fadeInUp = {
@@ -49,23 +51,50 @@ export default function BastuHygienkontroll() {
 
       {/* HERO SECTION */}
       <motion.div 
-        className="text-center mb-20"
+        className="text-center mb-12 sm:mb-16"
         {...fadeInUp}
       >
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-accent/10 text-cyan-accent mb-6">
-          <Flame className="w-5 h-5 animate-pulse" />
-          <span className="uppercase text-xs font-bold tracking-widest">
-            Teknisk Hygienkontroll
-          </span>
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-midnight/70 text-xs font-semibold uppercase tracking-wider mb-6">
+          <Clock className="w-3.5 h-3.5 text-cyan-accent" />
+          Kommande tjänst · Under utveckling
         </div>
-        <h1 className="text-5xl md:text-6xl font-extrabold text-midnight mb-6 leading-tight">
+        <div>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-accent/10 text-cyan-accent mb-6">
+            <Flame className="w-5 h-5 animate-pulse" />
+            <span className="uppercase text-xs font-bold tracking-widest">
+              Teknisk Hygienkontroll
+            </span>
+          </div>
+        </div>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-midnight mb-6 leading-tight">
           Bastuhygien på mikrobiologisk nivå
         </h1>
-        <p className="text-xl text-midnight/60 max-w-3xl mx-auto font-light leading-relaxed">
+        <p className="text-xl text-midnight/60 max-w-3xl mx-auto font-light leading-relaxed mb-8">
           Bastumiljöer är inte bara varma utrymmen. De är biologiska system där
           fukt, värme och organiskt material skapar en stabil miljö för
           biofilm, bakterier och svampsporer som inte försvinner med vanlig städning.
         </p>
+
+        {/* Development Notice */}
+        <div className="max-w-3xl mx-auto p-5 sm:p-6 rounded-2xl md:rounded-3xl bg-slate-50 border border-dashed border-slate-300 text-midnight flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-left">
+          <div className="flex items-start sm:items-center gap-3">
+            <Clock className="w-5 h-5 text-cyan-accent shrink-0 mt-0.5 sm:mt-0" />
+            <div>
+              <span className="text-xs font-bold tracking-wider uppercase text-cyan-accent block">
+                Koncept under utveckling
+              </span>
+              <p className="text-xs sm:text-sm text-midnight/70 font-light mt-0.5">
+                Denna specialiserade metodik förbereds och lanseras framöver. Kontakta oss gärna för rådgivning eller förhandsintresse för bastu- och wellnessanläggningar.
+              </p>
+            </div>
+          </div>
+          <Link
+            to="/kontakt"
+            className="shrink-0 text-xs sm:text-sm font-semibold px-4 py-2 rounded-full border border-midnight/20 hover:border-cyan-accent hover:text-cyan-accent transition-colors bg-white"
+          >
+            Kontakta oss inför lansering
+          </Link>
+        </div>
       </motion.div>
 
       {/* PROBLEM & INSIGHT BLOCK */}

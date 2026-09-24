@@ -12,6 +12,8 @@ import {
   ShieldCheck,
   Users,
   Users2,
+  Clock,
+  Lock,
 } from "lucide-react";
 
 const fadeInUp = {
@@ -25,37 +27,37 @@ const coreServices = [
     title: "Sanering vid obevakat dödsfall",
     description:
       "Diskret och professionell sanering efter obevakade dödsfall. Vi hanterar biologiskt material, lukt, dokumentation och återställande åtgärder med respekt och säkerhet.",
-    icon: <HeartHandshake className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
+    icon: <HeartHandshake className="w-5 h-5 text-cyan-accent" />,
     link: "/tjanster/sanering-dodstall",
   },
   {
     title: "Traumasanering",
     description:
       "Snabb och säker sanering efter blodspill, olyckor, våldshändelser och andra akuta biologiska föroreningar. Vid behov kan teknisk rengöring läggas till för övriga ytor.",
-    icon: <Activity className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
+    icon: <Activity className="w-5 h-5 text-cyan-accent" />,
     link: "/tjanster/traumasanering",
   },
   {
     title: "Socialsanering & hoarder-städning",
     description:
       "Vi utför professionell socialsanering och hoarder-städning — rensning och sanering av kraftigt nedskräpade bostäder med biologisk belastning, extrem uppsamling och luktpåverkan. Diskret, metodisk och med full utrustning.",
-    icon: <Users2 className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
+    icon: <Users2 className="w-5 h-5 text-cyan-accent" />,
     link: "/tjanster/socialsanering",
   },
   {
     title: "Luktsanering",
     description:
       "Teknisk behandling av svåra och kvarvarande lukter i bostäder, lokaler och andra miljöer där vanlig rengöring inte räcker.",
-    icon: <Wind className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
+    icon: <Wind className="w-5 h-5 text-cyan-accent" />,
     link: "/tjanster/luktsanering",
   },
-{
-  title: "Hantering av personliga tillhörigheter",
-  description:
-    "Respektfull identifiering, sortering och hantering av personliga tillhörigheter efter överenskommelse.",
-  icon: <Box className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
-  link: "/hantering-av-personliga-tillhorigheter",
-},
+  {
+    title: "Hantering av personliga tillhörigheter",
+    description:
+      "Respektfull identifiering, sortering och hantering av personliga tillhörigheter efter överenskommelse.",
+    icon: <Box className="w-5 h-5 text-cyan-accent" />,
+    link: "/hantering-av-personliga-tillhorigheter",
+  },
 ];
 
 const preventativeServices = [
@@ -109,81 +111,111 @@ export default function Services() {
         />
       </Helmet>
 
-      <motion.div className="text-center mb-14 sm:mb-16 md:mb-20" {...fadeInUp}>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-midnight mb-4 sm:mb-5 md:mb-6 leading-tight">
+      <motion.div className="text-center mb-10 sm:mb-12" {...fadeInUp}>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-midnight mb-3 leading-tight">
           Våra tjänster
         </h1>
-        <p className="text-base sm:text-lg md:text-xl text-midnight/60 max-w-3xl mx-auto font-light leading-relaxed">
+        <p className="text-sm sm:text-base md:text-lg text-midnight/60 max-w-2xl mx-auto font-light leading-relaxed">
           Vi erbjuder specialiserade saneringstjänster med fokus på säkerhet,
           teknisk noggrannhet, dokumentation och diskret hantering.
         </p>
       </motion.div>
 
-      <div className="mb-16 sm:mb-20 md:mb-28">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-10 md:mb-12 border-b border-midnight/10 pb-4">
-          Kärntjänster
-        </h2>
+      {/* Kärntjänster */}
+      <div className="mb-12 sm:mb-14">
+        <div className="border-b border-midnight/10 pb-3 mb-6">
+          <h2 className="text-xl sm:text-2xl font-bold text-midnight">
+            Kärntjänster
+          </h2>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {coreServices.map((service, index) => (
             <motion.div
               key={service.title}
-              className="bg-slate-50 p-6 sm:p-7 md:p-8 rounded-3xl border-l-4 sm:border-l-8 border-cyan-accent hover:-translate-y-1 sm:hover:-translate-y-2 transition-transform duration-300 flex flex-col h-full"
+              className="group bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 hover:border-cyan-accent/40 hover:shadow-md transition-all duration-300 flex flex-col h-full"
               {...fadeInUp}
-              transition={{ ...fadeInUp.transition, delay: index * 0.08 }}
+              transition={{ ...fadeInUp.transition, delay: index * 0.06 }}
             >
-              <div className="mb-5 sm:mb-6">{service.icon}</div>
+              <div className="w-10 h-10 rounded-xl bg-cyan-accent/10 flex items-center justify-center mb-3.5 group-hover:bg-cyan-accent group-hover:text-white transition-colors shrink-0">
+                {service.icon}
+              </div>
 
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-5 md:mb-6 leading-snug">
+              <h3 className="text-base sm:text-lg font-bold mb-2 text-midnight leading-snug">
                 {service.title}
               </h3>
 
-              <p className="text-sm sm:text-base md:text-lg text-midnight/70 font-light leading-relaxed mb-6 sm:mb-8 md:mb-10 flex-grow">
+              <p className="text-xs sm:text-sm text-midnight/70 font-light leading-relaxed mb-4 flex-grow">
                 {service.description}
               </p>
 
-              <Link
-                to={service.link}
-                className="text-cyan-accent font-bold text-base sm:text-lg flex items-center gap-2 hover:gap-3 transition-all"
-              >
-                Läs mer om tjänsten{" "}
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
-              </Link>
+              <div className="pt-3 border-t border-slate-100 mt-auto">
+                <Link
+                  to={service.link}
+                  className="text-cyan-accent font-semibold text-xs sm:text-sm inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
+                >
+                  Läs mer om tjänsten <ArrowRight className="w-3.5 h-3.5 shrink-0" />
+                </Link>
+              </div>
             </motion.div>
           ))}
         </div>
       </div>
 
-      <div className="mb-16 sm:mb-20 md:mb-28">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-10 md:mb-12 border-b border-midnight/10 pb-4">
-          Förebyggande tjänster & tillval
-        </h2>
+      {/* Kommande tjänster */}
+      <div className="mb-12 sm:mb-16">
+        <div className="border-b border-midnight/10 pb-3 mb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+          <div>
+            <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-accent uppercase tracking-wider mb-1">
+              <Clock className="w-3 h-3" />
+              Under utveckling
+            </div>
+            <h2 className="text-xl sm:text-2xl font-bold text-midnight">
+              Kommande tjänster
+            </h2>
+          </div>
+          <span className="text-xs text-midnight/50 font-medium">
+            Lanseras inom kort · Ej tillgängliga än
+          </span>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
+        <p className="text-xs sm:text-sm text-midnight/65 font-light leading-relaxed max-w-2xl mb-5">
+          Följande förebyggande och tekniska tjänster förbereds inför framtida lansering.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
           {preventativeServices.map((service, index) => (
             <motion.div
               key={service.title}
-              className="bg-slate-50 p-6 sm:p-7 md:p-8 rounded-3xl border-l-4 sm:border-l-8 border-midnight/30 hover:border-cyan-accent hover:-translate-y-1 sm:hover:-translate-y-2 transition-all duration-300 flex flex-col h-full"
+              className="relative bg-slate-50/70 p-4 sm:p-5 rounded-xl border border-dashed border-slate-300 opacity-55 hover:opacity-65 transition-opacity duration-300 flex flex-col h-full cursor-not-allowed select-none"
               {...fadeInUp}
-              transition={{ ...fadeInUp.transition, delay: index * 0.08 }}
+              transition={{ ...fadeInUp.transition, delay: index * 0.05 }}
             >
-              <div className="mb-5 sm:mb-6 opacity-80">{service.icon}</div>
+              <div className="flex items-center justify-between gap-2 mb-3">
+                <div className="opacity-50 text-cyan-accent">{service.icon}</div>
+                <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-200/80 text-midnight/55">
+                  <Lock className="w-2.5 h-2.5 text-midnight/40" />
+                  Kommande
+                </span>
+              </div>
 
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-5 md:mb-6 text-midnight/90 leading-snug">
+              <h3 className="text-sm sm:text-base font-bold mb-1.5 text-midnight/75 leading-snug">
                 {service.title}
               </h3>
 
-              <p className="text-sm sm:text-base md:text-lg text-midnight/60 font-light leading-relaxed mb-6 sm:mb-8 md:mb-10 flex-grow">
+              <p className="text-xs text-midnight/50 font-light leading-relaxed mb-3 flex-grow line-clamp-3">
                 {service.description}
               </p>
 
-              <Link
-                to={service.link}
-                className="text-midnight/50 hover:text-cyan-accent font-bold text-base sm:text-lg flex items-center gap-2 hover:gap-3 transition-all"
-              >
-                Läs mer om tjänsten{" "}
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
-              </Link>
+              <div className="pt-2.5 border-t border-slate-200/60 flex items-center justify-between text-[11px] text-midnight/40 font-medium mt-auto">
+                <span className="inline-flex items-center gap-1">
+                  <Clock className="w-3 h-3 text-midnight/35" />
+                  Utvecklas
+                </span>
+                <span className="bg-slate-200/50 px-1.5 py-0.5 rounded text-[10px]">
+                  Ingen åtkomst
+                </span>
+              </div>
             </motion.div>
           ))}
         </div>
