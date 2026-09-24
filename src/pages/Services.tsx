@@ -57,10 +57,10 @@ const preventativeServices = [
   {
     title: "Traumasanering",
     description:
-      "Sanering efter blodspill, olyckor, våldshändelser eller biologiska föroreningar. Tjänsten är för närvarande stängd.",
+      "Sanering efter blodspill, olyckor, våldshändelser eller biologiska föroreningar. Planerad tjänst under förberedelse.",
     icon: <Activity className="w-5 h-5 text-cyan-accent" />,
     link: "/tjanster/traumasanering",
-    status: "Stängd",
+    status: "Planerad",
   },
   {
     title: "Förebyggande hygienbehandling",
@@ -68,7 +68,7 @@ const preventativeServices = [
       "Teknisk behandling med torrånga och hydroxylteknik för utrymmen med luktproblem, stillastående miljöer eller behov av förebyggande hygieninsats på utvalda ytor.",
     icon: <Sparkles className="w-5 h-5 text-cyan-accent" />,
     link: "/tjanster/forebyggande-hygienbehandling",
-    status: "Kommande",
+    status: "Planerad",
   },
   {
     title: "Teknisk rengöring & hygienkontroll",
@@ -76,7 +76,7 @@ const preventativeServices = [
       "Diskret och noggrant utförd teknisk rengöring för hotell, konferensmiljöer och andra verksamheter med höga krav på hygien, dokumentation och återställning.",
     icon: <ShieldCheck className="w-5 h-5 text-cyan-accent" />,
     link: "/tjanster/technical-cleaning-b2b",
-    status: "Kommande",
+    status: "Planerad",
   },
   {
     title: "Svåråtkomliga ytor",
@@ -84,7 +84,7 @@ const preventativeServices = [
       "Specialiserad rengöring och desinfektion av dolda eller svåråtkomliga utrymmen där standardinsatser inte räcker.",
     icon: <Maximize className="w-5 h-5 text-cyan-accent" />,
     link: "/tjanster/svaratkomliga-ytor",
-    status: "Kommande",
+    status: "Planerad",
   },
   {
     title: "Bastu Hygienkontroll",
@@ -92,7 +92,7 @@ const preventativeServices = [
       "Specialiserad hygienbehandling av bastu- och wellnessmiljöer med hög värme och fukt. Fokus på porösa träytor, kontaktytor och områden där biofilm och organiskt material ackumuleras över tid. Anpassad för gym, spa och hotellmiljöer.",
     icon: <Wind className="w-5 h-5 text-cyan-accent" />,
     link: "/tjanster/bastu-hygienkontroll",
-    status: "Kommande",
+    status: "Planerad",
   },
 ];
 
@@ -167,58 +167,58 @@ export default function Services() {
         </div>
       </div>
 
-      {/* Kommande & stängda tjänster */}
+      {/* Planerade tjänster */}
       <div className="mb-12 sm:mb-16">
         <div className="border-b border-midnight/10 pb-3 mb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
           <div>
             <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-accent uppercase tracking-wider mb-1">
               <Lock className="w-3 h-3" />
-              Stängda & kommande tjänster
+              Planerade tjänster
             </div>
             <h2 className="text-xl sm:text-2xl font-bold text-midnight">
-              Stängda & planerade tjänster
+              Planerade tjänster
             </h2>
           </div>
           <span className="text-xs text-midnight/50 font-medium">
-            Ej tillgängliga för bokning just nu
+            Ej tillgängliga för bokning än
           </span>
         </div>
 
         <p className="text-xs sm:text-sm text-midnight/65 font-light leading-relaxed max-w-2xl mb-5">
-          Följande tjänster är för närvarande stängda eller under förberedelse inför framtida lansering.
+          Följande tjänster är planerade och förbereds inför framtida lansering.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3.5 sm:gap-4">
           {preventativeServices.map((service, index) => (
             <motion.div
               key={service.title}
-              className="relative bg-slate-50/70 p-4 sm:p-5 rounded-xl border border-dashed border-slate-300 opacity-55 hover:opacity-65 transition-opacity duration-300 flex flex-col h-full cursor-not-allowed select-none"
+              className="relative bg-slate-50/70 p-4 sm:p-5 rounded-xl border border-dashed border-slate-300 opacity-60 hover:opacity-75 transition-opacity duration-300 flex flex-col h-full cursor-not-allowed select-none"
               {...fadeInUp}
               transition={{ ...fadeInUp.transition, delay: index * 0.05 }}
             >
               <div className="flex items-center justify-between gap-2 mb-3">
-                <div className="opacity-50 text-cyan-accent">{service.icon}</div>
-                <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-200/80 text-midnight/55">
-                  <Lock className="w-2.5 h-2.5 text-midnight/40" />
-                  {service.status}
+                <div className="opacity-60 text-cyan-accent">{service.icon}</div>
+                <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-200/80 text-midnight/60">
+                  <Lock className="w-2.5 h-2.5 text-midnight/50" />
+                  Planerad
                 </span>
               </div>
 
-              <h3 className="text-sm sm:text-base font-bold mb-1.5 text-midnight/75 leading-snug">
+              <h3 className="text-sm sm:text-base font-bold mb-1.5 text-midnight/80 leading-snug">
                 {service.title}
               </h3>
 
-              <p className="text-xs text-midnight/50 font-light leading-relaxed mb-3 flex-grow line-clamp-3">
+              <p className="text-xs text-midnight/60 font-light leading-relaxed mb-3 flex-grow line-clamp-3">
                 {service.description}
               </p>
 
               <div className="pt-2.5 border-t border-slate-200/60 flex items-center justify-between text-[11px] text-midnight/40 font-medium mt-auto">
                 <span className="inline-flex items-center gap-1">
                   <Clock className="w-3 h-3 text-midnight/35" />
-                  {service.status === "Stängd" ? "Stängd" : "Utvecklas"}
+                  Planerad
                 </span>
-                <span className="bg-slate-200/50 px-1.5 py-0.5 rounded text-[10px]">
-                  Ingen åtkomst
+                <span className="bg-slate-200/60 px-1.5 py-0.5 rounded text-[10px] inline-flex items-center gap-1">
+                  <Lock className="w-2.5 h-2.5" /> Låst
                 </span>
               </div>
             </motion.div>

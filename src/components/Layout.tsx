@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "motion/react";
-import { Phone, Menu, X } from "lucide-react";
+import { Phone, Menu, X, Lock } from "lucide-react";
 import { Logo } from "./Logo";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -180,39 +180,41 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </ul>
           </div>
 
-          {/* Kommande & stängda tjänster */}
+          {/* Planerade tjänster */}
           <div>
             <h4 className="font-bold mb-3 uppercase tracking-wider text-xs text-midnight/40 flex items-center gap-1.5">
-              <span>Stängda & kommande</span>
-              <span className="text-[10px] text-midnight/40 font-semibold lowercase">
-                (ej aktiva)
+              <span>Planerade tjänster</span>
+              <span className="text-[10px] text-cyan-accent font-semibold lowercase">
+                (planerade)
               </span>
             </h4>
 
             <ul className="space-y-2 text-xs sm:text-sm font-medium text-midnight/40 select-none">
               <li className="flex items-center justify-between cursor-not-allowed">
                 <span>Traumasanering</span>
-                <span className="text-[10px] text-amber-700/60 font-semibold">stängd</span>
+                <span className="text-[10px] text-midnight/40 font-medium flex items-center gap-0.5">
+                  <Lock className="w-2.5 h-2.5 inline" /> planerad
+                </span>
               </li>
 
               <li className="flex items-center justify-between cursor-not-allowed">
                 <span>Förebyggande hygienbehandling</span>
-                <span className="text-[10px] text-midnight/35 font-normal">snart</span>
+                <span className="text-[10px] text-midnight/35 font-normal">planerad</span>
               </li>
 
               <li className="flex items-center justify-between cursor-not-allowed">
                 <span>Teknisk rengöring & hygien</span>
-                <span className="text-[10px] text-midnight/35 font-normal">snart</span>
+                <span className="text-[10px] text-midnight/35 font-normal">planerad</span>
               </li>
 
               <li className="flex items-center justify-between cursor-not-allowed">
                 <span>Svåråtkomliga ytor</span>
-                <span className="text-[10px] text-midnight/35 font-normal">snart</span>
+                <span className="text-[10px] text-midnight/35 font-normal">planerad</span>
               </li>
 
               <li className="flex items-center justify-between cursor-not-allowed">
                 <span>Bastu Hygienkontroll</span>
-                <span className="text-[10px] text-midnight/35 font-normal">snart</span>
+                <span className="text-[10px] text-midnight/35 font-normal">planerad</span>
               </li>
             </ul>
           </div>
