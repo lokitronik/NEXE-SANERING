@@ -1,3 +1,4 @@
+import { Children, useEffect, useRef, useState, type ReactNode } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -6,6 +7,7 @@ import {
   HeartHandshake,
   Wind,
   ArrowRight,
+  ArrowLeft,
   Maximize,
   Box,
   Sparkles,
@@ -19,7 +21,7 @@ import {
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.7, ease: [0.25, 1, 0.5, 1] },
+  transition: { duration: 0.7, ease: [0.25, 1, 0.5, 1] as const },
 };
 
 const coreServices = [
@@ -96,6 +98,133 @@ const preventativeServices = [
   },
 ];
 
+type ServiceCarouselProps = {
+  id: string;
+  label: string;
+  children: ReactNode;
+  desktopColumns: string;
+};
+
+function ServiceCarousel({ id, label, children, desktopColumns }: ServiceCarouselProps) {
+  const cards = Children.toArray(children);
+  const count = cards.length;
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const [activeService, setActiveService] = useState(0);
+
+  // Track swipes, arrow navigation and viewport changes from the actual scroll position.
+  useEffect(() => {
+    const track = servicesRef.current;
+    if (!track) return;
+
+    const updateActiveService = () => {
+      const cards = Array.from(track.children) as HTMLElement[];
+      const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+      const start = cards[0]?.offsetLeft ?? 0;
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+
+      cards.forEach((card, index) => {
+        const target = Math.min(card.offsetLeft - start, maxScroll);
+        const distance = Math.abs(track.scrollLeft - target);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+      setActiveService(closestIndex);
+    };
+
+    updateActiveService();
+    track.addEventListener("scroll", updateActiveService, { passive: true });
+    const observer = new ResizeObserver(updateActiveService);
+    observer.observe(track);
+    Array.from(track.children).forEach((card) => observer.observe(card));
+
+    return () => {
+      track.removeEventListener("scroll", updateActiveService);
+      observer.disconnect();
+    };
+  }, [count]);
+
+  const goToService = (index: number) => {
+    const track = servicesRef.current;
+    if (!track) return;
+    const next = Math.max(0, Math.min(index, count - 1));
+    const card = track.children[next] as HTMLElement | undefined;
+    const first = track.children[0] as HTMLElement | undefined;
+    if (!card || !first) return;
+
+    track.scrollTo({
+      left: Math.min(
+        card.offsetLeft - first.offsetLeft,
+        Math.max(0, track.scrollWidth - track.clientWidth),
+      ),
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
+    });
+  };
+
+  return (
+    <div className="min-w-0">
+      <div
+        id={id}
+        ref={servicesRef}
+        role="region"
+        aria-label={label}
+        tabIndex={0}
+        onKeyDown={(event) => {
+          if (event.target !== event.currentTarget) return;
+          if (event.currentTarget.scrollWidth <= event.currentTarget.clientWidth + 1) return;
+          if (event.key === "ArrowRight") {
+            event.preventDefault();
+            goToService(activeService + 1);
+          } else if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            goToService(activeService - 1);
+          } else if (event.key === "Home" || event.key === "End") {
+            event.preventDefault();
+            goToService(event.key === "Home" ? 0 : count - 1);
+          }
+        }}
+        className={`relative flex items-stretch gap-4 overflow-x-auto overscroll-x-contain snap-x snap-mandatory pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-cyan-accent md:grid md:overflow-visible md:pb-0 ${desktopColumns}`}
+      >
+        {cards}
+      </div>
+      {count > 1 && (
+        <div className="flex items-center justify-between gap-3 mt-3 md:hidden">
+          <span className="text-xs text-midnight/60">Svep för fler tjänster</span>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              aria-label={`Föregående tjänst – ${label}`}
+              aria-controls={id}
+              disabled={activeService === 0}
+              onClick={() => goToService(activeService - 1)}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-midnight hover:bg-slate-50 disabled:opacity-30 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-accent"
+            >
+              <ArrowLeft className="w-4 h-4" aria-hidden="true" />
+            </button>
+            <span className="min-w-[3rem] text-center text-sm tabular-nums text-midnight/70" aria-live="polite" aria-atomic="true">
+              {activeService + 1} / {count}
+            </span>
+            <button
+              type="button"
+              aria-label={`Nästa tjänst – ${label}`}
+              aria-controls={id}
+              disabled={activeService === count - 1}
+              onClick={() => goToService(activeService + 1)}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-midnight hover:bg-slate-50 disabled:opacity-30 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-accent"
+            >
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function Services() {
   return (
     <motion.div
@@ -134,11 +263,11 @@ export default function Services() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <ServiceCarousel id="core-services" label="Kärntjänster" desktopColumns="md:grid-cols-2 lg:grid-cols-3">
           {coreServices.map((service, index) => (
             <motion.div
               key={service.title}
-              className="group bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 hover:border-cyan-accent/40 hover:shadow-md transition-all duration-300 flex flex-col h-full"
+              className="min-w-0 basis-[86%] shrink-0 snap-start md:basis-auto group bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 hover:border-cyan-accent/40 hover:shadow-md transition-all duration-300 flex flex-col"
               {...fadeInUp}
               transition={{ ...fadeInUp.transition, delay: index * 0.06 }}
             >
@@ -157,6 +286,7 @@ export default function Services() {
               <div className="pt-3 border-t border-slate-100 mt-auto">
                 <Link
                   to={service.link}
+                  aria-label={`Läs mer om ${service.title}`}
                   className="text-cyan-accent font-semibold text-xs sm:text-sm inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
                 >
                   Läs mer om tjänsten <ArrowRight className="w-3.5 h-3.5 shrink-0" />
@@ -164,7 +294,7 @@ export default function Services() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </ServiceCarousel>
       </div>
 
       {/* Planerade tjänster */}
@@ -188,11 +318,11 @@ export default function Services() {
           Följande tjänster är planerade och förbereds inför framtida lansering.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3.5 sm:gap-4">
+        <ServiceCarousel id="planned-services" label="Planerade tjänster" desktopColumns="md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {preventativeServices.map((service, index) => (
             <motion.div
               key={service.title}
-              className="relative bg-slate-50/70 p-4 sm:p-5 rounded-xl border border-dashed border-slate-300 opacity-60 hover:opacity-75 transition-opacity duration-300 flex flex-col h-full cursor-not-allowed select-none"
+              className="min-w-0 basis-[86%] shrink-0 snap-start md:basis-auto relative bg-slate-50/70 p-4 sm:p-5 rounded-xl border border-dashed border-slate-300 opacity-60 hover:opacity-75 transition-opacity duration-300 flex flex-col cursor-not-allowed select-none"
               {...fadeInUp}
               transition={{ ...fadeInUp.transition, delay: index * 0.05 }}
             >
@@ -223,7 +353,7 @@ export default function Services() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </ServiceCarousel>
       </div>
 
       <section className="bg-midnight text-white p-6 sm:p-8 md:p-12 lg:p-16 rounded-[2rem] md:rounded-[3rem]">
