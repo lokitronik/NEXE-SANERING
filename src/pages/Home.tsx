@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import {
   Shield,
-  Activity,
   HeartHandshake,
   ArrowRight,
   Wind,
@@ -12,9 +11,9 @@ import {
 } from "lucide-react";
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 36 },
+  initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.7, ease: [0.25, 1, 0.5, 1] },
+  transition: { duration: 0.55, ease: [0.25, 1, 0.5, 1] as const },
 };
 
 const coreServices = [
@@ -28,7 +27,7 @@ const coreServices = [
   {
     title: "Socialsanering & hoarder-städning",
     description:
-      "Vi utför professionell socialsanering och hoarder-städning, rensning och sanering av kraftigt nedskräpade bostäder med biologisk belastning, lukt och extrem uppsamling. Diskret, metodisk och med full utrustning.",
+      "Rensning och sanering av kraftigt nedskräpade bostäder med omfattande ansamling av föremål, lukt och biologisk belastning.",
     icon: <Users2 className="w-5 h-5 text-cyan-accent" />,
     link: "/tjanster/socialsanering",
   },
@@ -132,7 +131,7 @@ export default function Home() {
       </Helmet>
 
       {/* Hero */}
-      <section className="relative min-h-[100svh] flex items-center overflow-hidden">
+      <section className="relative overflow-hidden border-b border-slate-100">
         <div className="absolute inset-0 z-0">
           <img
             src="https://i.imgur.com/Bpsvbao.png"
@@ -145,17 +144,17 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 w-full px-4 sm:px-6 md:px-10 lg:px-14">
-          <div className="max-w-7xl mx-auto py-24 sm:py-28 md:py-32">
-            <motion.div {...fadeInUp} className="max-w-3xl">
-              <span className="inline-flex items-center rounded-full border border-cyan-accent/20 bg-cyan-accent/10 text-cyan-accent px-4 py-2 text-xs sm:text-sm font-semibold tracking-wide mb-6 sm:mb-8">
+          <div className="max-w-7xl mx-auto py-10 sm:py-12 lg:py-14">
+            <motion.div {...fadeInUp} className="max-w-4xl">
+              <span className="inline-flex items-center text-midnight/65 text-xs sm:text-sm font-semibold tracking-wide mb-3">
                 Diskret · Säker · Professionell sanering
               </span>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold text-midnight leading-tight tracking-tight mb-5 sm:mb-6">
-                Specialiserad sanering för känsliga och krävande miljöer
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-midnight leading-tight tracking-tight mb-4 max-w-3xl">
+                Specialsanering med omtanke och precision
               </h1>
 
-              <p className="text-base sm:text-lg md:text-xl text-midnight/75 leading-relaxed font-light max-w-2xl mb-8 sm:mb-10">
+              <p className="text-base sm:text-lg text-midnight/75 leading-relaxed max-w-2xl mb-5">
                 Vi hjälper privatpersoner, fastighetsägare och verksamheter med
                 sanering där diskretion, säkerhet och noggrannhet är avgörande.
               </p>
@@ -163,14 +162,14 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <a
                   href="tel:0101234567"
-                  className="inline-flex items-center justify-center rounded-full bg-midnight text-white px-6 sm:px-8 py-4 text-sm sm:text-base font-semibold hover:bg-midnight/90 transition-colors w-full sm:w-auto"
+                  className="inline-flex items-center justify-center rounded-full bg-midnight text-white px-5 sm:px-6 py-3 text-sm sm:text-base font-semibold hover:bg-midnight/90 transition-colors w-full sm:w-auto"
                 >
                   Kontakta oss
                 </a>
 
                 <Link
                   to="/tjanster"
-                  className="inline-flex items-center justify-center rounded-full border border-midnight/15 bg-white text-midnight px-6 sm:px-8 py-4 text-sm sm:text-base font-semibold hover:border-midnight/30 transition-colors w-full sm:w-auto"
+                  className="inline-flex items-center justify-center rounded-full border border-midnight/15 bg-white text-midnight px-5 sm:px-6 py-3 text-sm sm:text-base font-semibold hover:border-midnight/30 transition-colors w-full sm:w-auto"
                 >
                   Se våra tjänster
                 </Link>
@@ -181,26 +180,25 @@ export default function Home() {
       </section>
 
       {/* Kärntjänster */}
-      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-10 lg:px-14">
+      <section className="py-8 sm:py-10 lg:py-12 px-4 sm:px-6 md:px-10 lg:px-14">
         <div className="max-w-7xl mx-auto">
           <motion.div
-            className="text-center mb-8 sm:mb-12"
+            className="mb-5 sm:mb-6"
             {...fadeInUp}
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-midnight">
-              Våra kärntjänster
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-midnight">
+              Våra tjänster
             </h2>
-            <p className="text-sm sm:text-base text-midnight/60 max-w-2xl mx-auto font-light leading-relaxed">
-              Specialiserade tjänster för miljöer där vanlig rengöring inte
-              räcker och där precision, säkerhet och diskretion är avgörande.
+            <p className="text-sm sm:text-base text-midnight/65 max-w-2xl leading-relaxed">
+              När vanlig rengöring inte räcker.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {coreServices.map((service, index) => (
               <motion.div
                 key={service.title}
-                className="group bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 hover:border-cyan-accent/40 hover:shadow-md transition-all duration-300 flex flex-col h-full"
+                className="group bg-white p-5 rounded-2xl border border-slate-200 hover:border-cyan-accent/40 hover:shadow-md transition-all duration-300 flex flex-col h-full"
                 {...fadeInUp}
                 transition={{ ...fadeInUp.transition, delay: index * 0.06 }}
               >
@@ -212,7 +210,7 @@ export default function Home() {
                   {service.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-midnight/70 font-light leading-relaxed mb-4 flex-grow">
+                <p className="text-sm text-midnight/70 leading-relaxed mb-4 flex-grow">
                   {service.description}
                 </p>
 
@@ -239,75 +237,65 @@ export default function Home() {
       </section> 
       */}
 
-      {/* Values */}
-      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-14">
+      {/* Values: one compact section */}
+      <section className="py-8 sm:py-10 px-4 sm:px-6 md:px-10 lg:px-14 bg-slate-50 border-y border-slate-100">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-            <motion.div {...fadeInUp} className="lg:col-span-5">
-              <div className="sticky top-24">
-                <Shield className="w-12 h-12 sm:w-14 sm:h-14 text-cyan-accent mb-6" />
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-midnight mb-6 leading-tight">
-                  Trygg hantering i känsliga situationer
-                </h2>
-                <p className="text-base sm:text-lg text-midnight/65 font-light leading-relaxed max-w-xl">
-                  Vi arbetar metodiskt och med respekt i varje uppdrag. Fokus
-                  ligger på säker hantering, tydlig struktur och så liten
-                  påverkan som möjligt för boende, verksamhet och omgivning.
+          <motion.div {...fadeInUp} className="flex items-center gap-3 mb-5">
+            <Shield className="w-6 h-6 text-cyan-accent shrink-0" aria-hidden="true" />
+            <h2 className="text-xl sm:text-2xl font-bold text-midnight leading-snug">
+              Trygg hantering i känsliga situationer
+            </h2>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
+            {values.map((value, index) => (
+              <motion.div
+                key={value.title}
+                {...fadeInUp}
+                transition={{ ...fadeInUp.transition, delay: index * 0.06 }}
+                className="border-l-2 border-cyan-accent/40 pl-4"
+              >
+                <h3 className="text-base font-bold text-midnight mb-1.5">
+                  {value.title}
+                </h3>
+                <p className="text-sm text-midnight/70 leading-relaxed">
+                  {value.description}
                 </p>
-              </div>
-            </motion.div>
-
-            <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
-              {values.map((value, index) => (
-                <motion.div
-                  key={value.title}
-                  {...fadeInUp}
-                  transition={{ ...fadeInUp.transition, delay: index * 0.1 }}
-                  className="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-7"
-                >
-                  <h3 className="text-lg sm:text-xl font-bold text-midnight mb-3">
-                    {value.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-midnight/65 leading-relaxed font-light">
-                    {value.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-14 bg-midnight text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div {...fadeInUp}>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 leading-tight">
-              Behöver du hjälp eller vill du veta mer?
+      {/* Compact contact strip */}
+      <section className="py-8 sm:py-10 px-4 sm:px-6 md:px-10 lg:px-14 bg-midnight text-white">
+        <motion.div
+          {...fadeInUp}
+          className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5 lg:gap-8"
+        >
+          <div className="max-w-xl">
+            <h2 className="text-xl sm:text-2xl font-bold mb-2 leading-snug">
+              Behöver du hjälp?
             </h2>
-
-            <p className="text-base sm:text-lg md:text-xl font-light leading-relaxed opacity-90 mb-8 sm:mb-10 max-w-3xl mx-auto">
-              Kontakta oss för en första dialog om uppdragets omfattning, behov
-              och förutsättningar. Vi återkommer så snart som möjligt.
+            <p className="text-sm sm:text-base text-white/80 leading-relaxed">
+              Berätta vad du behöver hjälp med, så går vi igenom nästa steg tillsammans.
             </p>
-
-            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-              <a
-                href="tel:0101234567"
-                className="inline-flex items-center justify-center rounded-full bg-white text-midnight px-6 sm:px-8 py-4 text-sm sm:text-base font-semibold hover:bg-white/90 transition-colors w-full sm:w-auto"
-              >
-                Ring oss
-              </a>
-
-              <Link
-                to="/kontakt"
-                className="inline-flex items-center justify-center rounded-full border border-white/20 text-white px-6 sm:px-8 py-4 text-sm sm:text-base font-semibold hover:border-white/40 transition-colors w-full sm:w-auto"
-              >
-                Gå till kontakt
-              </Link>
-            </div>
-          </motion.div>
-        </div>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-3 lg:shrink-0">
+            <a
+              href="tel:0101234567"
+              className="inline-flex items-center justify-center rounded-full bg-white text-midnight px-6 py-3 text-sm font-semibold hover:bg-white/90 transition-colors"
+            >
+              Ring oss
+            </a>
+            <Link
+              to="/kontakt"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 text-white px-6 py-3 text-sm font-semibold hover:border-white/60 transition-colors"
+            >
+              Skriv till oss
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </Link>
+          </div>
+        </motion.div>
       </section>
     </motion.div>
   );
