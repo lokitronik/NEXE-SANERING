@@ -200,7 +200,7 @@ export default function Home() {
                 {...fadeInUp}
                 transition={{ ...fadeInUp.transition, delay: index * 0.06 }}
               >
-                <div className="w-10 h-10 rounded-xl bg-cyan-accent/10 flex items-center justify-center mb-3.5 group-hover:bg-cyan-accent group-hover:text-white transition-colors shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center mb-3.5 shrink-0">
                   {service.icon}
                 </div>
 

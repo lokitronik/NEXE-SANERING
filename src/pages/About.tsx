@@ -90,31 +90,33 @@ export default function About() {
             id="our-story-heading"
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-midnight leading-tight mb-6"
           >
-            Gemenskap och samarbete börjar med en personlig kontakt.
+            Ett namn som för oss samman
           </h2>
           <div className="h-1 w-16 rounded-full bg-cyan-accent" aria-hidden="true" />
         </div>
 
         <div className="md:col-span-3 space-y-5 text-base sm:text-lg text-midnight/70 leading-relaxed">
           <p>
-            Vi som står bakom NEXE är katalaner. Därför har vi valt ett namn
-            på vårt modersmål som speglar det vi vill stå för: gemenskap,
-            samarbete och nära relationer mellan människor.
+            NEXE är ett katalanskt ord som vi har valt med omsorg. Vi som står
+            bakom företaget kommer från Katalonien, och med namnet vill vi
+            uttrycka det som är viktigt för oss: gemenskap, samarbete och
+            kontakten mellan människor.
           </p>
           <p>
-            För oss handlar det om att skapa en personlig kontakt mellan oss
-            och dig som kund. Vi vill förstå vad du behöver, lyssna på det
-            som oroar dig och hitta en lösning tillsammans. Du ska känna dig
-            bekväm med att ställa frågor och veta vem du kan vända dig till.
+            Den tanken vill vi ta med oss i varje uppdrag. Från det första
+            samtalet ska du känna att du kan berätta vad du behöver, ställa
+            frågor och få raka svar. Vi lyssnar, går igenom förutsättningarna
+            tillsammans och är tydliga med hur vi kan hjälpa dig.
           </p>
           <p>
-            Inom specialsanering kan vi möta människor i känsliga och
-            krävande situationer. Då är ett lugnt och respektfullt bemötande
-            lika viktigt som ett noggrant utfört arbete. Vi möter dig utan
-            att döma och med respekt för din situation.
+            Vi vet att det kan vara ett stort steg att be om hjälp, särskilt
+            när situationen är känslig. Därför möter vi dig med respekt och utan
+            att döma. Vi är varsamma med ditt hem, dina tillhörigheter och din
+            integritet, och visar samma omsorg när vi arbetar i din verksamhet.
           </p>
           <p className="text-sm sm:text-base text-midnight/60 pt-2">
-            NEXE SPECIALSANERING är en del av NEXE GROUP AB.
+            NEXE SPECIALSANERING är en del av NEXE GROUP AB. Vår ambition är att
+            förena ett personligt bemötande med ett noggrant och ansvarsfullt arbete.
           </p>
         </div>
       </motion.section>
