@@ -67,13 +67,9 @@ export default function About() {
           <Users className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
           Om oss
         </div>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-midnight mb-5 sm:mb-6 leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-midnight leading-tight">
           Människorna bakom NEXE
         </h1>
-        <p className="text-base sm:text-lg md:text-xl text-midnight/70 max-w-3xl mx-auto leading-relaxed">
-          Ett bra samarbete börjar med förtroende. Vi vill att du ska känna
-          dig trygg med både arbetet vi utför och människorna du möter.
-        </p>
       </motion.section>
 
       {/* OUR NAME AND THE PEOPLE BEHIND IT */}
