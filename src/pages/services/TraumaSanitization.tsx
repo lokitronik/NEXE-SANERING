@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Helmet } from "react-helmet-async";
-import { Activity, Phone, ShieldCheck, AlertTriangle, ClipboardCheck } from "lucide-react";
+import { Activity, Phone, ShieldCheck, AlertTriangle, ClipboardCheck, Lock } from "lucide-react";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -33,6 +33,10 @@ export default function TraumaSanitization() {
         <h1 className="text-5xl md:text-6xl font-extrabold text-midnight mb-6">
           Traumasanering
         </h1>
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-200/90 text-midnight/70 font-semibold text-sm mb-6 border border-slate-300">
+          <Lock className="w-4 h-4 text-midnight/60" />
+          Tjänsten är för närvarande stängd
+        </div>
         <p className="text-xl text-midnight/60 max-w-3xl mx-auto font-light leading-relaxed">
           Vid blodspill, olyckor, våldshändelser eller andra akuta situationer
           med biologiska föroreningar krävs mer än vanlig städning. Vi arbetar

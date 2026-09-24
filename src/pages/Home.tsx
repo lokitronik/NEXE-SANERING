@@ -26,13 +26,6 @@ const coreServices = [
     link: "/tjanster/sanering-dodstall",
   },
   {
-    title: "Traumasanering",
-    description:
-      "Snabb och säker sanering efter blodspill, olyckor, våldshändelser och andra akuta biologiska föroreningar.",
-    icon: <Activity className="w-5 h-5 text-cyan-accent" />,
-    link: "/tjanster/traumasanering",
-  },
-  {
     title: "Socialsanering & hoarder-städning",
     description:
       "Vi utför professionell socialsanering och hoarder-städning, rensning och sanering av kraftigt nedskräpade bostäder med biologisk belastning, lukt och extrem uppsamling. Diskret, metodisk och med full utrustning.",
@@ -54,6 +47,17 @@ const coreServices = [
     link: "/hantering-av-personliga-tillhorigheter",
   },
 ];
+
+// Sparas intakt för framtida återaktivering:
+/*
+  {
+    title: "Traumasanering",
+    description:
+      "Snabb och säker sanering efter blodspill, olyckor, våldshändelser och andra akuta biologiska föroreningar.",
+    icon: <Activity className="w-5 h-5 text-cyan-accent" />,
+    link: "/tjanster/traumasanering",
+  },
+*/
 
 // Sparas intakt för framtida återaktivering:
 /*

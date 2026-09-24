@@ -24,7 +24,6 @@ const fadeInUp = {
 
 const caseTypes = [
   "Akut sanering",
-  "Traumasanering",
   "Sanering vid dödsfall",
   "Socialsanering & hoarder-städning",
   "Luktsanering",

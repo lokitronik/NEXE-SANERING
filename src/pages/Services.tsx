@@ -31,13 +31,6 @@ const coreServices = [
     link: "/tjanster/sanering-dodstall",
   },
   {
-    title: "Traumasanering",
-    description:
-      "Snabb och säker sanering efter blodspill, olyckor, våldshändelser och andra akuta biologiska föroreningar. Vid behov kan teknisk rengöring läggas till för övriga ytor.",
-    icon: <Activity className="w-5 h-5 text-cyan-accent" />,
-    link: "/tjanster/traumasanering",
-  },
-  {
     title: "Socialsanering & hoarder-städning",
     description:
       "Vi utför professionell socialsanering och hoarder-städning — rensning och sanering av kraftigt nedskräpade bostäder med biologisk belastning, extrem uppsamling och luktpåverkan. Diskret, metodisk och med full utrustning.",
@@ -62,33 +55,45 @@ const coreServices = [
 
 const preventativeServices = [
   {
+    title: "Traumasanering",
+    description:
+      "Sanering efter blodspill, olyckor, våldshändelser eller biologiska föroreningar. Tjänsten är för närvarande stängd.",
+    icon: <Activity className="w-5 h-5 text-cyan-accent" />,
+    link: "/tjanster/traumasanering",
+    status: "Stängd",
+  },
+  {
     title: "Förebyggande hygienbehandling",
     description:
       "Teknisk behandling med torrånga och hydroxylteknik för utrymmen med luktproblem, stillastående miljöer eller behov av förebyggande hygieninsats på utvalda ytor.",
-    icon: <Sparkles className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
+    icon: <Sparkles className="w-5 h-5 text-cyan-accent" />,
     link: "/tjanster/forebyggande-hygienbehandling",
+    status: "Kommande",
   },
   {
     title: "Teknisk rengöring & hygienkontroll",
     description:
       "Diskret och noggrant utförd teknisk rengöring för hotell, konferensmiljöer och andra verksamheter med höga krav på hygien, dokumentation och återställning.",
-    icon: <ShieldCheck className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
+    icon: <ShieldCheck className="w-5 h-5 text-cyan-accent" />,
     link: "/tjanster/technical-cleaning-b2b",
+    status: "Kommande",
   },
   {
     title: "Svåråtkomliga ytor",
     description:
       "Specialiserad rengöring och desinfektion av dolda eller svåråtkomliga utrymmen där standardinsatser inte räcker.",
-    icon: <Maximize className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
+    icon: <Maximize className="w-5 h-5 text-cyan-accent" />,
     link: "/tjanster/svaratkomliga-ytor",
+    status: "Kommande",
   },
   {
-  title: "Bastu Hygienkontroll",
-  description:
-    "Specialiserad hygienbehandling av bastu- och wellnessmiljöer med hög värme och fukt. Fokus på porösa träytor, kontaktytor och områden där biofilm och organiskt material ackumuleras över tid. Anpassad för gym, spa och hotellmiljöer.",
-  icon: <Wind className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-accent" />,
-  link: "/tjanster/bastu-hygienkontroll",
-},
+    title: "Bastu Hygienkontroll",
+    description:
+      "Specialiserad hygienbehandling av bastu- och wellnessmiljöer med hög värme och fukt. Fokus på porösa träytor, kontaktytor och områden där biofilm och organiskt material ackumuleras över tid. Anpassad för gym, spa och hotellmiljöer.",
+    icon: <Wind className="w-5 h-5 text-cyan-accent" />,
+    link: "/tjanster/bastu-hygienkontroll",
+    status: "Kommande",
+  },
 ];
 
 export default function Services() {
@@ -162,28 +167,28 @@ export default function Services() {
         </div>
       </div>
 
-      {/* Kommande tjänster */}
+      {/* Kommande & stängda tjänster */}
       <div className="mb-12 sm:mb-16">
         <div className="border-b border-midnight/10 pb-3 mb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
           <div>
             <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-accent uppercase tracking-wider mb-1">
-              <Clock className="w-3 h-3" />
-              Under utveckling
+              <Lock className="w-3 h-3" />
+              Stängda & kommande tjänster
             </div>
             <h2 className="text-xl sm:text-2xl font-bold text-midnight">
-              Kommande tjänster
+              Stängda & planerade tjänster
             </h2>
           </div>
           <span className="text-xs text-midnight/50 font-medium">
-            Lanseras inom kort · Ej tillgängliga än
+            Ej tillgängliga för bokning just nu
           </span>
         </div>
 
         <p className="text-xs sm:text-sm text-midnight/65 font-light leading-relaxed max-w-2xl mb-5">
-          Följande förebyggande och tekniska tjänster förbereds inför framtida lansering.
+          Följande tjänster är för närvarande stängda eller under förberedelse inför framtida lansering.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3.5 sm:gap-4">
           {preventativeServices.map((service, index) => (
             <motion.div
               key={service.title}
@@ -195,7 +200,7 @@ export default function Services() {
                 <div className="opacity-50 text-cyan-accent">{service.icon}</div>
                 <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-200/80 text-midnight/55">
                   <Lock className="w-2.5 h-2.5 text-midnight/40" />
-                  Kommande
+                  {service.status}
                 </span>
               </div>
 
@@ -210,7 +215,7 @@ export default function Services() {
               <div className="pt-2.5 border-t border-slate-200/60 flex items-center justify-between text-[11px] text-midnight/40 font-medium mt-auto">
                 <span className="inline-flex items-center gap-1">
                   <Clock className="w-3 h-3 text-midnight/35" />
-                  Utvecklas
+                  {service.status === "Stängd" ? "Stängd" : "Utvecklas"}
                 </span>
                 <span className="bg-slate-200/50 px-1.5 py-0.5 rounded text-[10px]">
                   Ingen åtkomst

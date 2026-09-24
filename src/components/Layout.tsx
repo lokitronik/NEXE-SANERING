@@ -153,15 +153,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
               <li>
                 <Link
-                  to="/tjanster/traumasanering"
-                  className="hover:text-cyan-accent transition-colors"
-                >
-                  Traumasanering
-                </Link>
-              </li>
-
-              <li>
-                <Link
                   to="/tjanster/socialsanering"
                   className="hover:text-cyan-accent transition-colors"
                 >
@@ -177,19 +168,33 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   Luktsanering
                 </Link>
               </li>
+
+              <li>
+                <Link
+                  to="/hantering-av-personliga-tillhorigheter"
+                  className="hover:text-cyan-accent transition-colors"
+                >
+                  Personliga tillhörigheter
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Kommande tjänster */}
+          {/* Kommande & stängda tjänster */}
           <div>
             <h4 className="font-bold mb-3 uppercase tracking-wider text-xs text-midnight/40 flex items-center gap-1.5">
-              <span>Kommande tjänster</span>
-              <span className="text-[10px] text-cyan-accent font-semibold lowercase">
-                (snart)
+              <span>Stängda & kommande</span>
+              <span className="text-[10px] text-midnight/40 font-semibold lowercase">
+                (ej aktiva)
               </span>
             </h4>
 
             <ul className="space-y-2 text-xs sm:text-sm font-medium text-midnight/40 select-none">
+              <li className="flex items-center justify-between cursor-not-allowed">
+                <span>Traumasanering</span>
+                <span className="text-[10px] text-amber-700/60 font-semibold">stängd</span>
+              </li>
+
               <li className="flex items-center justify-between cursor-not-allowed">
                 <span>Förebyggande hygienbehandling</span>
                 <span className="text-[10px] text-midnight/35 font-normal">snart</span>
