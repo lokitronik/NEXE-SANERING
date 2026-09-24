@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "motion/react";
-import { Phone, Menu, X, Lock } from "lucide-react";
+import { Phone, Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -103,187 +103,67 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Main Content */}
       <main className="pt-20 sm:pt-24">{children}</main>
 
-      {/* Footer */}
-      <footer className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-12 bg-slate-50 border-t border-slate-200">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {/* Brand */}
-          <div>
-            <Link to="/" className="inline-block mb-3" id="footer-brand-logo">
-             <Logo imgClassName="h-12 sm:h-14 w-auto" />
-            </Link>
-
-            <p className="text-xs text-midnight/60 font-light leading-relaxed max-w-xs mb-3">
-              Specialiserade på sanering i känsliga och krävande miljöer med
-              teknisk precision, diskretion och respekt.
-            </p>
-
-            <div className="text-xs font-medium text-midnight/70">
-              En del av{" "}
-              <a
-                href="https://nexegroup.se"
-                target="_blank"
-                rel="noopener noreferrer"
-                translate="no"
-                className="notranslate font-semibold text-midnight hover:text-cyan-accent transition-colors underline underline-offset-2"
-              >
-                NEXE GROUP AB
-              </a>
+      {/* Compact footer */}
+      <footer className="bg-slate-50 border-t border-slate-200 px-4 sm:px-6 md:px-12 py-5 sm:py-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 lg:gap-8">
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+              <Link to="/" className="inline-flex shrink-0" id="footer-brand-logo" aria-label="NEXE SPECIALSANERING – startsida">
+                <Logo imgClassName="h-10 w-auto" />
+              </Link>
+              <p className="text-xs text-midnight/65">
+                En del av{" "}
+                <a
+                  href="https://nexegroup.se"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  translate="no"
+                  className="notranslate font-semibold text-midnight hover:text-cyan-accent transition-colors"
+                >
+                  NEXE GROUP AB
+                </a>
+              </p>
             </div>
 
-            <p className="text-[11px] text-midnight/45 mt-2 leading-relaxed">
-              Org.nr: 559602-9404
-            </p>
-          </div>
-
-          {/* Kärntjänster */}
-          <div>
-            <h4 className="font-bold mb-3 uppercase tracking-wider text-xs text-midnight/40">
-              Kärntjänster
-            </h4>
-
-            <ul className="space-y-2 text-xs sm:text-sm font-medium text-midnight/70">
-              <li>
-                <Link
-                  to="/tjanster/sanering-dodstall"
-                  className="hover:text-cyan-accent transition-colors"
-                >
-                  Sanering vid dödsfall
+            <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-x-6 gap-y-1">
+              <nav aria-label="Sidfotsmeny" className="flex flex-wrap items-center gap-x-5 text-sm font-medium text-midnight/75">
+                <Link to="/tjanster" className="inline-flex items-center min-h-11 hover:text-cyan-accent transition-colors">
+                  Tjänster
                 </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/tjanster/socialsanering"
-                  className="hover:text-cyan-accent transition-colors"
-                >
-                  Socialsanering & hoarder
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/tjanster/luktsanering"
-                  className="hover:text-cyan-accent transition-colors"
-                >
-                  Luktsanering
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/hantering-av-personliga-tillhorigheter"
-                  className="hover:text-cyan-accent transition-colors"
-                >
-                  Personliga tillhörigheter
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Planerade tjänster */}
-          <div>
-            <h4 className="font-bold mb-3 uppercase tracking-wider text-xs text-midnight/40 flex items-center gap-1.5">
-              <span>Planerade tjänster</span>
-              <span className="text-[10px] text-cyan-accent font-semibold lowercase">
-                (planerade)
-              </span>
-            </h4>
-
-            <ul className="space-y-2 text-xs sm:text-sm font-medium text-midnight/40 select-none">
-              <li className="flex items-center justify-between cursor-not-allowed">
-                <span>Traumasanering</span>
-                <span className="text-[10px] text-midnight/40 font-medium flex items-center gap-0.5">
-                  <Lock className="w-2.5 h-2.5 inline" /> planerad
-                </span>
-              </li>
-
-              <li className="flex items-center justify-between cursor-not-allowed">
-                <span>Förebyggande hygienbehandling</span>
-                <span className="text-[10px] text-midnight/35 font-normal">planerad</span>
-              </li>
-
-              <li className="flex items-center justify-between cursor-not-allowed">
-                <span>Teknisk rengöring & hygien</span>
-                <span className="text-[10px] text-midnight/35 font-normal">planerad</span>
-              </li>
-
-              <li className="flex items-center justify-between cursor-not-allowed">
-                <span>Svåråtkomliga ytor</span>
-                <span className="text-[10px] text-midnight/35 font-normal">planerad</span>
-              </li>
-
-              <li className="flex items-center justify-between cursor-not-allowed">
-                <span>Bastu Hygienkontroll</span>
-                <span className="text-[10px] text-midnight/35 font-normal">planerad</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h4 className="font-bold mb-3 uppercase tracking-wider text-xs text-midnight/40">
-              Företaget
-            </h4>
-
-            <ul className="space-y-2 text-xs sm:text-sm font-medium text-midnight/70">
-              <li>
-                <Link
-                  to="/om-oss"
-                  className="hover:text-cyan-accent transition-colors"
-                >
+                <Link to="/om-oss" className="inline-flex items-center min-h-11 hover:text-cyan-accent transition-colors">
                   Om oss
                 </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/kontakt"
-                  className="hover:text-cyan-accent transition-colors"
-                >
+                <Link to="/kontakt" className="inline-flex items-center min-h-11 hover:text-cyan-accent transition-colors">
                   Kontakt
                 </Link>
-              </li>
-
-              <li>
+              </nav>
+              <div className="text-sm text-midnight/70">
                 <a
                   href="mailto:kontakt@nexegroup.se"
                   translate="no"
-                  className="notranslate hover:text-cyan-accent transition-colors"
+                  className="notranslate inline-flex items-center min-h-11 hover:text-cyan-accent transition-colors"
                 >
                   kontakt@nexegroup.se
                 </a>
-              </li>
-
-              <li>
-                <span className="inline-flex items-center gap-1.5 text-cyan-accent font-semibold">
-                  Jour dygnet runt: 010-XXX XX XX
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Legal Footer */}
-        <div className="max-w-7xl mx-auto pt-4 sm:pt-5 border-t border-midnight/5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-midnight/40">
-          <div>
-            © {new Date().getFullYear()} NEXE GROUP AB. Alla rättigheter
-            förbehållna.
+                <p className="text-xs leading-relaxed">Jour dygnet runt: 010-XXX XX XX</p>
+              </div>
+            </div>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-            <Link
-              to="/integritetspolicy"
-              className="hover:text-midnight transition-colors"
-            >
-              Integritetspolicy
-            </Link>
-
-            <Link
-              to="/allmanna-villkor"
-              className="hover:text-midnight transition-colors"
-            >
-              Allmänna villkor
-            </Link>
+          <div className="mt-4 pt-3 border-t border-slate-200 flex flex-col sm:flex-row sm:flex-wrap sm:items-center sm:justify-between gap-x-6 gap-y-1 text-xs text-midnight/65">
+            <p className="leading-relaxed">
+              © {new Date().getFullYear()} NEXE GROUP AB
+              <span className="mx-2" aria-hidden="true">·</span>
+              Org.nr: 559602-9404
+            </p>
+            <div className="flex flex-wrap gap-x-5">
+              <Link to="/integritetspolicy" className="inline-flex items-center min-h-11 hover:text-midnight transition-colors">
+                Integritetspolicy
+              </Link>
+              <Link to="/allmanna-villkor" className="inline-flex items-center min-h-11 hover:text-midnight transition-colors">
+                Allmänna villkor
+              </Link>
+            </div>
           </div>
         </div>
       </footer>
