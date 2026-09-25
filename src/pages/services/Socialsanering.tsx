@@ -255,8 +255,9 @@ export default function Socialsanering() {
               <p className="text-base font-light leading-relaxed text-white/75 sm:text-lg">
                 Vid omfattande ansamling kan det behövas hjälp både med
                 att återställa bostaden och med att hantera tillhörigheter.
-                Tillsammans med EXHALE erbjuder vi en samordnad insats,
-                anpassad efter personens behov och situation.
+                I vårt samarbete med EXHALE kombinerar vi specialiserad
+                sanering med stöd kring sortering och organisering av
+                hemmet, utifrån personens behov och situation.
               </p>
             </div>
 
@@ -265,12 +266,20 @@ export default function Socialsanering() {
                 I samarbete med
               </span>
 
-              <img
-                src={`${import.meta.env.BASE_URL}EXHALE.png`}
-                alt="EXHALE – Andas ut hemma"
-                loading="lazy"
-                className="block h-auto w-full max-w-[280px] object-contain"
-              />
+              <a
+                href="https://andasuthemma.se/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Besök EXHALEs webbplats (öppnas i en ny flik)"
+                className="block w-full max-w-[280px] rounded-lg transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-accent"
+              >
+                <img
+                  src={`${import.meta.env.BASE_URL}EXHALE.png`}
+                  alt="EXHALE – Andas ut hemma"
+                  loading="lazy"
+                  className="block h-auto w-full object-contain"
+                />
+              </a>
             </div>
           </div>
 
@@ -305,12 +314,9 @@ export default function Socialsanering() {
 
           <div className="mt-8 border-t border-white/15 pt-6 sm:mt-10 sm:pt-8">
             <p className="max-w-3xl text-sm leading-relaxed text-white/75 sm:text-base">
-              <span className="font-semibold text-white">
-                En kontakt genom hela processen.
-              </span>{" "}
-              Du kontaktar NEXE, som samordnar upplägget med EXHALE.
-              Tillsammans kommer vi överens om vilka delar som behövs
-              i just ditt fall.
+              Insatsen anpassas efter varje situation. NEXE ansvarar för
+              saneringsarbetet, medan EXHALE erbjuder stöd med sortering
+              och organisering av hemmet.
             </p>
           </div>
         </div>
