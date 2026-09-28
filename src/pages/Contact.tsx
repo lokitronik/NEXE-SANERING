@@ -13,7 +13,9 @@ import {
   Clock,
   Lock,
   MapPin,
-  CheckCircle2
+  CheckCircle2,
+  Linkedin,
+  Instagram
 } from "lucide-react";
 
 const fadeInUp = {
@@ -498,6 +500,43 @@ export default function Contact() {
                   </p>
                 </div>
               </a>
+
+              <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+                <span className="text-xs font-bold opacity-60 uppercase tracking-widest text-slate-300">
+                  Följ NEXE GROUP
+                </span>
+                <div className="flex items-center gap-2">
+                  <a
+                    href="https://www.linkedin.com/company/nexe-group-ab/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="notranslate inline-flex items-center justify-center p-2 rounded-full border border-white/10 bg-white/5 hover:bg-[#0A66C2]/20 hover:border-[#0A66C2]/50 text-slate-300 hover:text-[#0A66C2] transition-all duration-200 shadow-xs hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]"
+                    translate="no"
+                    aria-label="Besök NEXE GROUP AB på LinkedIn"
+                    title="LinkedIn"
+                  >
+                    <Linkedin
+                      className="w-4 h-4 shrink-0"
+                      aria-hidden="true"
+                    />
+                  </a>
+
+                  <a
+                    href="https://www.instagram.com/nexegroupab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="notranslate inline-flex items-center justify-center p-2 rounded-full border border-white/10 bg-white/5 hover:bg-pink-500/20 hover:border-pink-500/50 text-slate-300 hover:text-pink-400 transition-all duration-200 shadow-xs hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500"
+                    translate="no"
+                    aria-label="Besök NEXE GROUP AB på Instagram"
+                    title="Instagram"
+                  >
+                    <Instagram
+                      className="w-4 h-4 shrink-0"
+                      aria-hidden="true"
+                    />
+                  </a>
+                </div>
+              </div>
             </div>
           </motion.div>
 

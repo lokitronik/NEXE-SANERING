@@ -1,12 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { motion } from "motion/react";
-import { Phone, Menu, X } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
+import { Phone, Menu, X, Linkedin, Instagram, ArrowUp } from "lucide-react";
 import { Logo } from "./Logo";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const shouldReduceMotion = useReducedMotion();
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: shouldReduceMotion ? "auto" : "smooth",
+    });
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -97,6 +105,31 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <Phone className="w-5 h-5" />
             010-XXX XX XX
           </span>
+
+          <div className="flex items-center gap-4 pt-4 border-t border-slate-100">
+            <a
+              href="https://www.linkedin.com/company/nexe-group-ab/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="notranslate inline-flex items-center justify-center p-2 rounded-full border border-slate-200 bg-slate-50 hover:bg-[#0A66C2]/15 hover:border-[#0A66C2]/40 text-slate-500 hover:text-[#0A66C2] transition-all duration-200 shadow-xs hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]"
+              translate="no"
+              aria-label="Besök NEXE GROUP AB på LinkedIn"
+              title="LinkedIn"
+            >
+              <Linkedin className="w-4 h-4 shrink-0" aria-hidden="true" />
+            </a>
+            <a
+              href="https://www.instagram.com/nexegroupab"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="notranslate inline-flex items-center justify-center p-2 rounded-full border border-slate-200 bg-slate-50 hover:bg-pink-500/15 hover:border-pink-500/40 text-slate-500 hover:text-pink-500 transition-all duration-200 shadow-xs hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500"
+              translate="no"
+              aria-label="Besök NEXE GROUP AB på Instagram"
+              title="Instagram"
+            >
+              <Instagram className="w-4 h-4 shrink-0" aria-hidden="true" />
+            </a>
+          </div>
         </motion.div>
       )}
 
@@ -125,7 +158,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-x-6 gap-y-1">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-x-6 gap-y-2">
               <nav aria-label="Sidfotsmeny" className="flex flex-wrap items-center gap-x-5 text-sm font-medium text-midnight/75">
                 <Link to="/tjanster" className="inline-flex items-center min-h-11 hover:text-cyan-accent transition-colors">
                   Tjänster
@@ -146,6 +179,44 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   kontakt@nexegroup.se
                 </a>
                 <p className="text-xs leading-relaxed">Jour dygnet runt: 010-XXX XX XX</p>
+              </div>
+
+              <div className="flex items-center gap-2 pt-1 sm:pt-0">
+                <a
+                  href="https://www.linkedin.com/company/nexe-group-ab/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="notranslate inline-flex items-center justify-center p-2 rounded-full border border-slate-300 bg-white hover:bg-[#0A66C2]/15 hover:border-[#0A66C2]/50 text-slate-500 hover:text-[#0A66C2] transition-all duration-200 shadow-xs hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]"
+                  translate="no"
+                  aria-label="Besök NEXE GROUP AB på LinkedIn"
+                  title="LinkedIn"
+                >
+                  <Linkedin className="w-4 h-4 shrink-0" aria-hidden="true" />
+                </a>
+
+                <a
+                  href="https://www.instagram.com/nexegroupab"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="notranslate inline-flex items-center justify-center p-2 rounded-full border border-slate-300 bg-white hover:bg-pink-500/15 hover:border-pink-500/50 text-slate-500 hover:text-pink-500 transition-all duration-200 shadow-xs hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500"
+                  translate="no"
+                  aria-label="Besök NEXE GROUP AB på Instagram"
+                  title="Instagram"
+                >
+                  <Instagram className="w-4 h-4 shrink-0" aria-hidden="true" />
+                </a>
+
+                <motion.button
+                  type="button"
+                  onClick={scrollToTop}
+                  whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
+                  whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-midnight px-2.5 py-1.5 rounded-lg bg-slate-200/70 hover:bg-slate-200 border border-slate-300 transition-colors ml-1 cursor-pointer"
+                  aria-label="Till toppen"
+                >
+                  <span className="whitespace-nowrap">Till toppen</span>
+                  <ArrowUp className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+                </motion.button>
               </div>
             </div>
           </div>

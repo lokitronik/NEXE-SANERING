@@ -138,7 +138,7 @@ function ServiceCarousel({ id, label, children, desktopColumns }: ServiceCarouse
     track.addEventListener("scroll", updateActiveService, { passive: true });
     const observer = new ResizeObserver(updateActiveService);
     observer.observe(track);
-    Array.from(track.children).forEach((card) => observer.observe(card));
+    Array.from(track.children).forEach((card) => observer.observe(card as Element));
 
     return () => {
       track.removeEventListener("scroll", updateActiveService);
