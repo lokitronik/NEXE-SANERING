@@ -69,7 +69,7 @@ export default function BirdBlocker() {
           <div className="mt-12 pt-12 border-t border-midnight/10">
             <p className="text-midnight/60 mb-6 font-medium text-center">Vill du veta mer om våra lösningar?</p>
             <a 
-              href="tel:0101234567" 
+              href="tel:0760079796" 
               className="flex items-center justify-center gap-3 bg-cyan-accent text-white py-4 rounded-full font-bold text-lg hover:bg-cyan-accent/90 transition-all"
             >
               <Phone className="w-5 h-5" />

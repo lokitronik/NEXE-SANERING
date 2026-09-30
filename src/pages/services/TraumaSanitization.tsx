@@ -128,11 +128,11 @@ export default function TraumaSanitization() {
           berörs.
         </p>
         <a
-          href="tel:0101234567"
+          href="tel:0760079796"
           className="inline-flex items-center gap-3 bg-cyan-accent text-white px-12 py-5 rounded-full font-bold text-xl hover:bg-cyan-accent/90 transition-all"
         >
           <Phone className="w-6 h-6" />
-          Ring: 010-XXX XX XX
+          Ring: 076-007 97 96
         </a>
       </motion.div>
     </motion.div>

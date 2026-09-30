@@ -460,18 +460,18 @@ export default function Contact() {
             </div>
 
             <div className="space-y-6">
-              <a href="tel:0101234567" className="flex items-center gap-5 group">
+              <a href="tel:0760079796" className="flex items-center gap-5 group">
                 <div className="w-14 h-14 bg-cyan-accent rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
                   <Phone className="w-7 h-7 text-white" />
                 </div>
                 <div>
                   <p className="text-xs font-bold opacity-40 uppercase tracking-widest">Jour / Direktkontakt</p>
-                  <p className="text-xl md:text-2xl font-bold">010-XXX XX XX</p>
+                  <p className="text-xl md:text-2xl font-bold">076-007 97 96</p>
                 </div>
               </a>
 
               <a
-                href="https://wa.me/46101234567"
+                href="https://wa.me/46760079796"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-5 group"

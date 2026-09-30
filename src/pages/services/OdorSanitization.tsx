@@ -223,11 +223,11 @@ export default function OdorSanitization() {
               innan vi börjar. Ingen bindning vid bedömningen.
             </p>
             <a
-              href="tel:0101234567"
+              href="tel:0760079796"
               className="flex items-center justify-center gap-3 bg-cyan-accent text-white py-4 rounded-full font-bold hover:bg-cyan-accent/90 transition-all"
             >
               <Phone className="w-5 h-5" />
-              010-XXX XX XX
+              076-007 97 96
             </a>
           </div>
         </motion.div>

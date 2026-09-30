@@ -109,7 +109,7 @@ export default function HardToReachDisinfection() {
           <h3 className="text-2xl font-bold mb-6">Teknisk rådgivning</h3>
           <p className="opacity-60 mb-10 font-light">Vi hjälper dig att identifiera riskområden i din fastighet och tar fram en skräddarsydd saneringsplan.</p>
           <a 
-            href="tel:0101234567" 
+            href="tel:0760079796" 
             className="inline-flex items-center gap-3 bg-cyan-accent text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-cyan-accent/90 transition-all"
           >
             <Phone className="w-5 h-5" />

@@ -183,7 +183,7 @@ export default function TermsAndConditions() {
             </p>
 
             <p>
-              Telefon: 010-XXX XX XX
+              Telefon: 076-007 97 96
             </p>
           </div>
         </section>

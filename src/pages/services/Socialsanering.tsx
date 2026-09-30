@@ -117,7 +117,7 @@ export default function Socialsanering() {
 
           <div className="mt-7 sm:mt-9">
             <a
-              href="tel:0101234567"
+              href="tel:0760079796"
               className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-midnight px-6 py-4 text-sm font-bold text-white transition-colors hover:bg-midnight/90 sm:w-auto sm:text-base"
             >
               <Phone className="h-5 w-5" aria-hidden="true" />
@@ -339,11 +339,11 @@ export default function Socialsanering() {
           </p>
 
           <a
-            href="tel:0101234567"
+            href="tel:0760079796"
             className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-cyan-accent px-8 py-4 text-base font-bold text-white transition-colors hover:bg-cyan-accent/90 sm:w-auto sm:py-5 sm:text-lg"
           >
             <Phone className="h-5 w-5" aria-hidden="true" />
-            010-XXX XX XX
+            076-007 97 96
           </a>
         </div>
       </motion.section>

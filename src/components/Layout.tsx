@@ -69,10 +69,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             Kontakt
           </Link>
 
-          <span className="pulse-cyan bg-cyan-accent text-white px-5 lg:px-6 py-2.5 rounded-full font-semibold flex items-center gap-2 whitespace-nowrap">
+          <a
+            href="tel:0760079796"
+            className="pulse-cyan bg-cyan-accent text-white px-5 lg:px-6 py-2.5 rounded-full font-semibold flex items-center gap-2 whitespace-nowrap hover:bg-cyan-accent/90 transition-colors"
+          >
             <Phone className="w-4 h-4" />
-            010-XXX XX XX
-          </span>
+            076-007 97 96
+          </a>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -101,10 +104,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Link to="/om-oss">Om oss</Link>
           <Link to="/kontakt">Kontakt</Link>
 
-          <span className="text-cyan-accent flex items-center gap-2 pt-2">
+          <a
+            href="tel:0760079796"
+            className="text-cyan-accent flex items-center gap-2 pt-2"
+          >
             <Phone className="w-5 h-5" />
-            010-XXX XX XX
-          </span>
+            076-007 97 96
+          </a>
 
           <div className="flex items-center gap-4 pt-4 border-t border-slate-100">
             <a
@@ -178,7 +184,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 >
                   kontakt@nexegroup.se
                 </a>
-                <p className="text-xs leading-relaxed">Jour dygnet runt: 010-XXX XX XX</p>
+                <a
+                  href="tel:0760079796"
+                  className="text-xs leading-relaxed hover:text-cyan-accent transition-colors block"
+                >
+                  Jour dygnet runt: 076-007 97 96
+                </a>
               </div>
 
               <div className="flex items-center gap-2 pt-1 sm:pt-0">

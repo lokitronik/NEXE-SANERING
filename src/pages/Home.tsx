@@ -220,7 +220,7 @@ export default function Home() {
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <a
-                  href="tel:0101234567"
+                  href="tel:0760079796"
                   className="inline-flex items-center justify-center rounded-full bg-midnight text-white px-5 sm:px-6 py-3 text-sm sm:text-base font-semibold hover:bg-midnight/90 transition-colors w-full sm:w-auto"
                 >
                   Kontakta oss
@@ -395,7 +395,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col sm:flex-row gap-3 lg:shrink-0">
             <a
-              href="tel:0101234567"
+              href="tel:0760079796"
               className="inline-flex items-center justify-center rounded-full bg-white text-midnight px-6 py-3 text-sm font-semibold hover:bg-white/90 transition-colors"
             >
               Ring oss

@@ -105,7 +105,7 @@ export default function DeathSanitization() {
 
           <div className="mt-7 sm:mt-9">
             <a
-              href="tel:0101234567"
+              href="tel:0760079796"
               className="inline-flex items-center justify-center gap-3 rounded-full bg-midnight text-white px-6 py-4 text-sm sm:text-base font-bold hover:bg-midnight/90 transition-colors w-full sm:w-auto"
             >
               <Phone className="w-5 h-5" />
@@ -220,11 +220,11 @@ export default function DeathSanitization() {
           </p>
 
           <a
-            href="tel:0101234567"
+            href="tel:0760079796"
             className="inline-flex items-center justify-center gap-3 bg-cyan-accent text-white px-8 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:bg-cyan-accent/90 transition-all w-full sm:w-auto"
           >
             <Phone className="w-5 h-5" />
-            010-XXX XX XX
+            076-007 97 96
           </a>
         </div>
       </motion.section>

@@ -270,7 +270,7 @@ export default function ForebyggandeHygienbehandling() {
           metod.
         </p>
         <a
-          href="tel:0101234567"
+          href="tel:0760079796"
           className="inline-flex items-center justify-center gap-3 bg-cyan-accent text-white px-6 sm:px-8 md:px-12 py-4 sm:py-4 md:py-5 rounded-full font-bold text-base sm:text-lg md:text-xl hover:bg-cyan-accent/90 transition-all shadow-xl shadow-cyan-accent/20 w-full sm:w-auto"
         >
           <Phone className="w-5 h-5 sm:w-6 sm:h-6" />
