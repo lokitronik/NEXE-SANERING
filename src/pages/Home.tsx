@@ -175,16 +175,15 @@ export default function Home() {
     >
       <Helmet>
         <title>
-          NEXE SPECIALSANERING | Traumasanering, sanering vid dödsfall och
-          luktsanering
+          Specialsanering i Stockholm | Dödsfall, Socialsanering & Luktsanering | NEXE
         </title>
         <meta
           name="description"
-          content="NEXE SPECIALSANERING erbjuder specialiserade tjänster inom traumasanering, sanering vid dödsfall, socialsanering, luktsanering, förebyggande hygienbehandling med torrånga och hydroxylteknik, teknisk rengöring och sanering av svåråtkomliga ytor."
+          content="Auktoriserad och certifierad specialsanering i Stockholm och Mälardalen. Akut dödsbosanering vid obevakat dödsfall, socialsanering, hoarder-städning och teknisk luktsanering."
         />
         <meta
           name="keywords"
-          content="traumasanering, sanering vid dödsfall, socialsanering, hoarder städning, luktsanering, förebyggande hygienbehandling, torrånga, hydroxylbehandling, hydroxylteknik, teknisk rengöring, svåråtkomliga ytor, biologisk sanering"
+          content="specialsanering stockholm, sanering vid dödsfall, dödsbosanering, socialsanering stockholm, hoarder städning, sanering efter dödsfall, luktsanering, biologisk sanering, saneringsfirma stockholm"
         />
         <link rel="canonical" href={window.location.origin} />
       </Helmet>
@@ -194,7 +193,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <img
             src="https://i.imgur.com/Bpsvbao.png"
-            alt="Trygg och väl återställd miljö"
+            alt="Trygg och professionellt återställd miljö efter specialsanering"
             className="w-full h-full object-cover object-center opacity-20"
             referrerPolicy="no-referrer"
           />
@@ -206,16 +205,15 @@ export default function Home() {
           <div className="max-w-7xl mx-auto py-10 sm:py-12 lg:py-14">
             <motion.div {...fadeInUp} className="max-w-4xl">
               <span className="inline-flex items-center text-midnight/65 text-xs sm:text-sm font-semibold tracking-wide mb-3">
-                Diskret · Säker · Professionell sanering
+                Jour dygnet runt · Stockholm & Mälardalen · Diskretion & Respekt
               </span>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-midnight leading-tight tracking-tight mb-4 max-w-3xl">
-                Specialsanering med omtanke och precision
+                Professionell specialsanering i Stockholm
               </h1>
 
               <p className="text-base sm:text-lg text-midnight/75 leading-relaxed max-w-2xl mb-5">
-                Vi hjälper privatpersoner, fastighetsägare och verksamheter med
-                sanering där diskretion, säkerhet och noggrannhet är avgörande.
+                Vi hjälper privatpersoner, anhöriga, fastighetsägare och socialförvaltning med sanering vid dödsfall, socialsanering, hoarder-städning och teknisk luktsanering där diskretion och säkerhet är avgörande.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -223,14 +221,14 @@ export default function Home() {
                   href="tel:0760079796"
                   className="inline-flex items-center justify-center rounded-full bg-midnight text-white px-5 sm:px-6 py-3 text-sm sm:text-base font-semibold hover:bg-midnight/90 transition-colors w-full sm:w-auto"
                 >
-                  Kontakta oss
+                  Kontakta oss för akut hjälp
                 </a>
 
                 <Link
                   to="/tjanster"
                   className="inline-flex items-center justify-center rounded-full border border-midnight/15 bg-white text-midnight px-5 sm:px-6 py-3 text-sm sm:text-base font-semibold hover:border-midnight/30 transition-colors w-full sm:w-auto"
                 >
-                  Se våra tjänster
+                  Utforska våra saneringstjänster
                 </Link>
               </div>
             </motion.div>
@@ -246,10 +244,10 @@ export default function Home() {
             {...fadeInUp}
           >
             <h2 id="services-heading" className="text-2xl sm:text-3xl font-bold mb-2 text-midnight">
-              Våra tjänster
+              Våra specialiserade saneringstjänster
             </h2>
             <p className="text-sm sm:text-base text-midnight/65 max-w-2xl leading-relaxed">
-              När vanlig rengöring inte räcker.
+              Metodisk sanering, desinfektion och luktbehandling när vanlig städning inte räcker till.
             </p>
           </motion.div>
 
@@ -356,7 +354,7 @@ export default function Home() {
           <motion.div {...fadeInUp} className="flex items-center gap-3 mb-5">
             <Shield className="w-6 h-6 text-cyan-accent shrink-0" aria-hidden="true" />
             <h2 className="text-xl sm:text-2xl font-bold text-midnight leading-snug">
-              Trygg hantering i känsliga situationer
+              Varför anlita NEXE för specialsanering?
             </h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
@@ -387,10 +385,10 @@ export default function Home() {
         >
           <div className="max-w-xl">
             <h2 className="text-xl sm:text-2xl font-bold mb-2 leading-snug">
-              Behöver du hjälp?
+              Behöver du akut sanering eller rådgivning?
             </h2>
             <p className="text-sm sm:text-base text-white/80 leading-relaxed">
-              Berätta vad du behöver hjälp med, så går vi igenom nästa steg tillsammans.
+              Vi är tillgängliga dygnet runt. Berätta om ärendet så ger vi en snabb och kostnadsfri bedömning.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 lg:shrink-0">

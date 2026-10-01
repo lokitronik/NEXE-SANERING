@@ -73,34 +73,31 @@ export default function DeathSanitization() {
       className="py-10 sm:py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-12 max-w-7xl mx-auto"
     >
       <Helmet>
-        <title>Teknisk sanering vid obevakat dödsfall | NEXE SPECIALSANERING</title>
+        <title>Sanering vid dödsfall i Stockholm | Dödsbosanering | NEXE</title>
         <meta
           name="description"
-          content="Teknisk sanering vid obevakat dödsfall. Vi hanterar biologiska risker, lukt, kontaminerat material, dokumentation och personliga tillhörigheter med diskretion och respekt."
+          content="Professionell och diskret sanering vid obevakat dödsfall och dödsbo i Stockholm. Sanering av biologiskt material, luktsanering, desinfektion och säkring av personliga tillhörigheter."
         />
         <meta
           name="keywords"
-          content="teknisk sanering vid obevakat dödsfall, sanering vid obevakat dödsfall, dödsfallssanering, sanering efter dödsfall, biologisk sanering, luktsanering dödsfall"
+          content="sanering vid dödsfall, sanering dödsbo stockholm, dödsbosanering, liksanering, obevakat dödsfall, sanering efter dödsfall, biologisk sanering stockholm, luktsanering dödsfall"
         />
+        <link rel="canonical" href={`${window.location.origin}/tjanster/sanering-dodstall`} />
       </Helmet>
 
       <motion.section className="mb-12 sm:mb-16 md:mb-20" {...fadeInUp}>
         <div className="max-w-4xl">
           <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-cyan-accent/10 text-cyan-accent font-bold text-xs sm:text-sm mb-5">
             <Shield className="w-4 h-4" />
-            Sanering vid obevakat dödsfall
+            Sanering vid dödsfall & dödsbo i Stockholm
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-midnight mb-5 leading-tight">
-            Teknisk sanering vid obevakat dödsfall
+            Sanering vid dödsfall & obevakat dödsfall
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-midnight/65 font-light leading-relaxed max-w-3xl">
-            Ett obevakat dödsfall kräver mer än vanlig rengöring. Det kräver
-            teknisk sanering, biologisk riskbedömning, rätt skyddsrutiner,
-            lukthantering och metodisk hantering av påverkade material. Vi
-            kombinerar ett tydligt saneringsprotokoll med diskret och
-            respektfull hantering genom hela processen.
+            Ett obevakat dödsfall kräver specialiserad biologisk sanering. Vi hanterar smittrisker, kroppsvätskor, teknisk luktsanering och bortforsling av kontaminerat material med största diskretion, respekt och professionalitet för anhöriga och fastighetsägare.
           </p>
 
           <div className="mt-7 sm:mt-9">
@@ -109,7 +106,7 @@ export default function DeathSanitization() {
               className="inline-flex items-center justify-center gap-3 rounded-full bg-midnight text-white px-6 py-4 text-sm sm:text-base font-bold hover:bg-midnight/90 transition-colors w-full sm:w-auto"
             >
               <Phone className="w-5 h-5" />
-              Ring oss
+              Kontakta jouren: 076-007 97 96
             </a>
           </div>
         </div>
@@ -123,7 +120,7 @@ export default function DeathSanitization() {
           <HeartHandshake className="w-10 h-10 sm:w-12 sm:h-12 text-cyan-accent mb-5" />
 
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-            Teknisk noggrannhet i en känslig situation
+            Trygg dödsbosanering med respekt för anhöriga
           </h2>
 
           <p className="text-base sm:text-lg text-white/75 font-light leading-relaxed">
@@ -142,7 +139,7 @@ export default function DeathSanitization() {
           transition={{ ...fadeInUp.transition, delay: 0.1 }}
         >
           <h2 className="text-2xl sm:text-3xl font-bold text-midnight mb-5">
-            Vad ingår i teknisk sanering vid obevakat dödsfall?
+            Vad ingår i sanering vid dödsfall?
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3.5">

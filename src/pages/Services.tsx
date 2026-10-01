@@ -234,24 +234,24 @@ export default function Services() {
       className="py-14 sm:py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-12 max-w-7xl mx-auto"
     >
       <Helmet>
-        <title>Våra tjänster | NEXE SPECIALSANERING</title>
+        <title>Saneringstjänster i Stockholm | Specialsanering, Dödsbo & Lukt | NEXE</title>
         <meta
           name="description"
-          content="Utforska våra specialiserade tjänster inom biologisk sanering, traumasanering, luktsanering, socialsanering, förebyggande hygienbehandling med torrånga och hydroxylteknik, teknisk rengöring och sanering av svåråtkomliga ytor."
+          content="Specialiserade saneringstjänster i Stockholm: sanering vid dödsfall, socialsanering, hoarder-städning, luktsanering med hydroxyl & ozon samt personliga tillhörigheter."
         />
         <meta
           name="keywords"
-          content="saneringstjänster, traumasanering, luktsanering, dödsfallssanering, socialsanering, hoarder städning, förebyggande hygienbehandling, torrånga, hydroxylteknik, teknisk rengöring, svåråtkomliga ytor, personliga tillhörigheter"
+          content="saneringstjänster stockholm, specialsanering, dödsbosanering, socialsanering, hoarder städning, luktsanering, saneringsfirma stockholm"
         />
+        <link rel="canonical" href={`${window.location.origin}/tjanster`} />
       </Helmet>
 
       <motion.div className="text-center mb-10 sm:mb-12" {...fadeInUp}>
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-midnight mb-3 leading-tight">
-          Våra tjänster
+          Specialiserade saneringstjänster i Stockholm
         </h1>
         <p className="text-sm sm:text-base md:text-lg text-midnight/60 max-w-2xl mx-auto font-light leading-relaxed">
-          Vi erbjuder specialiserade saneringstjänster med fokus på säkerhet,
-          teknisk noggrannhet, dokumentation och diskret hantering.
+          När vanlig städning inte räcker. Vi erbjuder teknisk sanering vid dödsfall, socialsanering, hoarder-uppdrag och permanent luktborttagning med full diskretion och dokumentation.
         </p>
       </motion.div>
 
@@ -259,7 +259,7 @@ export default function Services() {
       <div className="mb-12 sm:mb-14">
         <div className="border-b border-midnight/10 pb-3 mb-6">
           <h2 className="text-xl sm:text-2xl font-bold text-midnight">
-            Kärntjänster
+            Tillgängliga saneringstjänster
           </h2>
         </div>
 

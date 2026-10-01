@@ -75,37 +75,35 @@ export default function OdorSanitization() {
       className="py-24 px-6 md:px-12 max-w-7xl mx-auto"
     >
       <Helmet>
-        <title>Luktsanering | NEXE SPECIALSANERING — Hydroxyl & Ozon</title>
+        <title>Luktsanering i Stockholm | Ta bort röklukt, mögellukt & avfallslukt | NEXE</title>
         <meta
           name="description"
-          content="Professionell luktsanering med hydroxylgenerator (TITAN 4000) och ozon. Hydroxyl för vardagliga fall utan evakuering — ozon för de svåraste situationerna. Stockholm."
+          content="Professionell luktsanering i Stockholm. Vi tar bort röklukt, mögellukt, liklukt, brandlukt och avfallslukt med avancerad hydroxylteknik (TITAN 4000) och ozonbehandling."
         />
         <meta
           name="keywords"
-          content="luktsanering, hydroxylbehandling, ozonsanering, ta bort röklukt, sanera mögellukt, luktneutralisering Stockholm, TITAN 4000"
+          content="luktsanering stockholm, ta bort röklukt, få bort röklukt i lägenhet, sanera mögellukt, luktsanering bostad, ozonsanering, hydroxylsanering, luktborttagning"
         />
+        <link rel="canonical" href={`${window.location.origin}/tjanster/luktsanering`} />
       </Helmet>
 
       {/* ── Hero ── */}
       <motion.div className="mb-24" {...fadeUp(0)}>
         <div className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-accent uppercase tracking-widest mb-6">
           <Wind className="w-4 h-4" />
-          <span>Luktsanering</span>
+          <span>Luktsanering i Stockholm</span>
         </div>
         <h1 className="text-5xl md:text-6xl font-extrabold text-midnight leading-tight mb-6 max-w-3xl">
-          Rätt teknik för<br />
-          <span className="text-cyan-accent">varje luktsituation</span>
+          Professionell luktsanering som tar bort luktkällan permanent
         </h1>
         <p className="text-xl text-midnight/60 font-light leading-relaxed max-w-2xl">
-          Vi maskerar inte lukter — vi eliminerar källan. Med hydroxylgenerator som primärt
-          verktyg och ozon som komplement vid svåra fall väljer vi alltid den metod som
-          passar situationen, inte den enklaste.
+          Vi maskerar inte lukter — vi bryter ned luktmolekylerna vid källan. Med avancerad hydroxylgenerator (TITAN 4000) som primärt verktyg och ozonbehandling vid extrema fall sanerar vi röklukt, mögellukt, urin och biologisk odör.
         </p>
       </motion.div>
 
       {/* ── Methods ── */}
       <motion.div className="mb-24" {...fadeUp(0.1)}>
-        <h2 className="text-3xl font-bold text-midnight mb-4">Tekniska metoder</h2>
+        <h2 className="text-3xl font-bold text-midnight mb-4">Våra metoder för effektiv luktsanering</h2>
         <p className="text-midnight/55 font-light mb-10 max-w-xl">
           Hydroxyl är vår primära metod — skonsam och effektiv utan evakuering. Ozon
           reserveras för de fall där det verkligen krävs.
@@ -150,7 +148,7 @@ export default function OdorSanitization() {
 
         {/* Cases */}
         <motion.div {...fadeUp(0.2)}>
-          <h2 className="text-3xl font-bold text-midnight mb-8">Vanliga fall</h2>
+          <h2 className="text-3xl font-bold text-midnight mb-8">Vanliga problem vi löser med luktsanering</h2>
 
           <div className="mb-8">
             <div className="flex items-center gap-2 mb-4">

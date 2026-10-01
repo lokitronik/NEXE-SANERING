@@ -80,18 +80,19 @@ export default function Socialsanering() {
     >
       <Helmet>
         <title>
-          Socialsanering & hoarder-städning | NEXE SPECIALSANERING
+          Socialsanering & Hoarder-städning i Stockholm | NEXE SPECIALSANERING
         </title>
 
         <meta
           name="description"
-          content="Professionell socialsanering och hoarder-städning med diskretion och respekt. I samarbete med EXHALE erbjuder vi även stöd med sortering och organisering av hemmet."
+          content="Professionell socialsanering, misärsanering och hoarder-städning i Stockholm med full diskretion. Rensning, luktsanering och återställande i samarbete med EXHALE."
         />
 
         <meta
           name="keywords"
-          content="socialsanering, hoarder-städning, hoarder sanering, sanering nedskräpad bostad, diogenes sanering, luktsanering, biologisk sanering, rensning bostad"
+          content="socialsanering stockholm, hoarder städning stockholm, misärsanering, sanering nedskräpad bostad, diogenes sanering, extremstädning, rensning avfall bostad, dödsbosanering"
         />
+        <link rel="canonical" href={`${window.location.origin}/tjanster/socialsanering`} />
       </Helmet>
 
       {/* Introduktion */}
@@ -102,17 +103,15 @@ export default function Socialsanering() {
         <div className="max-w-4xl">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-cyan-accent/10 px-3.5 py-2 text-xs font-bold text-cyan-accent sm:text-sm">
             <Users2 className="h-4 w-4" aria-hidden="true" />
-            Socialsanering & hoarder-städning
+            Socialsanering & hoarder-städning i Stockholm
           </div>
 
           <h1 className="mb-5 text-3xl font-extrabold leading-tight text-midnight sm:text-4xl md:text-5xl lg:text-6xl">
-            När en bostad behöver tas om hand med respekt och struktur
+            Socialsanering & städning vid hoarder- och samlarsituationer
           </h1>
 
           <p className="max-w-3xl text-base font-light leading-relaxed text-midnight/65 sm:text-lg md:text-xl">
-            Vi hjälper till när en bostad har blivit svår att hantera på
-            grund av ansamling av föremål, lukt, smuts eller biologisk
-            belastning. Arbetet utförs diskret, metodiskt och utan dömande.
+            När en bostad har blivit obeboelig på grund av extrem ansamling av föremål, grov smuts, lukt eller biologisk belastning. Vi utför professionell misär- och socialsanering med full diskretion, respekt och rätt skyddsutrustning.
           </p>
 
           <div className="mt-7 sm:mt-9">
@@ -121,7 +120,7 @@ export default function Socialsanering() {
               className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-midnight px-6 py-4 text-sm font-bold text-white transition-colors hover:bg-midnight/90 sm:w-auto sm:text-base"
             >
               <Phone className="h-5 w-5" aria-hidden="true" />
-              Ring oss
+              Kontakta oss för bedömning
             </a>
           </div>
         </div>
@@ -139,7 +138,7 @@ export default function Socialsanering() {
           />
 
           <h2 className="mb-4 text-2xl font-bold sm:text-3xl">
-            Vi arbetar utan dömande
+            Diskret och respektfullt arbete utan dömande
           </h2>
 
           <p className="text-base font-light leading-relaxed text-white/75 sm:text-lg">
@@ -155,7 +154,7 @@ export default function Socialsanering() {
           transition={{ ...fadeInUp.transition, delay: 0.1 }}
         >
           <h2 className="mb-5 text-2xl font-bold text-midnight sm:text-3xl">
-            Vi kan hjälpa vid
+            När behövs professionell socialsanering?
           </h2>
 
           <ul className="grid grid-cols-1 gap-x-8 gap-y-3.5 sm:grid-cols-2">

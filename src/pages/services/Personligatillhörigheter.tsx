@@ -27,29 +27,27 @@ export default function atillhörigheter() {
       className="py-14 sm:py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-12 max-w-7xl mx-auto"
     >
       <Helmet>
-        <title>Hantering av personliga tillhörigheter | NEXE SPECIALSANERING</title>
+        <title>Hantering av personliga tillhörigheter vid dödsfall | NEXE SPECIALSANERING</title>
         <meta
           name="description"
-          content="Vi hanterar personliga tillhörigheter med respekt och omsorg vid sanering efter dödsfall eller trauma. Identifiering, desinfektion, säkring och återlämning på ett tryggt sätt."
+          content="Varsam och respektfull hantering av personliga tillhörigheter, värdeföremål och minnessaker vid sanering av dödsbo, dödsfall och trauma i Stockholm."
         />
         <meta
           name="keywords"
-          content="personliga tillhörigheter, hantering dödsfall, sanering dödsfall, respektfull hantering, desinfektion tillhörigheter, traumasanering tillhörigheter"
+          content="personliga tillhörigheter dödsfall, sortering dödsbo, värdesaker dödsfall, sanering dödsbo tillhörigheter, minnessaker sanering"
         />
+        <link rel="canonical" href={`${window.location.origin}/hantering-av-personliga-tillhorigheter`} />
       </Helmet>
 
       <motion.div className="text-center mb-14 sm:mb-16 md:mb-20" {...fadeInUp}>
         <Box className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-cyan-accent mx-auto mb-5 sm:mb-6 md:mb-8" />
 
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-midnight mb-4 sm:mb-5 md:mb-6 leading-tight">
-          Hantering av personliga tillhörigheter
+          Hantering av personliga tillhörigheter vid dödsfall och sanering
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-midnight/60 max-w-3xl mx-auto font-light leading-relaxed">
-          Vid sanering efter dödsfall eller trauma kan personliga tillhörigheter
-          ha både praktiskt och emotionellt värde. Vi hanterar föremål med
-          respekt, diskretion och omsorg, från identifiering och säkring till
-          eventuell desinfektion och återlämning.
+          Vid sanering efter dödsfall eller trauma har personliga tillhörigheter och minnessaker ett ovärderligt sentimentalt värde. Vi identifierar, säkrar och desinficerar föremål med största respekt och diskretion.
         </p>
       </motion.div>
 

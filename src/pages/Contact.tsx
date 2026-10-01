@@ -156,25 +156,30 @@ export default function Contact() {
       className="py-20 px-5 sm:px-6 md:px-10 lg:px-12 max-w-7xl mx-auto"
     >
       <Helmet>
-        <title>Kontakta oss | NEXE SPECIALSANERING</title>
+        <title>Kontakta NEXE SPECIALSANERING | Saneringsjour Stockholm</title>
         <meta
           name="description"
-          content="Kontakta NEXE SPECIALSANERING för hjälp med sanering, trauma, dödsfall, luktproblem, hygienbehandling och teknisk rengöring."
+          content="Kontakta NEXE SPECIALSANERING för akut hjälp eller rådgivning vid dödsfall, socialsanering och luktsanering i Stockholm. Jour dygnet runt: 076-007 97 96."
         />
+        <meta
+          name="keywords"
+          content="kontakta saneringsfirma, saneringsjour stockholm, sanering dödsfall kontakt, socialsanering kontakt, saneringshjälp stockholm"
+        />
+        <link rel="canonical" href={`${window.location.origin}/kontakt`} />
       </Helmet>
 
       <motion.div className="text-center mb-14 md:mb-20" {...fadeInUp}>
         <span className="inline-flex items-center gap-2 rounded-full bg-cyan-accent/10 px-4 py-2 text-sm font-bold text-midnight mb-6">
           <ShieldCheck className="w-4 h-4" />
-          Diskret kontakt · Trygg hantering
+          Jour dygnet runt · Diskret kontakt · Stockholm & Mälardalen
         </span>
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-midnight mb-6">
-          Kontakta oss
+          Kontakta NEXE SPECIALSANERING
         </h1>
 
         <p className="text-lg md:text-xl text-midnight/60 max-w-3xl mx-auto font-light leading-relaxed">
-          Beskriv vad som har hänt eller vad du behöver hjälp med. Vi hjälper dig att bedöma nästa steg.
+          Behöver du akut sanering vid dödsfall, socialsanering eller luktborttagning? Beskriv ditt ärende så gör vi en kostnadsfri bedömning och återkommer omgående.
         </p>
       </motion.div>
 

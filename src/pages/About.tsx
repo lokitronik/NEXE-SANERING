@@ -51,11 +51,16 @@ export default function About() {
       className="py-14 sm:py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-12 max-w-7xl mx-auto"
     >
       <Helmet>
-        <title>Om oss | NEXE SPECIALSANERING</title>
+        <title>Om oss | Auktoriserad saneringsfirma i Stockholm | NEXE</title>
         <meta
           name="description"
-          content="Lär känna människorna bakom NEXE SPECIALSANERING. Personlig kontakt, omtanke och noggrant arbete – med samarbete och respekt i centrum. En del av NEXE GROUP AB."
+          content="Lär känna människorna bakom NEXE SPECIALSANERING i Stockholm. Personlig kontakt, omtanke och certifierat arbete inom dödsfallssanering, socialsanering och luktsanering."
         />
+        <meta
+          name="keywords"
+          content="saneringsfirma stockholm, om nexe specialsanering, saneringsföretag stockholm, professionell sanerare"
+        />
+        <link rel="canonical" href={`${window.location.origin}/om-oss`} />
       </Helmet>
 
       {/* HERO */}
