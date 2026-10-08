@@ -110,8 +110,12 @@ export default function Socialsanering() {
             Socialsanering & städning vid hoarder- och samlarsituationer
           </h1>
 
-          <p className="max-w-3xl text-base font-light leading-relaxed text-midnight/65 sm:text-lg md:text-xl">
-            När en bostad har blivit obeboelig på grund av extrem ansamling av föremål, grov smuts, lukt eller biologisk belastning. Vi utför professionell misär- och socialsanering med full diskretion, respekt och rätt skyddsutrustning.
+          <p className="max-w-3xl text-base font-light leading-relaxed text-midnight/70 sm:text-lg md:text-xl mb-4">
+            Vi hjälper dig med röjning, bortforsling, rengöring och sanering när hemmet blivit överfullt eller svårt att hålla rent. Det kan handla om hoarding, samlarsyndrom eller andra situationer där vanlig städning inte räcker till. Vi arbetar diskret och utan att döma.
+          </p>
+
+          <p className="max-w-3xl text-sm font-light leading-relaxed text-midnight/60 sm:text-base md:text-lg">
+            Vid kraftig ansamling, grov smuts, lukt eller biologisk belastning krävs metodisk specialsanering med rätt skyddsutrustning och respektfull hantering av bostaden.
           </p>
 
           <div className="mt-7 sm:mt-9">
