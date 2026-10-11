@@ -175,15 +175,15 @@ export default function Home() {
     >
       <Helmet>
         <title>
-          Specialsanering i Stockholm | Dödsfall, Socialsanering & Luktsanering | NEXE
+          Sanering efter dödsfall och socialsanering | NEXE
         </title>
         <meta
           name="description"
-          content="Auktoriserad och certifierad specialsanering i Stockholm och Mälardalen. Akut dödsbosanering vid obevakat dödsfall, socialsanering, hoarder-städning och teknisk luktsanering."
+          content="Sanering efter dödsfall och svåra boendemiljöer i hela Sverige."
         />
         <meta
           name="keywords"
-          content="specialsanering stockholm, sanering vid dödsfall, dödsbosanering, socialsanering stockholm, hoarder städning, sanering efter dödsfall, luktsanering, biologisk sanering, saneringsfirma stockholm"
+          content="sanering efter dödsfall, svåra boendemiljöer, specialsanering sverige, dödsbosanering, socialsanering, hoarder städning, luktsanering"
         />
         <link rel="canonical" href={window.location.origin} />
       </Helmet>
@@ -209,7 +209,7 @@ export default function Home() {
               </span>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-midnight leading-tight tracking-tight mb-4 max-w-3xl">
-                Professionell specialsanering i Stockholm
+                Sanering efter dödsfall och svåra boendemiljöer i hela Sverige
               </h1>
 
               <p className="text-base sm:text-lg text-midnight/75 leading-relaxed max-w-2xl mb-5">

@@ -80,17 +80,17 @@ export default function Socialsanering() {
     >
       <Helmet>
         <title>
-          Socialsanering & Hoarder-städning i Stockholm | NEXE SPECIALSANERING
+          Socialsanering & Hoarding | NEXE SPECIALSANERING
         </title>
 
         <meta
           name="description"
-          content="Professionell socialsanering, misärsanering och hoarder-städning i Stockholm med full diskretion. Rensning, luktsanering och återställande i samarbete med EXHALE."
+          content="Professionell socialsanering, misärsanering och hoarder-städning med full diskretion. Rensning, luktsanering och återställande i samarbete med EXHALE."
         />
 
         <meta
           name="keywords"
-          content="socialsanering stockholm, hoarder städning stockholm, misärsanering, sanering nedskräpad bostad, diogenes sanering, extremstädning, rensning avfall bostad, dödsbosanering"
+          content="socialsanering, hoarding sanering, hoarder städning, samlarsyndrom, misärsanering, sanering nedskräpad bostad, diogenes sanering, extremstädning"
         />
         <link rel="canonical" href={`${window.location.origin}/tjanster/socialsanering`} />
       </Helmet>
@@ -103,7 +103,7 @@ export default function Socialsanering() {
         <div className="max-w-4xl">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-cyan-accent/10 px-3.5 py-2 text-xs font-bold text-cyan-accent sm:text-sm">
             <Users2 className="h-4 w-4" aria-hidden="true" />
-            Socialsanering & hoarder-städning i Stockholm
+            Socialsanering & hoarding
           </div>
 
           <h1 className="mb-5 text-3xl font-extrabold leading-tight text-midnight sm:text-4xl md:text-5xl lg:text-6xl">

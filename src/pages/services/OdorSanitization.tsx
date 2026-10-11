@@ -75,14 +75,14 @@ export default function OdorSanitization() {
       className="py-24 px-6 md:px-12 max-w-7xl mx-auto"
     >
       <Helmet>
-        <title>Luktsanering i Stockholm | Ta bort röklukt, mögellukt & avfallslukt | NEXE</title>
+        <title>Luktsanering | NEXE SPECIALSANERING</title>
         <meta
           name="description"
-          content="Professionell luktsanering i Stockholm. Vi tar bort röklukt, mögellukt, liklukt, brandlukt och avfallslukt med avancerad hydroxylteknik (TITAN 4000) och ozonbehandling."
+          content="Professionell luktsanering. Vi tar bort röklukt, mögellukt, liklukt, brandlukt och avfallslukt med avancerad hydroxylteknik (TITAN 4000) och ozonbehandling."
         />
         <meta
           name="keywords"
-          content="luktsanering stockholm, ta bort röklukt, få bort röklukt i lägenhet, sanera mögellukt, luktsanering bostad, ozonsanering, hydroxylsanering, luktborttagning"
+          content="luktsanering, ta bort röklukt, få bort röklukt, sanera mögellukt, luktsanering bostad, ozonsanering, hydroxylsanering, luktborttagning"
         />
         <link rel="canonical" href={`${window.location.origin}/tjanster/luktsanering`} />
       </Helmet>
@@ -91,7 +91,7 @@ export default function OdorSanitization() {
       <motion.div className="mb-24" {...fadeUp(0)}>
         <div className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-accent uppercase tracking-widest mb-6">
           <Wind className="w-4 h-4" />
-          <span>Luktsanering i Stockholm</span>
+          <span>Luktsanering</span>
         </div>
         <h1 className="text-5xl md:text-6xl font-extrabold text-midnight leading-tight mb-6 max-w-3xl">
           Professionell luktsanering som tar bort luktkällan permanent

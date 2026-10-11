@@ -73,14 +73,14 @@ export default function DeathSanitization() {
       className="py-10 sm:py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-12 max-w-7xl mx-auto"
     >
       <Helmet>
-        <title>Sanering vid dödsfall i Stockholm | Dödsbosanering | NEXE</title>
+        <title>Sanering efter dödsfall | Dödsbosanering | NEXE</title>
         <meta
           name="description"
-          content="Professionell och diskret sanering vid obevakat dödsfall och dödsbo i Stockholm. Sanering av biologiskt material, luktsanering, desinfektion och säkring av personliga tillhörigheter."
+          content="Professionell och diskret sanering efter obevakat dödsfall och dödsbo. Sanering av biologiskt material, luktsanering, desinfektion och säkring av personliga tillhörigheter."
         />
         <meta
           name="keywords"
-          content="sanering vid dödsfall, sanering dödsbo stockholm, dödsbosanering, liksanering, obevakat dödsfall, sanering efter dödsfall, biologisk sanering stockholm, luktsanering dödsfall"
+          content="sanering efter dödsfall, sanering vid dödsfall, sanering dödsbo, dödsbosanering, liksanering, obevakat dödsfall, biologisk sanering, luktsanering dödsfall"
         />
         <link rel="canonical" href={`${window.location.origin}/tjanster/sanering-dodstall`} />
       </Helmet>
@@ -89,11 +89,11 @@ export default function DeathSanitization() {
         <div className="max-w-4xl">
           <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-cyan-accent/10 text-cyan-accent font-bold text-xs sm:text-sm mb-5">
             <Shield className="w-4 h-4" />
-            Sanering vid dödsfall & dödsbo i Stockholm
+            Sanering efter dödsfall
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-midnight mb-5 leading-tight">
-            Sanering vid dödsfall & obevakat dödsfall
+            Sanering efter dödsfall & obevakat dödsfall
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-midnight/65 font-light leading-relaxed max-w-3xl">
