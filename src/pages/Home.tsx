@@ -385,10 +385,10 @@ export default function Home() {
         >
           <div className="max-w-xl">
             <h2 className="text-xl sm:text-2xl font-bold mb-2 leading-snug">
-              Behöver du akut sanering eller rådgivning?
+              Behöver du hjälp med sanering eller tömning av ett dödsbo?
             </h2>
             <p className="text-sm sm:text-base text-white/80 leading-relaxed">
-              Vi är tillgängliga dygnet runt. Berätta om ärendet så ger vi en snabb och kostnadsfri bedömning.
+              Kontakta oss för rådgivning och en kostnadsfri bedömning av ditt ärende. Vi hjälper privatpersoner, begravningsbyråer och fastighetsägare med diskret och professionell service i hela Sverige.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 lg:shrink-0">
